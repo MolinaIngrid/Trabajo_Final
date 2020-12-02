@@ -1,0 +1,759 @@
+	Sci_name	Region	AOS_57	type	C_name	PT-c	TB-r	PS-g	BD-g	CS	PS_BD	PT_TB	WatchList	Cont_concern	Major_hab	Red_list_16	NOT_IUCN
+5	Acanthidops bairdi	Costa Rica	1876	landbird	Peg-billed Finch	3	3	5	5	16	10	6	2	Watch List - Red	Montane evergreen forest	LC	NA
+9	Accipiter bicolor	Costa Rica	788	landbird	Bicolored Hawk	5	2	3	1	11	4	7	3	Watch List - Yel-d	Tropical deciduous forest	LC	NA
+14	Accipiter cooperii	Costa Rica	786	landbird	Cooper's Hawk	1	NA	3	1	5	4	1	2	NC	Tropical deciduous forest	LC	NA
+19	Accipiter striatus	Costa Rica	785	landbird	Sharp-shinned Hawk	1	NA	3	1	5	4	1	2	NC	Pine forest	LC	NA
+25	Accipiter superciliosus	Costa Rica	784	landbird	Tiny Hawk	4	3	4	1	12	5	7	3	NC	Tropical lowland evergreen forest	LC	NA
+28	Actitis macularius	Costa Rica	512	shorebird	Spotted Sandpiper	4	NA	3	1	8	4	4	NA	NC	rivers	LC	NA
+37	Aegolius ridgwayi	Costa Rica	863	landbird	Unspotted Saw-whet Owl	5	3	5	5	18	10	8	1	Watch List - Red	Montane evergreen forest	LC	NA
+42	Agamia agami	Costa Rica	745	waterbird	Agami Heron	3	3	4	1	11	5	6	NA	NC	Flooded evergreen forest	VU	NA
+47	Agelaius phoeniceus	Costa Rica	2068	landbird	Red-winged Blackbird	4	2	1	1	8	2	6	3	NC	Freshwater marshes	LC	NA
+53	Aimophila rufescens	Costa Rica	1961	landbird	Rusty Sparrow	2	3	3	3	11	6	5	2	NC	Arid montane scrub	LC	NA
+60	Amaurolimnas concolor	Costa Rica	412	waterbird	Uniform Crake	5	3	4	2	14	6	8	NA	Watch List - Yel-d	Gallery forest	LC	NA
+65	Amaurospiza concolor	Costa Rica	2056	landbird	Blue Seedeater	4	3	5	4	16	9	7	2	Watch List - Red	Montane evergreen forest	LC	NA
+74	Amazilia amabilis	Costa Rica	375	landbird	Blue-chested Hummingbird	5	3	3	4	15	7	8	NA	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+78	Amazilia boucardi	Costa Rica	377	landbird	Mangrove Hummingbird	5	5	5	5	20	10	10	NA	Watch List - Red	Mangrove forest	EN	NA
+94	Amazilia decora	Costa Rica	376	landbird	Charming Hummingbird	4	3	4	5	16	9	7	NA	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+96	Amazilia edward	Costa Rica	382	landbird	Snowy-bellied Hummingbird	2	3	4	5	14	9	5	NA	NC	Tropical lowland evergreen forest	LC	NA
+102	Amazilia rutila	Costa Rica	385	landbird	Cinnamon Hummingbird	2	2	3	3	10	6	4	NA	NC	Tropical deciduous forest	LC	NA
+105	Amazilia hoffmanni	Costa Rica	381	landbird	Blue-vented Hummingbird	4	2	3	4	13	7	6	NA	Watch List - Yel-r	Secondary forest	LC	NA
+110	Amazilia tzacatl	Costa Rica	383	landbird	Rufous-tailed Hummingbird	3	2	2	2	9	4	5	NA	NC	Tropical lowland evergreen forest	LC	NA
+117	Amazona albifrons	Costa Rica	1037	landbird	White-fronted Parrot	4	3	3	3	13	6	7	3	NC	Tropical deciduous forest	LC	NA
+123	Amazona auropalliata	Costa Rica	1049	landbird	Yellow-naped Parrot	5	4	5	4	18	9	9	1	Watch List - Red	Tropical deciduous forest	VU	NA
+133	Amazona autumnalis	Costa Rica	1046	landbird	Red-lored Parrot	4	4	3	3	14	6	8	3	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+134	Amazona farinosa	Costa Rica	1047	landbird	Mealy Parrot	5	3	3	1	12	4	8	3	Watch List - Yel-d	Tropical lowland evergreen forest	NT	NA
+146	Amblycercus holosericeus	Costa Rica	2120	landbird	Yellow-billed Cacique	4	3	3	2	12	5	7	3	NC	Montane evergreen forest	LC	NA
+153	Ammodramus savannarum	Costa Rica	1996	landbird	Grasshopper Sparrow	5	3	2	1	11	3	8	3	CBSD	Northern temperate grassland	LC	NA
+158	Anabacerthia variegaticeps	Costa Rica	1129	landbird	Scaly-throated Foliage-gleaner	4	3	4	4	15	8	7	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+168	Anas acuta	Costa Rica	48	waterfowl	Northern Pintail	4	NA	3	1	8	4	4	NA	NC	Freshwater lakes	LC	NA
+175	Anas americana	Costa Rica	37	waterfowl	American Wigeon	3	NA	3	1	7	4	3	NA	NC	freshwater lakes	LC	NA
+177	Anas clypeata	Costa Rica	46	waterfowl	Northern Shoveler	1	NA	3	1	5	4	1	NA	NC	Saltwater/brackish marshes	LC	NA
+183	Anas crecca	Costa Rica	51	waterfowl	Green-winged Teal	1	NA	3	1	5	4	1	NA	NC	freshwater lakes	LC	NA
+190	Anas cyanoptera	Costa Rica	45	waterfowl	Cinnamon Teal	5	NA	4	1	10	5	5	NA	Watch List - Yel-d	Freshwater marshes	LC	NA
+195	Anas discors	Costa Rica	44	waterfowl	Blue-winged Teal	1	NA	2	1	4	3	1	NA	NC	freshwater lakes	LC	NA
+201	Anas platyrhynchos	Costa Rica	39	waterfowl	Mallard	2	NA	2	1	5	3	2	NA	NC	freshwater lakes	LC	NA
+209	Anhinga anhinga	Costa Rica	716	waterbird	Anhinga	2	2	3	1	8	4	4	NA	NC	Freshwater lakes	LC	NA
+212	Anous minutus	Costa Rica	590	waterbird	Black Noddy	3	3	3	1	10	4	6	NA	NC	Pelagic waters	LC	NA
+218	Anous stolidus	Costa Rica	589	waterbird	Brown Noddy	3	3	3	1	10	4	6	NA	NC	Pelagic waters	LC	NA
+225	Anthracothorax prevostii	Costa Rica	292	landbird	Green-breasted Mango	3	2	3	3	11	6	5	NA	NC	Secondary forest	LC	NA
+228	Anthracothorax veraguensis	Costa Rica	294	landbird	Veraguan Mango	2	2	5	5	14	10	4	NA	Watch List - Yel-r	Secondary forest	LC	NA
+240	Antrostomus carolinensis	Costa Rica	233	landbird	Chuck-will's-widow	5	NA	2	2	9	4	5	NA	CBSD	Tropical lowland evergreen forest	LC	NA
+245	Antrostomus rufus	Costa Rica	234	landbird	Rufous Nightjar	3	3	2	1	9	3	6	NA	NC	Tropical deciduous forest	LC	NA
+247	Antrostomus saturatus	Costa Rica	240	landbird	Dusky Nightjar	2	3	5	5	15	10	5	NA	Watch List - Yel-r	Montane evergreen forest	LC	NA
+254	Aphanotriccus capitalis	Costa Rica	1198	landbird	Tawny-chested Flycatcher	5	4	5	5	19	10	9	1	Watch List - Red	Tropical lowland evergreen forest	VU	NA
+260	Ara ambiguus	Costa Rica	1011	landbird	Great Green Macaw	5	4	5	4	18	9	9	1	Watch List - Red	Tropical lowland evergreen forest	EN	NA
+268	Ara macao	Costa Rica	1013	landbird	Scarlet Macaw	5	4	4	1	14	5	9	3	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+275	Aramides albiventris	Costa Rica	410	waterbird	Russet-naped Wood-Rail	3	2	4	3	12	7	5	NA	NC	Flooded evergreen forest	LC	1
+281	Aramides axillaris	Costa Rica	409	waterbird	Rufous-necked Wood-Rail	4	3	4	3	14	7	7	NA	Watch List - Yel-d	Mangrove forest	LC	NA
+285	Aramides cajaneus	Costa Rica	411	waterbird	Gray-cowled Wood-Rail	2	2	2	1	7	3	4	NA	NC	Flooded evergreen forest	LC	1
+287	Aramus guarauna	Costa Rica	431	waterbird	Limpkin	3	3	3	1	10	4	6	NA	NC	Freshwater marshes	LC	NA
+298	Archilochus colubris	Costa Rica	328	landbird	Ruby-throated Hummingbird	1	NA	2	1	4	3	1	NA	NC	Tropical deciduous forest	LC	NA
+301	Ardea alba	Costa Rica	731	waterbird	Great Egret	1	2	3	1	7	4	3	NA	NC	Saltwater/brackish marshes	LC	NA
+312	Ardea herodias	Costa Rica	727	waterbird	Great Blue Heron	2	NA	3	1	6	4	2	NA	NC	Freshwater marshes	LC	NA
+317	Arenaria interpres	Costa Rica	475	shorebird	Ruddy Turnstone	4	NA	3	2	9	5	4	NA	NC	coastal rocky beaches	LC	NA
+323	Arremon aurantiirostris	Costa Rica	1946	landbird	Orange-billed Sparrow	4	3	4	3	14	7	7	2	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+329	Arremon brunneinucha	Costa Rica	1948	landbird	Chestnut-capped Brushfinch	4	3	3	3	13	6	7	3	Watch List - Yel-d	Montane evergreen forest	LC	NA
+335	Arremon costaricensis	Costa Rica	1950	landbird	Costa Rican Brushfinch	3	3	5	3	14	8	6	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+337	Arremon crassirostris	Costa Rica	1947	landbird	Sooty-faced Finch	3	3	4	5	15	9	6	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+342	Arremonops conirostris	Costa Rica	1954	landbird	Black-striped Sparrow	2	2	2	2	8	4	4	2	NC	Tropical lowland evergreen forest	LC	NA
+346	Arremonops rufivirgatus	Costa Rica	1952	landbird	Olive Sparrow	3	3	3	3	12	6	6	2	NC	Tropical deciduous forest	LC	NA
+359	Atlapetes albinucha	Costa Rica	1955	landbird	White-naped Brushfinch	4	3	4	4	15	8	7	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+374	Attila spadiceus	Costa Rica	1236	landbird	Bright-rumped Attila	4	3	3	1	11	4	7	3	NC	Tropical lowland evergreen forest	LC	NA
+381	Aulacorhynchus prasinus	Costa Rica	919	landbird	Emerald Toucanet	4	3	4	3	14	7	7	2	Watch List - Yel-d	Montane evergreen forest	LC	NA
+386	Automolus ochrolaemus	Costa Rica	1133	landbird	Buff-throated Foliage-gleaner	4	3	3	1	11	4	7	3	NC	Tropical lowland evergreen forest	LC	NA
+394	Automolus subulatus	Costa Rica	1134	landbird	Striped Woodhaunter	5	3	3	2	13	5	8	3	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+399	Aythya affinis	Costa Rica	58	waterfowl	Lesser Scaup	4	NA	3	1	8	4	4	NA	NC	Freshwater lakes	LC	NA
+403	Aythya americana	Costa Rica	53	waterfowl	Redhead	1	NA	3	1	5	4	1	NA	NC	Freshwater lakes	LC	NA
+412	Aythya collaris	Costa Rica	55	waterfowl	Ring-necked Duck	2	NA	3	1	6	4	2	NA	NC	freshwater lakes	LC	NA
+416	Bangsia arcaei	Costa Rica	1854	landbird	Blue-and-gold Tanager	4	3	5	5	17	10	7	1	Watch List - Red	Tropical lowland evergreen forest	NT	NA
+424	Baryphthengus martii	Costa Rica	895	landbird	Rufous Motmot	4	3	2	2	11	4	7	3	NC	Tropical lowland evergreen forest	LC	NA
+428	Basileuterus culicivorus	Costa Rica	1837	landbird	Golden-crowned Warbler	4	3	2	1	10	3	7	3	NC	Tropical lowland evergreen forest	LC	NA
+440	Basileuterus melanogenys	Costa Rica	1834	landbird	Black-cheeked Warbler	3	3	5	5	16	10	6	2	Watch List - Red	Elfin forest	LC	NA
+442	Basileuterus melanotis	Costa Rica	1838	landbird	Costa Rican Warbler	3	3	4	5	15	9	6	2	Watch List - Yel-r	Montane evergreen forest	LC	1
+443	Basileuterus rufifrons	Costa Rica	1833	landbird	Rufous-capped Warbler	4	3	3	3	13	6	7	3	NC	Tropical deciduous forest	LC	NA
+453	Bolborhynchus lineola	Costa Rica	1025	landbird	Barred Parakeet	4	3	4	4	15	8	7	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+461	Bombycilla cedrorum	Costa Rica	1626	landbird	Cedar Waxwing	3	NA	1	1	5	2	3	3	NC	Secondary forest	LC	NA
+469	Botaurus pinnatus	Costa Rica	719	waterbird	Pinnated Bittern	2	3	4	2	11	6	5	NA	NC	Freshwater marshes	LC	NA
+474	Brotogeris jugularis	Costa Rica	1029	landbird	Orange-chinned Parakeet	3	3	3	3	12	6	6	2	NC	Tropical deciduous forest	LC	NA
+488	Bubulcus ibis	Costa Rica	741	waterbird	Cattle Egret	4	2	2	1	9	3	6	NA	NC	Pastures/agricultural lands	LC	NA
+494	Burhinus bistriatus	Costa Rica	435	shorebird	Double-striped Thick-knee	2	2	3	3	10	6	4	NA	NC	"Low, seasonally wet grassland"	LC	NA
+500	Busarellus nigricollis	Costa Rica	778	landbird	Black-collared Hawk	4	3	4	1	12	5	7	3	NC	Flooded evergreen forest	LC	NA
+509	Buteo albonotatus	Costa Rica	811	landbird	Zone-tailed Hawk	3	3	3	1	10	4	6	3	NC	Gallery forest	LC	NA
+515	Buteo brachyurus	Costa Rica	809	landbird	Short-tailed Hawk	3	2	2	1	8	3	5	3	NC	Tropical lowland evergreen forest	LC	NA
+521	Buteo jamaicensis	Costa Rica	812	landbird	Red-tailed Hawk	1	3	3	1	8	4	4	2	NC	Tropical deciduous forest	LC	NA
+526	Buteo nitidus	Costa Rica	804	landbird	Gray-lined Hawk	2	3	3	1	9	4	5	3	NC	Gallery forest	LC	NA
+527	Buteo plagiatus	Costa Rica	803	landbird	Gray Hawk	2	2	3	1	8	4	4	2	NC	Gallery forest	LC	NA
+536	Buteo platypterus	Costa Rica	807	landbird	Broad-winged Hawk	1	NA	3	1	5	4	1	2	NC	Tropical lowland evergreen forest	LC	NA
+542	Buteo swainsoni	Costa Rica	810	landbird	Swainson's Hawk	2	NA	3	1	6	4	2	2	NC	Northern temperate grassland	LC	NA
+551	Buteogallus anthracinus	Costa Rica	792	landbird	Common Black Hawk	3	3	3	2	11	5	6	3	NC	Tropical deciduous forest	LC	NA
+554	Buteogallus meridionalis	Costa Rica	794	landbird	Savanna Hawk	2	2	2	1	7	3	4	3	NC	"Low, seasonally wet grassland"	LC	NA
+556	Buteogallus solitarius	Costa Rica	796	landbird	Solitary Eagle	5	3	5	3	16	8	8	4	Watch List - Red	Montane evergreen forest	NT	NA
+564	Buteogallus urubitinga	Costa Rica	795	landbird	Great Black Hawk	4	3	3	1	11	4	7	3	NC	Tropical deciduous forest	LC	NA
+572	Butorides virescens	Costa Rica	743	waterbird	Green Heron	5	2	3	1	11	4	7	NA	CBSD	Freshwater lakes	LC	1
+579	Cacicus uropygialis	Costa Rica	2122	landbird	Scarlet-rumped Cacique	4	3	3	3	13	6	7	3	NC	Montane evergreen forest	LC	NA
+584	Cairina moschata	Costa Rica	32	waterfowl	Muscovy Duck	5	3	4	1	13	5	8	NA	Watch List - Yel-d	Freshwater lakes	LC	NA
+589	Calidris alba	Costa Rica	489	shorebird	Sanderling	4	NA	3	2	9	5	4	NA	NC	Coastal sand beaches/mudflats	LC	NA
+613	Calidris himantopus	Costa Rica	483	shorebird	Stilt Sandpiper	4	NA	3	3	10	6	4	NA	NC	Saltwater/brackish marshes	LC	NA
+614	Calidris mauri	Costa Rica	500	shorebird	Western Sandpiper	3	NA	3	3	9	6	3	NA	NC	Coastal sand beaches/mudflats	LC	NA
+625	Calidris minutilla	Costa Rica	495	shorebird	Least Sandpiper	3	NA	3	1	7	4	3	NA	NC	Coastal sand beaches/mudflats	LC	NA
+636	Calidris pusilla	Costa Rica	499	shorebird	Semipalmated Sandpiper	4	NA	3	2	9	5	4	NA	NC	Coastal sand beaches/mudflats	NT	NA
+642	Calidris virgata	Costa Rica	479	shorebird	Surfbird	3	NA	4	3	10	7	3	NA	NC	coastal rocky beaches	LC	NA
+646	Philodice bryantae	Costa Rica	321	landbird	Magenta-throated Woodstar	4	3	5	5	17	10	7	NA	Watch List - Red	Montane evergreen forest	NT	NA
+651	Calocitta formosa	Costa Rica	1363	landbird	White-throated Magpie-Jay	2	2	3	4	11	7	4	2	NC	Tropical deciduous forest	LC	NA
+656	Campephilus guatemalensis	Costa Rica	979	landbird	Pale-billed Woodpecker	4	3	4	3	14	7	7	2	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+668	Camptostoma imberbe	Costa Rica	1146	landbird	Northern Beardless-Tyrannulet	3	2	3	2	10	5	5	2	NC	Gallery forest	LC	NA
+669	Camptostoma obsoletum	Costa Rica	1147	landbird	Southern Beardless-Tyrannulet	2	2	1	1	6	2	4	3	NC	Secondary forest	LC	NA
+679	Campylopterus hemileucurus	Costa Rica	361	landbird	Violet Sabrewing	4	2	4	4	14	8	6	NA	Watch List - Yel-r	Montane evergreen forest	LC	NA
+685	Campylorhamphus pusillus	Costa Rica	1119	landbird	Brown-billed Scythebill	4	3	3	4	14	7	7	2	Watch List - Yel-d	Montane evergreen forest	LC	NA
+689	Campylorhynchus rufinucha	Costa Rica	1468	landbird	Rufous-naped Wren	3	2	3	4	12	7	5	2	NC	Tropical deciduous forest	LC	NA
+694	Campylorhynchus zonatus	Costa Rica	1464	landbird	Band-backed Wren	3	3	3	3	12	6	6	2	NC	Pine-oak forest	LC	NA
+700	Cantorchilus elutus	Costa Rica	1486	landbird	Isthmian Wren	2	3	4	5	14	9	5	2	NC	Second-growth scrub	LC	1
+708	Cantorchilus modestus	Costa Rica	1484	landbird	Cabanis's Wren	2	3	3	4	12	7	5	2	NC	Second-growth scrub	LC	1
+710	Cantorchilus nigricapillus	Costa Rica	1487	landbird	Bay Wren	3	3	3	3	12	6	6	2	NC	Riparian thickets	LC	NA
+713	Cantorchilus semibadius	Costa Rica	1488	landbird	Riverside Wren	4	3	5	5	17	10	7	1	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+715	Cantorchilus thoracicus	Costa Rica	1483	landbird	Stripe-breasted Wren	5	3	4	5	17	9	8	1	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+721	Capsiempis flaveola	Costa Rica	1150	landbird	Yellow Tyrannulet	3	2	2	1	8	3	5	3	NC	Second-growth scrub	LC	NA
+725	Caracara cheriway	Costa Rica	987	landbird	Crested Caracara	2	2	3	1	8	4	4	2	NC	Arid lowland scrub	LC	NA
+733	Cardellina canadensis	Costa Rica	1840	landbird	Canada Warbler	5	NA	3	2	10	5	5	4	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+740	Cardellina pusilla	Costa Rica	1841	landbird	Wilson's Warbler	5	NA	1	1	7	2	5	3	CBSD	Semihumid/humid montane scrub	LC	NA
+744	Carpodectes antoniae	Costa Rica	1302	landbird	Yellow-billed Cotinga	5	5	5	5	20	10	10	1	Watch List - Red	Tropical lowland evergreen forest	EN	NA
+749	Carpodectes nitidus	Costa Rica	1303	landbird	Snowy Cotinga	5	3	5	4	17	9	8	1	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+752	Caryothraustes poliogaster	Costa Rica	2045	landbird	Black-faced Grosbeak	4	3	4	3	14	7	7	2	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+761	Cathartes aura	Costa Rica	759	landbird	Turkey Vulture	1	2	2	1	6	3	3	NA	NC	Pastures/agricultural lands	LC	NA
+772	Cathartes burrovianus	Costa Rica	760	landbird	Lesser Yellow-headed Vulture	2	3	3	1	9	4	5	NA	NC	"Low, seasonally wet grassland"	LC	NA
+774	Catharus aurantiirostris	Costa Rica	1561	landbird	Orange-billed Nightingale-Thrush	3	3	3	3	12	6	6	2	NC	Montane evergreen forest	LC	NA
+783	Catharus frantzii	Costa Rica	1564	landbird	Ruddy-capped Nightingale-Thrush	4	3	4	4	15	8	7	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+790	Catharus fuscater	Costa Rica	1562	landbird	Slaty-backed Nightingale-Thrush	3	3	3	4	13	7	6	2	NC	Montane evergreen forest	LC	NA
+795	Catharus gracilirostris	Costa Rica	1560	landbird	Black-billed Nightingale-Thrush	3	2	5	5	15	10	5	2	Watch List - Red	Montane evergreen forest	LC	NA
+798	Catharus mexicanus	Costa Rica	1565	landbird	Black-headed Nightingale-Thrush	5	3	4	4	16	8	8	NA	Watch List - Red	Montane evergreen forest	LC	NA
+811	Catharus ustulatus	Costa Rica	1570	landbird	Swainson's Thrush	4	NA	1	1	6	2	4	3	NC	tropical lowland evergreen forest	LC	NA
+815	Celeus castaneus	Costa Rica	974	landbird	Chestnut-colored Woodpecker	5	3	4	3	15	7	8	3	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+818	Celeus loricatus	Costa Rica	973	landbird	Cinnamon Woodpecker	5	3	4	4	16	8	8	NA	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+821	Cephalopterus glabricollis	Costa Rica	1295	landbird	Bare-necked Umbrellabird	4	2	5	5	16	10	6	2	Watch List - Red	Tropical lowland evergreen forest	EN	NA
+826	Ceratopipra mentalis	Costa Rica	1313	landbird	Red-capped Manakin	5	3	4	3	15	7	8	3	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+832	Cercomacroides tyrannina	Costa Rica	1079	landbird	Dusky Antbird	4	2	3	2	11	5	6	3	NC	Tropical lowland evergreen forest	LC	NA
+847	Chaetura cinereiventris	Costa Rica	264	landbird	Gray-rumped Swift	3	3	1	1	8	2	6	NA	NC	Tropical lowland evergreen forest	LC	NA
+849	Chaetura fumosa	Costa Rica	263	landbird	Costa Rican Swift	3	3	5	5	16	10	6	NA	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+857	Chaetura vauxi	Costa Rica	258	landbird	Vaux's Swift	4	3	3	2	12	5	7	NA	NC	Tropical lowland evergreen forest	LC	NA
+866	Chalybura urochrysia	Costa Rica	370	landbird	Bronze-tailed Plumeleteer	5	3	3	4	15	7	8	NA	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+867	Chamaepetes unicolor	Costa Rica	85	landbird	Black Guan	3	3	4	5	15	9	6	NA	Watch List - Yel-r	Montane evergreen forest	NT	NA
+872	Charadrius collaris	Costa Rica	450	shorebird	Collared Plover	3	3	4	1	11	5	6	NA	NC	Riverine sand beaches	LC	NA
+885	Charadrius semipalmatus	Costa Rica	454	shorebird	Semipalmated Plover	3	NA	4	1	8	5	3	NA	NC	coastal sand beaches/mudflats	LC	NA
+892	Charadrius vociferus	Costa Rica	457	shorebird	Killdeer	4	3	2	1	10	3	7	NA	NC	Freshwater marshes	LC	NA
+895	Charadrius wilsonia	Costa Rica	452	shorebird	Wilson's Plover	4	3	5	3	15	8	7	NA	Watch List - Yel-r	Coastal sand beaches/mudflats	LC	NA
+904	Chiroxiphia lanceolata	Costa Rica	1304	landbird	Lance-tailed Manakin	3	3	3	3	12	6	6	2	NC	Tropical deciduous forest	LC	NA
+905	Chiroxiphia linearis	Costa Rica	1305	landbird	Long-tailed Manakin	4	3	4	4	15	8	7	2	Watch List - Yel-r	Tropical deciduous forest	LC	NA
+918	Chloroceryle aenea	Costa Rica	904	landbird	American Pygmy Kingfisher	4	3	3	1	11	4	7	3	NC	Streams	LC	NA
+923	Chloroceryle amazona	Costa Rica	901	landbird	Amazon Kingfisher	4	3	3	1	11	4	7	3	NC	Rivers	LC	NA
+936	Chloroceryle americana	Costa Rica	902	landbird	Green Kingfisher	4	3	2	1	10	3	7	3	NC	Streams	LC	NA
+940	Chloroceryle inda	Costa Rica	903	landbird	Green-and-rufous Kingfisher	5	4	3	1	13	4	9	3	Watch List - Yel-d	Streams	LC	NA
+941	Chlorophanes spiza	Costa Rica	1879	landbird	Green Honeycreeper	4	2	3	1	10	4	6	3	NC	Tropical lowland evergreen forest	LC	NA
+947	Chlorophonia callophrys	Costa Rica	1686	landbird	Golden-browed Chlorophonia	3	3	4	5	15	9	6	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+954	Chlorospingus canigularis	Costa Rica	2022	landbird	Ashy-throated Chlorospingus	4	3	3	4	14	7	7	2	Watch List - Yel-d	Montane evergreen forest	LC	NA
+957	Chlorospingus flavopectus	Costa Rica	2017	landbird	Common Chlorospingus	3	2	2	3	10	5	5	2	NC	Montane evergreen forest	LC	NA
+964	Chlorospingus pileatus	Costa Rica	2020	landbird	Sooty-capped Chlorospingus	3	2	4	5	14	9	5	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+968	Chlorostilbon assimilis	Costa Rica	346	landbird	Garden Emerald	2	2	4	5	13	9	4	NA	NC	Tropical lowland evergreen forest	LC	NA
+973	Chlorostilbon canivetii	Costa Rica	345	landbird	Canivet's Emerald	2	2	3	3	10	6	4	NA	NC	Tropical lowland evergreen forest	LC	NA
+975	Chlorothraupis carmioli	Costa Rica	2043	landbird	Carmiol's Tanager	4	3	3	4	14	7	7	2	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+979	Chondrohierax uncinatus	Costa Rica	765	landbird	Hook-billed Kite	4	3	4	1	12	5	7	NA	NC	Tropical lowland evergreen forest	LC	NA
+989	Chordeiles acutipennis	Costa Rica	223	landbird	Lesser Nighthawk	2	3	2	2	9	4	5	NA	NC	Arid lowland scrub	LC	NA
+995	Chordeiles minor	Costa Rica	224	landbird	Common Nighthawk	5	3	2	1	11	3	8	NA	CBSD	Northern temperate grassland	LC	NA
+1002	Chrysothlypis chrysomelas	Costa Rica	1880	landbird	Black-and-yellow Tanager	3	3	4	5	15	9	6	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+1005	Ciccaba nigrolineata	Costa Rica	851	landbird	Black-and-white Owl	5	3	4	3	15	7	8	3	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+1017	Ciccaba virgata	Costa Rica	850	landbird	Mottled Owl	4	3	3	1	11	4	7	3	NC	Tropical lowland evergreen forest	LC	NA
+1018	Cinclus mexicanus	Costa Rica	1504	landbird	American Dipper	3	4	4	1	12	5	7	3	NC	Streams	LC	NA
+1027	Circus cyaneus	Costa Rica	779	landbird	Northern Harrier	4	NA	3	1	8	4	4	2	NC	Northern temperate grassland	LC	NA
+1030	Cistothorus platensis	Costa Rica	1459	landbird	Sedge Wren	1	5	2	1	9	3	6	3	NC	Paramo grassland	LC	NA
+1038	Claravis mondetoura	Costa Rica	171	landbird	Maroon-chested Ground-Dove	4	3	4	3	14	7	7	NA	Watch List - Yel-d	Montane evergreen forest	LC	NA
+1048	Claravis pretiosa	Costa Rica	170	landbird	Blue Ground-Dove	4	3	3	1	11	4	7	NA	NC	Tropical lowland evergreen forest	LC	NA
+1054	Clibanornis rubiginosus	Costa Rica	1131	landbird	Ruddy Foliage-gleaner	5	3	3	2	13	5	8	3	Watch List - Yel-d	Montane evergreen forest	LC	NA
+1067	Coccyzus ferrugineus	Costa Rica	205	landbird	Cocos Cuckoo	2	4	5	5	16	10	6	NA	Watch List - Yel-r	Tropical lowland evergreen forest	VU	NA
+1076	Cochlearius cochlearius	Costa Rica	749	waterbird	Boat-billed Heron	3	3	3	1	10	4	6	NA	NC	Freshwater lakes	LC	NA
+1081	Coereba flaveola	Costa Rica	1903	landbird	Bananaquit	3	2	2	1	8	3	5	3	NC	Tropical lowland evergreen forest	LC	NA
+1098	Colaptes rubiginosus	Costa Rica	967	landbird	Golden-olive Woodpecker	4	3	3	2	12	5	7	3	NC	Montane evergreen forest	LC	NA
+1100	Colibri cyanotus	Costa Rica	288	landbird	Lesser Violetear	2	2	3	3	10	6	4	NA	NC	Pine-oak forest	LC	1
+1103	Colibri delphinae	Costa Rica	286	landbird	Brown Violetear	4	3	3	2	12	5	7	NA	NC	Montane evergreen forest	LC	NA
+1116	Colinus cristatus	Costa Rica	98	landbird	Crested Bobwhite	2	3	2	2	9	4	5	NA	NC	Arid lowland scrub	LC	NA
+1124	Colonia colonus	Costa Rica	1234	landbird	Long-tailed Tyrant	3	3	2	1	9	3	6	3	NC	Montane evergreen forest	LC	NA
+1129	Columbina inca	Costa Rica	166	landbird	Inca Dove	1	2	2	2	7	4	3	NA	NC	Second-growth scrub	LC	NA
+1137	Columbina minuta	Costa Rica	168	landbird	Plain-breasted Ground-Dove	2	3	3	1	9	4	5	NA	NC	Arid lowland scrub	LC	NA
+1145	Columbina passerina	Costa Rica	167	landbird	Common Ground-Dove	3	2	2	1	8	3	5	NA	NC	Arid lowland scrub	LC	NA
+1150	Columbina talpacoti	Costa Rica	169	landbird	Ruddy Ground-Dove	1	2	2	1	6	3	3	NA	NC	Second-growth scrub	LC	NA
+1156	Conopias albovittatus	Costa Rica	1260	landbird	White-ringed Flycatcher	3	3	4	2	12	6	6	2	NC	Tropical lowland evergreen forest	LC	NA
+1160	Contopus cinereus	Costa Rica	1209	landbird	Tropical Pewee	2	2	2	1	7	3	4	3	NC	Tropical lowland evergreen forest	LC	NA
+1167	Contopus cooperi	Costa Rica	1203	landbird	Olive-sided Flycatcher	5	NA	3	1	9	4	5	3	Watch List - Yel-d	Montane evergreen forest	NT	NA
+1171	Contopus lugubris	Costa Rica	1205	landbird	Dark Pewee	3	3	5	5	16	10	6	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+1173	Contopus ochraceus	Costa Rica	1206	landbird	Ochraceous Pewee	3	3	5	5	16	10	6	2	Watch List - Red	Montane evergreen forest	LC	NA
+1181	Contopus sordidulus	Costa Rica	1207	landbird	Western Wood-Pewee	4	NA	2	1	7	3	4	3	NC	Pine-oak forest	LC	NA
+1188	Contopus virens	Costa Rica	1208	landbird	Eastern Wood-Pewee	4	NA	2	1	7	3	4	3	NC	tropical lowland evergreen forest	LC	NA
+1194	Coragyps atratus	Costa Rica	758	landbird	Black Vulture	1	2	1	1	5	2	3	NA	NC	Second-growth scrub	LC	NA
+1197	Corapipo altera	Costa Rica	1306	landbird	White-ruffed Manakin	5	3	3	4	15	7	8	3	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+1209	Cotinga amabilis	Costa Rica	1296	landbird	Lovely Cotinga	5	3	5	4	17	9	8	1	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+1212	Cotinga ridgwayi	Costa Rica	1297	landbird	Turquoise Cotinga	5	3	5	5	18	10	8	1	Watch List - Red	Tropical lowland evergreen forest	VU	NA
+1215	Cranioleuca erythrops	Costa Rica	1139	landbird	Red-faced Spinetail	3	3	4	5	15	9	6	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+1222	Crax rubra	Costa Rica	88	landbird	Great Curassow	5	4	4	3	16	7	9	NA	Watch List - Red	Tropical lowland evergreen forest	VU	NA
+1228	Crotophaga ani	Costa Rica	220	landbird	Smooth-billed Ani	3	2	2	1	8	3	5	NA	NC	Second-growth scrub	LC	NA
+1233	Crotophaga sulcirostris	Costa Rica	221	landbird	Groove-billed Ani	1	2	2	2	7	4	3	NA	NC	Second-growth scrub	LC	NA
+1242	Crypturellus boucardi	Costa Rica	5	landbird	Slaty-breasted Tinamou	4	3	5	3	15	8	7	NA	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+1249	Crypturellus cinnamomeus	Costa Rica	4	landbird	Thicket Tinamou	4	3	4	3	14	7	7	NA	Watch List - Yel-r	Gallery forest	LC	NA
+1253	Crypturellus soui	Costa Rica	3	landbird	Little Tinamou	4	3	3	1	11	4	7	NA	NC	Tropical lowland evergreen forest	LC	NA
+1258	Cyanerpes cyaneus	Costa Rica	1899	landbird	Red-legged Honeycreeper	4	2	2	1	9	3	6	3	NC	Tropical lowland evergreen forest	LC	NA
+1265	Cyanerpes lucidus	Costa Rica	1897	landbird	Shining Honeycreeper	5	3	4	4	16	8	8	NA	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+1275	Cyanoloxia cyanoides	Costa Rica	2057	landbird	Blue-black Grosbeak	4	3	3	1	11	4	7	3	NC	Tropical lowland evergreen forest	LC	NA
+1286	Cyanocorax affinis	Costa Rica	1366	landbird	Black-chested Jay	2	2	2	3	9	5	4	2	NC	Tropical lowland evergreen forest	LC	NA
+1298	Cyanolyca argentigula	Costa Rica	1360	landbird	Silvery-throated Jay	3	3	5	5	16	10	6	2	Watch List - Red	Montane evergreen forest	LC	NA
+1302	Cyanolyca cucullata	Costa Rica	1361	landbird	Azure-hooded Jay	5	3	5	4	17	9	8	1	Watch List - Red	Montane evergreen forest	LC	NA
+1309	Cyclarhis gujanensis	Costa Rica	1319	landbird	Rufous-browed Peppershrike	3	3	2	1	9	3	6	3	NC	Tropical lowland evergreen forest	LC	NA
+1313	Cymbilaimus lineatus	Costa Rica	1059	landbird	Fasciated Antshrike	5	3	3	1	12	4	8	3	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+1316	Cyphorhinus phaeocephalus	Costa Rica	1493	landbird	Song Wren	5	3	3	4	15	7	8	3	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+1321	Cypseloides cherriei	Costa Rica	253	landbird	Spot-fronted Swift	3	3	5	5	16	10	6	NA	Watch List - Yel-r	Montane evergreen forest	DD	NA
+1326	Cypseloides cryptus	Costa Rica	252	landbird	White-chinned Swift	3	3	5	4	15	9	6	NA	Watch List - Yel-r	Montane evergreen forest	LC	NA
+1331	Cypseloides niger	Costa Rica	250	landbird	Black Swift	5	3	4	2	14	6	8	NA	Watch List - Yel-d	Montane evergreen forest	LC	NA
+1337	Dacnis cayana	Costa Rica	1901	landbird	Blue Dacnis	4	3	1	1	9	2	7	3	NC	Tropical lowland evergreen forest	LC	NA
+1341	Dacnis venusta	Costa Rica	1900	landbird	Scarlet-thighed Dacnis	4	3	3	4	14	7	7	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+1353	Deconychura longicauda	Costa Rica	1105	landbird	Long-tailed Woodcreeper	5	3	3	1	12	4	8	3	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+1354	Dendrocincla anabatina	Costa Rica	1107	landbird	Tawny-winged Woodcreeper	4	3	4	3	14	7	7	2	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+1363	Dendrocincla fuliginosa	Costa Rica	1108	landbird	Plain-brown Woodcreeper	5	3	2	1	11	3	8	3	CBSD	Tropical lowland evergreen forest	LC	NA
+1368	Dendrocincla homochroa	Costa Rica	1106	landbird	Ruddy Woodcreeper	4	3	4	3	14	7	7	2	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+1374	Dendrocolaptes picumnus	Costa Rica	1111	landbird	Black-banded Woodcreeper	5	3	4	1	13	5	8	3	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+1383	Dendrocolaptes sanctithomae	Costa Rica	1110	landbird	Northern Barred-Woodcreeper	4	3	4	3	14	7	7	2	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+1387	Dendrocygna autumnalis	Costa Rica	8	waterfowl	Black-bellied Whistling-Duck	1	2	3	1	7	4	3	NA	NC	Freshwater marshes	LC	NA
+1396	Dendrocygna bicolor	Costa Rica	10	waterfowl	Fulvous Whistling-Duck	3	3	3	1	10	4	6	NA	NC	Freshwater marshes	LC	NA
+1401	Dendrortyx leucophrys	Costa Rica	94	landbird	Buffy-crowned Wood-Partridge	5	3	4	4	16	8	8	NA	Watch List - Red	Montane evergreen forest	LC	NA
+1408	Diglossa plumbea	Costa Rica	1878	landbird	Slaty Flowerpiercer	3	2	4	5	14	9	5	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+1410	Discosura conversii	Costa Rica	300	landbird	Green Thorntail	4	3	4	4	15	8	7	NA	Watch List - Yel-r	Montane evergreen forest	LC	NA
+1412	Dives dives	Costa Rica	2079	landbird	Melodious Blackbird	1	2	2	3	8	5	3	2	NC	Tropical lowland evergreen forest	LC	NA
+1420	Dixiphia pipra	Costa Rica	1312	landbird	White-crowned Manakin	4	3	2	1	10	3	7	3	NC	Tropical lowland evergreen forest	LC	NA
+1429	Doryfera ludovicae	Costa Rica	285	landbird	Green-fronted Lancebill	3	3	3	3	12	6	6	NA	NC	Montane evergreen forest	LC	NA
+1432	Dromococcyx phasianellus	Costa Rica	214	landbird	Pheasant Cuckoo	4	3	4	1	12	5	7	NA	NC	Tropical lowland evergreen forest	LC	NA
+1437	Dryocopus lineatus	Costa Rica	975	landbird	Lineated Woodpecker	3	3	2	1	9	3	6	3	NC	River-edge forest	LC	NA
+1448	Dumetella carolinensis	Costa Rica	1601	landbird	Gray Catbird	2	NA	2	1	5	3	2	2	NC	Second-growth scrub	LC	NA
+1450	Dysithamnus mentalis	Costa Rica	1067	landbird	Plain Antvireo	4	3	3	1	11	4	7	3	NC	Montane evergreen forest	LC	NA
+1456	Dysithamnus puncticeps	Costa Rica	1069	landbird	Spot-crowned Antvireo	4	3	4	4	15	8	7	2	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+1460	Dysithamnus striaticeps	Costa Rica	1068	landbird	Streak-crowned Antvireo	5	3	4	4	16	8	8	NA	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+1466	Egretta caerulea	Costa Rica	738	waterbird	Little Blue Heron	4	NA	3	1	8	4	4	NA	NC	Freshwater marshes	LC	NA
+1468	Egretta rufescens	Costa Rica	740	waterbird	Reddish Egret	3	NA	5	3	11	8	3	NA	Watch List - Yel-r	Coastal sand beaches/mudflats	NT	NA
+1473	Egretta thula	Costa Rica	737	waterbird	Snowy Egret	1	NA	3	1	5	4	1	NA	NC	Freshwater marshes	LC	NA
+1481	Egretta tricolor	Costa Rica	739	waterbird	Tricolored Heron	2	NA	4	2	8	6	2	NA	NC	Saltwater/brackish marshes	LC	NA
+1486	Elaenia chiriquensis	Costa Rica	1159	landbird	Lesser Elaenia	2	2	2	1	7	3	4	3	NC	Cerrado	LC	NA
+1493	Elaenia flavogaster	Costa Rica	1157	landbird	Yellow-bellied Elaenia	2	2	2	1	7	3	4	3	NC	Second-growth scrub	LC	NA
+1499	Elaenia frantzii	Costa Rica	1160	landbird	Mountain Elaenia	4	2	3	4	13	7	6	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+1502	Elanoides forficatus	Costa Rica	766	landbird	Swallow-tailed Kite	3	3	4	1	11	5	6	NA	NC	Tropical lowland evergreen forest	LC	NA
+1512	Elanus leucurus	Costa Rica	768	landbird	White-tailed Kite	4	2	3	1	10	4	6	NA	NC	Pastures/agricultural lands	LC	NA
+1515	Electron carinatum	Costa Rica	896	landbird	Keel-billed Motmot	5	3	5	4	17	9	8	1	Watch List - Red	Tropical lowland evergreen forest	VU	NA
+1521	Electron platyrhynchum	Costa Rica	897	landbird	Broad-billed Motmot	5	3	3	2	13	5	8	3	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+1524	Elvira chionura	Costa Rica	366	landbird	White-tailed Emerald	3	3	5	5	16	10	6	NA	Watch List - Yel-r	Montane evergreen forest	LC	NA
+1525	Elvira cupreiceps	Costa Rica	367	landbird	Coppery-headed Emerald	2	2	5	5	14	10	4	NA	Watch List - Yel-r	Montane evergreen forest	LC	NA
+1526	Emberizoides herbicola	Costa Rica	1925	landbird	Wedge-tailed Grass-Finch	4	4	3	1	12	4	8	3	NC	"Low, seasonally wet grassland"	LC	NA
+1530	Empidonax albigularis	Costa Rica	1218	landbird	White-throated Flycatcher	3	3	4	3	13	7	6	2	NC	Second-growth scrub	LC	NA
+1540	Empidonax atriceps	Costa Rica	1228	landbird	Black-capped Flycatcher	3	2	5	5	15	10	5	2	Watch List - Red	Montane evergreen forest	LC	NA
+1546	Empidonax flavescens	Costa Rica	1226	landbird	Yellowish Flycatcher	5	3	4	4	16	8	8	NA	Watch List - Red	Montane evergreen forest	LC	NA
+1551	Empidonax flaviventris	Costa Rica	1214	landbird	Yellow-bellied Flycatcher	1	NA	2	1	4	3	1	2	NC	Tropical lowland evergreen forest	LC	NA
+1562	Empidonax minimus	Costa Rica	1219	landbird	Least Flycatcher	5	NA	2	1	8	3	5	3	CBSD	second-growth scrub	LC	NA
+1568	Empidonax traillii	Costa Rica	1217	landbird	Willow Flycatcher	4	NA	2	1	7	3	4	3	NC	Second-growth scrub	LC	NA
+1574	Empidonax virescens	Costa Rica	1215	landbird	Acadian Flycatcher	3	NA	2	2	7	4	3	2	NC	Tropical lowland evergreen forest	LC	NA
+1577	Epinecrophylla fulviventris	Costa Rica	1074	landbird	Checker-throated Antwren	5	3	3	4	15	7	8	3	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+1581	Eubucco bourcierii	Costa Rica	917	landbird	Red-headed Barbet	4	3	3	4	14	7	7	2	Watch List - Yel-d	Montane evergreen forest	LC	NA
+1584	Euchrepomis callinota	Costa Rica	1078	landbird	Rufous-rumped Antwren	3	3	4	5	15	9	6	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+1585	Eucometis penicillata	Costa Rica	1885	landbird	Gray-headed Tanager	4	3	3	1	11	4	7	3	NC	Tropical lowland evergreen forest	LC	NA
+1591	Eudocimus albus	Costa Rica	750	waterbird	White Ibis	3	3	4	2	12	6	6	NA	NC	Freshwater marshes	LC	NA
+1602	Eugenes fulgens	Costa Rica	307	landbird	Magnificent Hummingbird	3	2	3	3	11	6	5	NA	NC	Pine-oak forest	LC	NA
+1606	Eumomota superciliosa	Costa Rica	898	landbird	Turquoise-browed Motmot	3	3	3	4	13	7	6	2	NC	Tropical deciduous forest	LC	NA
+1609	Eupherusa eximia	Costa Rica	362	landbird	Stripe-tailed Hummingbird	4	2	4	4	14	8	6	NA	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+1616	Eupherusa nigriventris	Costa Rica	365	landbird	Black-bellied Hummingbird	4	3	4	5	16	9	7	NA	Watch List - Yel-r	Montane evergreen forest	LC	NA
+1620	Euphonia affinis	Costa Rica	1672	landbird	Scrub Euphonia	3	2	3	3	11	6	5	2	NC	Tropical deciduous forest	LC	NA
+1623	Euphonia anneae	Costa Rica	1682	landbird	Tawny-capped Euphonia	3	3	4	5	15	9	6	2	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+1625	Euphonia elegantissima	Costa Rica	1677	landbird	Elegant Euphonia	4	2	4	3	13	7	6	2	Watch List - Yel-r	Pine-oak forest	LC	NA
+1636	Euphonia gouldi	Costa Rica	1680	landbird	Olive-backed Euphonia	4	2	4	3	13	7	6	2	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+1639	Euphonia hirundinacea	Costa Rica	1675	landbird	Yellow-throated Euphonia	3	2	3	3	11	6	5	2	NC	Tropical lowland evergreen forest	LC	NA
+1646	Euphonia imitans	Costa Rica	1679	landbird	Spot-crowned Euphonia	4	3	4	5	16	9	7	2	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+1648	Euphonia laniirostris	Costa Rica	1674	landbird	Thick-billed Euphonia	2	2	2	1	7	3	4	3	NC	River-edge forest	LC	NA
+1650	Euphonia luteicapilla	Costa Rica	1673	landbird	Yellow-crowned Euphonia	2	2	3	4	11	7	4	2	NC	Tropical lowland evergreen forest	LC	NA
+1654	Euphonia minuta	Costa Rica	1681	landbird	White-vented Euphonia	3	3	3	1	10	4	6	3	NC	Tropical lowland evergreen forest	LC	NA
+1664	Eupsittula canicularis	Costa Rica	1006	landbird	Orange-fronted Parakeet	4	4	3	4	15	7	8	3	Watch List - Yel-r	Tropical deciduous forest	LC	NA
+1668	Eupsittula nana	Costa Rica	1005	landbird	Olive-throated Parakeet	3	3	3	3	12	6	6	2	NC	Secondary forest	NT	NA
+1673	Eupsittula pertinax	Costa Rica	1007	landbird	Brown-throated Parakeet	2	3	2	2	9	4	5	3	NC	Tropical deciduous forest	LC	NA
+1677	Eurypyga helias	Costa Rica	616	waterbird	Sunbittern	4	3	3	1	11	4	7	NA	NC	Flooded evergreen forest	LC	NA
+1679	Eutoxeres aquila	Costa Rica	276	landbird	White-tipped Sicklebill	4	3	4	4	15	8	7	NA	Watch List - Yel-r	Montane evergreen forest	LC	NA
+1686	Falco columbarius	Costa Rica	993	landbird	Merlin	1	NA	3	1	5	4	1	2	NC	Pastures/agricultural lands	LC	NA
+1697	Falco peregrinus	Costa Rica	999	landbird	Peregrine Falcon	2	NA	4	1	7	5	2	2	NC	Coastal waters	LC	NA
+1706	Falco rufigularis	Costa Rica	996	landbird	Bat Falcon	4	3	3	1	11	4	7	3	NC	Tropical lowland evergreen forest	LC	NA
+1709	Falco sparverius	Costa Rica	991	landbird	American Kestrel	4	NA	3	1	8	4	4	2	NC	Northern temperate grassland	LC	NA
+1718	Florisuga mellivora	Costa Rica	275	landbird	White-necked Jacobin	4	3	2	1	10	3	7	NA	NC	Tropical lowland evergreen forest	LC	NA
+1725	Formicarius analis	Costa Rica	1098	landbird	Black-faced Antthrush	4	3	2	1	10	3	7	3	NC	Tropical lowland evergreen forest	LC	NA
+1727	Formicarius nigricapillus	Costa Rica	1099	landbird	Black-headed Antthrush	4	3	4	4	15	8	7	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+1729	Formicarius rufipectus	Costa Rica	1100	landbird	Rufous-breasted Antthrush	4	3	3	4	14	7	7	2	Watch List - Yel-d	Montane evergreen forest	LC	NA
+1739	Fulica americana	Costa Rica	429	waterbird	American Coot	2	4	2	1	9	3	6	NA	NC	Freshwater marshes	LC	NA
+1749	Galbula ruficauda	Costa Rica	914	landbird	Rufous-tailed Jacamar	4	3	3	1	11	4	7	3	NC	Tropical lowland evergreen forest	LC	NA
+1755	Gallinago delicata	Costa Rica	504	shorebird	Wilson's Snipe	2	NA	3	1	6	4	2	NA	NC	Freshwater marshes	LC	NA
+1768	Gampsonyx swainsonii	Costa Rica	767	landbird	Pearl Kite	1	2	3	1	7	4	3	NA	NC	Tropical lowland evergreen forest	LC	NA
+1773	Gelochelidon nilotica	Costa Rica	601	waterbird	Gull-billed Tern	4	NA	4	1	9	5	4	NA	NC	Saltwater/brackish marshes	LC	NA
+1780	Geothlypis aequinoctialis	Costa Rica	1785	landbird	Masked Yellowthroat	4	4	2	1	11	3	8	3	NC	Riparian thickets	LC	NA
+1786	Geothlypis formosa	Costa Rica	1788	landbird	Kentucky Warbler	4	NA	3	2	9	5	4	2	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+1791	Geothlypis philadelphia	Costa Rica	1787	landbird	Mourning Warbler	4	NA	2	2	8	4	4	2	NC	Second-growth scrub	LC	NA
+1793	Geothlypis poliocephala	Costa Rica	1784	landbird	Gray-crowned Yellowthroat	3	2	3	3	11	6	5	2	NC	Second-growth scrub	LC	NA
+1800	Geothlypis semiflava	Costa Rica	1789	landbird	Olive-crowned Yellowthroat	3	3	3	4	13	7	6	2	NC	Riparian thickets	LC	NA
+1806	Geothlypis tolmiei	Costa Rica	1786	landbird	MacGillivray's Warbler	4	NA	2	2	8	4	4	2	NC	Second-growth scrub	LC	NA
+1812	Geothlypis trichas	Costa Rica	1794	landbird	Common Yellowthroat	4	NA	1	1	6	2	4	3	NC	Freshwater marshes	LC	NA
+1817	Geotrygon montana	Costa Rica	174	landbird	Ruddy Quail-Dove	4	3	4	1	12	5	7	NA	NC	Tropical lowland evergreen forest	LC	NA
+1821	Geotrygon violacea	Costa Rica	175	landbird	Violaceous Quail-Dove	5	3	4	2	14	6	8	NA	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+1830	Geranoaetus albicaudatus	Costa Rica	800	landbird	White-tailed Hawk	3	3	3	1	10	4	6	3	NC	"Low, seasonally wet grassland"	LC	NA
+1836	Geranospiza caerulescens	Costa Rica	790	landbird	Crane Hawk	4	3	3	1	11	4	7	3	NC	Tropical deciduous forest	LC	NA
+1843	Glaucidium brasilianum	Costa Rica	846	landbird	Ferruginous Pygmy-Owl	3	3	2	1	9	3	6	3	NC	Arid lowland scrub	LC	NA
+1846	Glaucidium costaricanum	Costa Rica	842	landbird	Costa Rican Pygmy-Owl	3	3	5	5	16	10	6	2	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+1854	Glaucidium griseiceps	Costa Rica	843	landbird	Central American Pygmy-Owl	4	3	4	4	15	8	7	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+1859	Glaucis aeneus	Costa Rica	277	landbird	Bronzy Hermit	3	3	3	4	13	7	6	NA	NC	Tropical lowland evergreen forest	LC	NA
+1866	Glyphorynchus spirurus	Costa Rica	1109	landbird	Wedge-billed Woodcreeper	4	3	3	1	11	4	7	3	NC	Tropical lowland evergreen forest	LC	NA
+1870	Grallaria guatimalensis	Costa Rica	1091	landbird	Scaled Antpitta	5	3	4	2	14	6	8	3	Watch List - Yel-d	Montane evergreen forest	LC	NA
+1876	Grallaricula flavirostris	Costa Rica	1094	landbird	Ochre-breasted Antpitta	4	3	3	4	14	7	7	2	Watch List - Yel-d	Montane evergreen forest	NT	NA
+1881	Gymnocichla nudiceps	Costa Rica	1081	landbird	Bare-crowned Antbird	5	3	3	3	14	6	8	3	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+1885	Gymnopithys bicolor	Costa Rica	1088	landbird	Bicolored Antbird	5	3	3	2	13	5	8	3	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+1889	Habia atrimaxillaris	Costa Rica	2042	landbird	Black-cheeked Ant-Tanager	4	4	5	5	18	10	8	1	Watch List - Red	Tropical lowland evergreen forest	EN	NA
+1890	Habia fuscicauda	Costa Rica	2041	landbird	Red-throated Ant-Tanager	4	3	3	3	13	6	7	3	NC	Tropical lowland evergreen forest	LC	NA
+1897	Habia rubica	Costa Rica	2040	landbird	Red-crowned Ant-Tanager	4	3	2	1	10	3	7	3	NC	Tropical lowland evergreen forest	LC	NA
+1909	Haematopus palliatus	Costa Rica	440	shorebird	American Oystercatcher	3	NA	5	2	10	7	3	NA	Watch List - Yel-r	Coastal sand beaches/mudflats	LC	NA
+1914	Hapalocrex flaviventer	Costa Rica	417	waterbird	Yellow-breasted Crake	4	4	5	2	15	7	8	NA	Watch List - Yel-d	Freshwater marshes	LC	NA
+1919	Haplospiza rustica	Costa Rica	1875	landbird	Slaty Finch	4	3	4	3	14	7	7	2	Watch List - Yel-d	Montane evergreen forest	LC	NA
+1927	Harpagus bidentatus	Costa Rica	771	landbird	Double-toothed Kite	4	3	3	1	11	4	7	3	NC	Tropical lowland evergreen forest	LC	NA
+1932	Harpia harpyja	Costa Rica	816	landbird	Harpy Eagle	5	3	5	1	14	6	8	3	Watch List - Red	Tropical lowland evergreen forest	NT	NA
+1939	Heliodoxa jacula	Costa Rica	306	landbird	Green-crowned Brilliant	4	2	3	5	14	8	6	NA	Watch List - Yel-r	Montane evergreen forest	LC	NA
+1944	Heliomaster constantii	Costa Rica	310	landbird	Plain-capped Starthroat	3	3	4	3	13	7	6	NA	NC	Tropical deciduous forest	LC	NA
+1950	Heliomaster longirostris	Costa Rica	309	landbird	Long-billed Starthroat	3	3	3	1	10	4	6	NA	NC	Tropical lowland evergreen forest	LC	NA
+1955	Heliornis fulica	Costa Rica	430	waterbird	Sungrebe	4	4	3	1	12	4	8	NA	NC	Freshwater lakes	LC	NA
+1961	Heliothryx barroti	Costa Rica	290	landbird	Purple-crowned Fairy	4	3	4	3	14	7	7	NA	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+1969	Helmitheros vermivorum	Costa Rica	1765	landbird	Worm-eating Warbler	3	NA	3	2	8	5	3	2	NC	Tropical lowland evergreen forest	LC	NA
+1971	Henicorhina leucophrys	Costa Rica	1492	landbird	Gray-breasted Wood-Wren	4	3	3	3	13	6	7	3	Watch List - Yel-d	Montane evergreen forest	LC	NA
+1977	Henicorhina leucosticta	Costa Rica	1491	landbird	White-breasted Wood-Wren	4	3	3	2	12	5	7	3	NC	Tropical lowland evergreen forest	LC	NA
+1987	Herpetotheres cachinnans	Costa Rica	982	landbird	Laughing Falcon	3	3	3	1	10	4	6	3	NC	Tropical lowland evergreen forest	LC	NA
+1991	Heterospingus rubrifrons	Costa Rica	1881	landbird	Sulphur-rumped Tanager	3	3	5	5	16	10	6	2	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+1994	Himantopus mexicanus	Costa Rica	437	shorebird	Black-necked Stilt	1	3	3	1	8	4	4	NA	NC	Freshwater marshes	LC	1
+2006	Hirundo rustica	Costa Rica	1423	landbird	Barn Swallow	4	NA	1	1	6	2	4	3	NC	Pastures/agricultural lands	LC	NA
+2008	Hydroprogne caspia	Costa Rica	602	waterbird	Caspian Tern	3	NA	4	2	9	6	3	NA	NC	Freshwater marshes	LC	NA
+2015	Hydropsalis cayennensis	Costa Rica	243	landbird	White-tailed Nightjar	3	3	3	2	11	5	6	NA	NC	"Low, seasonally wet grassland"	LC	NA
+2020	Hylocharis eliciae	Costa Rica	394	landbird	Blue-throated Goldentail	4	2	4	3	13	7	6	NA	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+2035	Hylocichla mustelina	Costa Rica	1572	landbird	Wood Thrush	5	NA	2	2	9	4	5	3	Watch List - Yel-d	Tropical lowland evergreen forest	NT	NA
+2040	Hylomanes momotula	Costa Rica	889	landbird	Tody Motmot	5	3	5	3	16	8	8	4	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+2045	Hylopezus dives	Costa Rica	1093	landbird	Thicket Antpitta	5	3	4	4	16	8	8	NA	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+2050	Hylopezus perspicillatus	Costa Rica	1092	landbird	Streak-chested Antpitta	5	3	4	4	16	8	8	NA	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+2051	Hylophilus flavipes	Costa Rica	1320	landbird	Scrub Greenlet	3	2	2	3	10	5	5	2	NC	Tropical deciduous forest	LC	NA
+2056	Hylophylax naevioides	Costa Rica	1086	landbird	Spotted Antbird	5	3	3	3	14	6	8	3	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+2058	Ibycter americanus	Costa Rica	986	landbird	Red-throated Caracara	5	4	3	1	13	4	9	3	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+2064	Icteria virens	Costa Rica	1849	landbird	Yellow-breasted Chat	3	NA	2	1	6	3	3	2	NC	Gallery forest	LC	NA
+2081	Icterus galbula	Costa Rica	2117	landbird	Baltimore Oriole	4	NA	2	1	7	3	4	3	NC	secondary forest	LC	NA
+2090	Icterus mesomelas	Costa Rica	2108	landbird	Yellow-tailed Oriole	3	4	4	3	14	7	7	2	NC	Tropical deciduous forest	LC	NA
+2096	Icterus pectoralis	Costa Rica	2114	landbird	Spot-breasted Oriole	3	3	3	4	13	7	6	2	NC	Tropical deciduous forest	LC	NA
+2102	Icterus prosthemelas	Costa Rica	2103	landbird	Black-cowled Oriole	4	2	3	3	12	6	6	2	NC	Tropical lowland evergreen forest	LC	NA
+2108	Icterus pustulatus	Costa Rica	2110	landbird	Streak-backed Oriole	2	2	2	3	9	5	4	2	NC	Tropical deciduous forest	LC	NA
+2118	Icterus spurius	Costa Rica	2104	landbird	Orchard Oriole	4	NA	2	1	7	3	4	3	NC	Secondary forest	LC	NA
+2127	Ictinia plumbea	Costa Rica	773	landbird	Plumbeous Kite	3	3	3	1	10	4	6	3	NC	Tropical lowland evergreen forest	LC	NA
+2136	Ixobrychus exilis	Costa Rica	722	waterbird	Least Bittern	3	3	3	1	10	4	6	NA	NC	Freshwater marshes	LC	NA
+2140	Jabiru mycteria	Costa Rica	698	waterbird	Jabiru	3	5	5	1	14	6	8	NA	NC	"Low, seasonally wet grassland"	LC	NA
+2146	Jacamerops aureus	Costa Rica	915	landbird	Great Jacamar	5	3	3	1	12	4	8	3	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+2154	Jacana spinosa	Costa Rica	460	shorebird	Northern Jacana	3	2	3	2	10	5	5	NA	NC	Freshwater marshes	LC	NA
+2160	Junco vulcani	Costa Rica	2013	landbird	Volcano Junco	3	4	5	5	17	10	7	1	Watch List - Red	Semihumid/humid montane scrub	LC	NA
+2162	Klais guimeti	Costa Rica	354	landbird	Violet-headed Hummingbird	5	3	3	3	14	6	8	NA	Watch List - Yel-d	Montane evergreen forest	LC	NA
+2169	Lampornis calolaemus	Costa Rica	316	landbird	Purple-throated Mountain-gem	4	2	4	5	15	9	6	NA	Watch List - Yel-r	Montane evergreen forest	LC	NA
+2173	Lampornis castaneoventris	Costa Rica	317	landbird	White-throated Mountain-gem	4	2	5	5	16	10	6	NA	Watch List - Red	Montane evergreen forest	LC	NA
+2175	Lampornis hemileucus	Costa Rica	315	landbird	White-bellied Mountain-gem	4	3	5	5	17	10	7	NA	Watch List - Red	Montane evergreen forest	LC	NA
+2187	Lanio leucothorax	Costa Rica	1890	landbird	White-throated Shrike-Tanager	4	3	4	4	15	8	7	2	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+2192	Laniocera rufescens	Costa Rica	1282	landbird	Speckled Mourner	5	3	5	3	16	8	8	4	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+2212	Laterallus albigularis	Costa Rica	400	waterbird	White-throated Crake	2	2	3	3	10	6	4	NA	NC	Freshwater marshes	LC	NA
+2218	Laterallus exilis	Costa Rica	401	waterbird	Gray-breasted Crake	3	3	3	1	10	4	6	NA	NC	Freshwater marshes	LC	NA
+2232	Legatus leucophaius	Costa Rica	1265	landbird	Piratic Flycatcher	3	2	2	1	8	3	5	3	NC	Tropical lowland evergreen forest	LC	NA
+2234	Lepidocolaptes affinis	Costa Rica	1122	landbird	Spot-crowned Woodcreeper	4	2	4	4	14	8	6	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+2241	Lepidocolaptes souleyetii	Costa Rica	1121	landbird	Streak-headed Woodcreeper	4	2	3	2	11	5	6	3	NC	Tropical deciduous forest	LC	NA
+2246	Lepidopyga coeruleogularis	Costa Rica	391	landbird	Sapphire-throated Hummingbird	2	2	4	4	12	8	4	NA	NC	Tropical lowland evergreen forest	LC	NA
+2250	Lepidothrix coronata	Costa Rica	1308	landbird	Blue-crowned Manakin	4	3	3	2	12	5	7	3	NC	Tropical lowland evergreen forest	LC	NA
+2253	Leptodon cayanensis	Costa Rica	764	landbird	Gray-headed Kite	5	3	4	1	13	5	8	NA	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+2263	Leptopogon amaurocephalus	Costa Rica	1165	landbird	Sepia-capped Flycatcher	5	3	3	1	12	4	8	3	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+2265	Leptopogon superciliaris	Costa Rica	1166	landbird	Slaty-capped Flycatcher	4	3	2	3	12	5	7	3	NC	Montane evergreen forest	LC	NA
+2270	Leptotila cassinii	Costa Rica	183	landbird	Gray-chested Dove	4	3	4	3	14	7	7	NA	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+2276	Leptotila plumbeiceps	Costa Rica	184	landbird	Gray-headed Dove	4	3	4	3	14	7	7	NA	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+2284	Leptotila verreauxi	Costa Rica	181	landbird	White-tipped Dove	3	2	2	1	8	3	5	NA	NC	Tropical deciduous forest	LC	NA
+2287	Leptotrygon veraguensis	Costa Rica	180	landbird	Olive-backed Quail-Dove	4	4	5	4	17	9	8	NA	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+2290	Leucophaeus atricilla	Costa Rica	569	waterbird	Laughing Gull	1	NA	3	3	7	6	1	NA	NC	Coastal waters	LC	NA
+2300	Leucophaeus pipixcan	Costa Rica	570	waterbird	Franklin's Gull	5	NA	3	2	10	5	5	NA	Watch List - Yel-d	Coastal sand beaches/mudflats	LC	NA
+2302	Leucopternis semiplumbeus	Costa Rica	802	landbird	Semiplumbeous Hawk	4	3	5	4	16	9	7	2	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+2310	Limnodromus griseus	Costa Rica	501	shorebird	Short-billed Dowitcher	4	NA	4	2	10	6	4	NA	Watch List - Yel-d	Coastal sand beaches/mudflats	LC	NA
+2316	Limnodromus scolopaceus	Costa Rica	502	shorebird	Long-billed Dowitcher	3	NA	3	3	9	6	3	NA	NC	Freshwater marshes	LC	NA
+2328	Limosa fedoa	Costa Rica	474	shorebird	Marbled Godwit	3	NA	4	2	9	6	3	NA	Watch List - Yel-r	Coastal sand beaches/mudflats	LC	NA
+2335	Lipaugus unirufus	Costa Rica	1299	landbird	Rufous Piha	4	3	4	3	14	7	7	2	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+2339	Lophornis adorabilis	Costa Rica	304	landbird	White-crested Coquette	4	3	5	5	17	10	7	NA	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+2342	Lophornis helenae	Costa Rica	303	landbird	Black-crested Coquette	4	3	5	4	16	9	7	NA	Watch List - Yel-r	Montane evergreen forest	LC	NA
+2353	Lophostrix cristata	Costa Rica	836	landbird	Crested Owl	4	3	4	1	12	5	7	3	NC	Tropical lowland evergreen forest	LC	NA
+2358	Lophotriccus pileatus	Costa Rica	1175	landbird	Scale-crested Pygmy-Tyrant	4	3	3	3	13	6	7	3	NC	Montane evergreen forest	LC	NA
+2364	Lurocalis semitorquatus	Costa Rica	222	landbird	Short-tailed Nighthawk	3	3	4	1	11	5	6	NA	NC	Tropical lowland evergreen forest	LC	NA
+2374	Malacoptila panamensis	Costa Rica	909	landbird	White-whiskered Puffbird	4	3	4	3	14	7	7	2	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+2376	Manacus aurantiacus	Costa Rica	1310	landbird	Orange-collared Manakin	4	3	4	5	16	9	7	2	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+2379	Manacus candei	Costa Rica	1309	landbird	White-collared Manakin	4	3	4	4	15	8	7	2	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+2386	Margarornis rubiginosus	Costa Rica	1137	landbird	Ruddy Treerunner	3	3	5	5	16	10	6	2	Watch List - Red	Montane evergreen forest	LC	NA
+2391	Megaceryle alcyon	Costa Rica	900	landbird	Belted Kingfisher	4	NA	3	1	8	4	4	2	NC	Saltwater/brackish marshes	LC	NA
+2394	Megaceryle torquata	Costa Rica	899	landbird	Ringed Kingfisher	3	3	2	1	9	3	6	3	NC	Rivers	LC	NA
+2403	Megarynchus pitangua	Costa Rica	1256	landbird	Boat-billed Flycatcher	2	2	2	1	7	3	4	3	NC	Tropical lowland evergreen forest	LC	NA
+2408	Megascops choliba	Costa Rica	830	landbird	Tropical Screech-Owl	3	3	3	1	10	4	6	3	NC	Secondary forest	LC	NA
+2410	Megascops clarkii	Costa Rica	833	landbird	Bare-shanked Screech-Owl	3	2	5	5	15	10	5	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+2412	Megascops cooperi	Costa Rica	828	landbird	Pacific Screech-Owl	4	3	4	5	16	9	7	2	Watch List - Yel-r	Tropical deciduous forest	LC	NA
+2420	Megascops guatemalae	Costa Rica	832	landbird	Vermiculated Screech-Owl	4	3	4	2	13	6	7	3	NC	Tropical lowland evergreen forest	LC	NA
+2432	Melanerpes chrysauchen	Costa Rica	933	landbird	Golden-naped Woodpecker	4	3	5	5	17	10	7	1	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+2436	Melanerpes formicivorus	Costa Rica	932	landbird	Acorn Woodpecker	2	3	2	2	9	4	5	3	NC	Pine-oak forest	LC	NA
+2440	Melanerpes hoffmannii	Costa Rica	942	landbird	Hoffmann's Woodpecker	1	3	4	5	13	9	4	2	NC	Tropical deciduous forest	LC	NA
+2443	Melanerpes pucherani	Costa Rica	934	landbird	Black-cheeked Woodpecker	4	3	4	3	14	7	7	2	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+2452	Melanerpes rubricapillus	Costa Rica	940	landbird	Red-crowned Woodpecker	2	3	3	3	11	6	5	2	NC	Tropical lowland evergreen forest	LC	NA
+2464	Melozone biarcuata	Costa Rica	1965	landbird	Prevost's Ground-Sparrow	4	4	4	4	16	8	8	2	Watch List - Yel-r	Tropical deciduous forest	LC	NA
+2468	Melozone leucotis	Costa Rica	1964	landbird	White-eared Ground-Sparrow	4	4	5	5	18	10	8	1	Watch List - Red	Montane evergreen forest	LC	NA
+24444	Melozone cabanisi	Costa Rica	19999	landbird	Cabanis's Ground-Sparrow	4	4	5	5	18	10	8	1	Watch List - Red	Montane evergreen forest	LC	NA
+2477	Mesembrinibis cayennensis	Costa Rica	754	waterbird	Green Ibis	2	2	4	1	9	5	4	NA	NC	Flooded evergreen forest	LC	NA
+2481	Micrastur mirandollei	Costa Rica	984	landbird	Slaty-backed Forest-Falcon	5	3	4	1	13	5	8	3	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+2485	Micrastur ruficollis	Costa Rica	983	landbird	Barred Forest-Falcon	5	3	3	1	12	4	8	3	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+2494	Micrastur semitorquatus	Costa Rica	985	landbird	Collared Forest-Falcon	4	3	3	1	11	4	7	3	NC	Tropical lowland evergreen forest	LC	NA
+2496	Microbates cinereiventris	Costa Rica	1494	landbird	Tawny-faced Gnatwren	5	3	3	3	14	6	8	3	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+2499	Microcerculus marginatus	Costa Rica	1446	landbird	Scaly-breasted Wren	4	3	2	1	10	3	7	3	NC	Tropical lowland evergreen forest	LC	NA
+2502	Microcerculus philomela	Costa Rica	1445	landbird	Nightingale Wren	5	3	5	4	17	9	8	1	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+2508	Microchera albocoronata	Costa Rica	368	landbird	Snowcap	5	3	4	5	17	9	8	NA	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+2511	Micromonacha lanceolata	Costa Rica	910	landbird	Lanceolated Monklet	3	3	4	2	12	6	6	2	NC	Montane evergreen forest	LC	NA
+2512	Micropygia schomburgkii	Costa Rica	398	waterbird	Ocellated Crake	5	3	4	2	14	6	8	NA	Watch List - Yel-d	Campo grasslands	LC	NA
+2518	Microrhopias quixensis	Costa Rica	1076	landbird	Dot-winged Antwren	4	3	3	1	11	4	7	3	NC	Tropical lowland evergreen forest	LC	NA
+2522	Milvago chimachima	Costa Rica	989	landbird	Yellow-headed Caracara	1	2	2	1	6	3	3	2	NC	"Low, seasonally wet grassland"	LC	NA
+2523	Mimus gilvus	Costa Rica	1620	landbird	Tropical Mockingbird	1	1	3	2	7	5	2	2	NC	Arid lowland scrub	LC	NA
+2533	Mionectes oleagineus	Costa Rica	1164	landbird	Ochre-bellied Flycatcher	4	3	2	1	10	3	7	3	NC	Tropical lowland evergreen forest	LC	NA
+2537	Mionectes olivaceus	Costa Rica	1163	landbird	Olive-striped Flycatcher	4	3	3	3	13	6	7	3	NC	Tropical lowland evergreen forest	LC	NA
+2543	Mitrephanes phaeocercus	Costa Rica	1202	landbird	Tufted Flycatcher	4	3	3	3	13	6	7	3	NC	Montane evergreen forest	LC	NA
+2544	Mitrospingus cassinii	Costa Rica	1938	landbird	Dusky-faced Tanager	3	3	4	4	14	8	6	2	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+2551	Mniotilta varia	Costa Rica	1771	landbird	Black-and-white Warbler	4	NA	2	1	7	3	4	3	NC	secondary forest	LC	NA
+2553	Molothrus aeneus	Costa Rica	2091	landbird	Bronzed Cowbird	1	2	2	2	7	4	3	2	NC	Pine-oak forest	LC	NA
+2560	Molothrus bonariensis	Costa Rica	2090	landbird	Shiny Cowbird	3	1	2	1	7	3	4	3	NC	Tropical deciduous forest	LC	NA
+2563	Molothrus oryzivorus	Costa Rica	2093	landbird	Giant Cowbird	3	3	2	1	9	3	6	3	NC	Pastures/agricultural lands	LC	NA
+2570	Momotus lessonii	Costa Rica	893	landbird	Lesson's Motmot	3	2	3	3	11	6	5	2	NC	Tropical lowland evergreen forest	LC	NA
+2581	Monasa morphoeus	Costa Rica	912	landbird	White-fronted Nunbird	5	4	2	1	12	3	9	3	CBSD	Tropical lowland evergreen forest	LC	NA
+2584	Morococcyx erythropygus	Costa Rica	215	landbird	Lesser Ground-Cuckoo	4	3	4	3	14	7	7	NA	Watch List - Yel-r	Arid lowland scrub	LC	NA
+2589	Morphnarchus princeps	Costa Rica	797	landbird	Barred Hawk	4	3	5	4	16	9	7	2	Watch List - Red	Montane evergreen forest	LC	NA
+2593	Morphnus guianensis	Costa Rica	815	landbird	Crested Eagle	5	3	5	1	14	6	8	3	Watch List - Red	Tropical lowland evergreen forest	NT	NA
+2597	Myadestes melanops	Costa Rica	1552	landbird	Black-faced Solitaire	4	4	4	5	17	9	8	1	Watch List - Red	Montane evergreen forest	LC	NA
+2611	Mycteria americana	Costa Rica	699	waterbird	Wood Stork	3	3	4	1	11	5	6	NA	NC	Freshwater marshes	LC	NA
+2619	Myiarchus crinitus	Costa Rica	1245	landbird	Great Crested Flycatcher	2	NA	2	1	5	3	2	2	NC	Tropical lowland evergreen forest	LC	NA
+2626	Myiarchus nuttingi	Costa Rica	1244	landbird	Nutting's Flycatcher	4	3	3	3	13	6	7	3	NC	Tropical deciduous forest	LC	NA
+2629	Myiarchus panamensis	Costa Rica	1242	landbird	Panama Flycatcher	3	3	3	3	12	6	6	2	NC	Tropical deciduous forest	LC	NA
+2635	Myiarchus tuberculifer	Costa Rica	1241	landbird	Dusky-capped Flycatcher	3	2	2	1	8	3	5	3	NC	Montane evergreen forest	LC	NA
+2642	Myiarchus tyrannulus	Costa Rica	1246	landbird	Brown-crested Flycatcher	3	3	2	1	9	3	6	3	NC	Tropical deciduous forest	LC	NA
+2645	Myiobius atricaudus	Costa Rica	1195	landbird	Black-tailed Flycatcher	3	3	3	1	10	4	6	3	NC	Tropical lowland evergreen forest	LC	NA
+2652	Myiobius sulphureipygius	Costa Rica	1194	landbird	Sulphur-rumped Flycatcher	5	3	4	3	15	7	8	3	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+2654	Myioborus miniatus	Costa Rica	1846	landbird	Slate-throated Redstart	3	2	3	2	10	5	5	2	NC	Montane evergreen forest	LC	NA
+2665	Myioborus torquatus	Costa Rica	1847	landbird	Collared Redstart	3	2	4	5	14	9	5	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+2667	Myiodynastes hemichrysus	Costa Rica	1261	landbird	Golden-bellied Flycatcher	4	3	4	5	16	9	7	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+2674	Myiodynastes luteiventris	Costa Rica	1264	landbird	Sulphur-bellied Flycatcher	3	2	3	2	10	5	5	2	NC	Tropical deciduous forest	LC	NA
+2677	Myiodynastes maculatus	Costa Rica	1263	landbird	Streaked Flycatcher	3	2	2	1	8	3	5	3	NC	Tropical lowland evergreen forest	LC	NA
+2684	Myiopagis viridicata	Costa Rica	1155	landbird	Greenish Elaenia	4	3	3	1	11	4	7	3	NC	Tropical lowland evergreen forest	LC	NA
+2690	Myiophobus fasciatus	Costa Rica	1196	landbird	Bran-colored Flycatcher	3	3	2	1	9	3	6	3	NC	Second-growth scrub	LC	NA
+2692	Myiornis atricapillus	Costa Rica	1174	landbird	Black-capped Pygmy-Tyrant	4	3	3	4	14	7	7	2	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+2698	Myiothlypis fulvicauda	Costa Rica	1831	landbird	Buff-rumped Warbler	4	3	2	2	11	4	7	3	NC	Tropical lowland evergreen forest	LC	NA
+2700	Myiozetetes cayanensis	Costa Rica	1257	landbird	Rusty-margined Flycatcher	2	2	1	1	6	2	4	3	NC	Second-growth scrub	LC	NA
+2702	Myiozetetes granadensis	Costa Rica	1259	landbird	Gray-capped Flycatcher	2	1	2	2	7	4	3	2	NC	River-edge forest	LC	NA
+2706	Myiozetetes similis	Costa Rica	1258	landbird	Social Flycatcher	2	1	1	1	5	2	3	3	NC	Tropical lowland evergreen forest	LC	NA
+2714	Myrmeciza exsul	Costa Rica	1083	landbird	Chestnut-backed Antbird	5	3	3	3	14	6	8	3	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+2716	Myrmeciza laemosticta	Costa Rica	1084	landbird	Dull-mantled Antbird	4	3	4	4	15	8	7	2	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+2721	Myrmeciza zeledoni	Costa Rica	1085	landbird	Zeledon's Antbird	4	3	4	4	15	8	7	2	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+2725	Myrmotherula axillaris	Costa Rica	1072	landbird	White-flanked Antwren	5	3	2	1	11	3	8	3	CBSD	Tropical lowland evergreen forest	LC	NA
+2733	Myrmotherula schisticolor	Costa Rica	1073	landbird	Slaty Antwren	4	3	4	3	14	7	7	2	Watch List - Yel-d	Montane evergreen forest	LC	NA
+2738	Neocrex erythrops	Costa Rica	419	waterbird	Paint-billed Crake	2	2	4	2	10	6	4	NA	NC	"Low, seasonally wet grassland"	LC	NA
+2741	Neomorphus geoffroyi	Costa Rica	218	landbird	Rufous-vented Ground-Cuckoo	5	3	5	3	16	8	8	NA	Watch List - Red	Tropical lowland evergreen forest	VU	NA
+2744	Nesotriccus ridgwayi	Costa Rica	1149	landbird	Cocos Flycatcher	2	3	5	5	15	10	5	2	Watch List - Yel-r	Tropical lowland evergreen forest	VU	NA
+2748	Nomonyx dominicus	Costa Rica	76	waterfowl	Masked Duck	3	3	4	1	11	5	6	NA	NC	freshwater lakes	LC	NA
+2758	Notharchus hyperrhynchus	Costa Rica	906	landbird	White-necked Puffbird	4	3	3	1	11	4	7	3	NC	Tropical lowland evergreen forest	LC	NA
+2763	Notharchus tectus	Costa Rica	908	landbird	Pied Puffbird	4	3	3	1	11	4	7	3	NC	Tropical lowland evergreen forest	LC	NA
+2764	Nothocercus bonapartei	Costa Rica	1	landbird	Highland Tinamou	4	3	4	4	15	8	7	NA	Watch List - Yel-r	Montane evergreen forest	LC	NA
+2770	Numenius americanus	Costa Rica	470	shorebird	Long-billed Curlew	2	NA	4	2	8	6	2	NA	NC	Coastal sand beaches/mudflats	LC	NA
+2780	Numenius phaeopus	Costa Rica	465	shorebird	Whimbrel	4	NA	3	1	8	4	4	NA	NC	Coastal sand beaches/mudflats	LC	NA
+2785	Nyctanassa violacea	Costa Rica	748	waterbird	Yellow-crowned Night-Heron	3	3	4	1	11	5	6	NA	NC	Mangrove forest	LC	NA
+2788	Nyctibius grandis	Costa Rica	247	landbird	Great Potoo	3	3	3	1	10	4	6	NA	NC	Tropical lowland evergreen forest	LC	NA
+2795	Nyctibius griseus	Costa Rica	248	landbird	Common Potoo	3	2	3	1	9	4	5	NA	NC	Tropical lowland evergreen forest	LC	NA
+2798	Nyctibius jamaicensis	Costa Rica	249	landbird	Northern Potoo	4	2	4	3	13	7	6	NA	Watch List - Yel-r	Tropical deciduous forest	LC	NA
+2807	Nycticorax nycticorax	Costa Rica	747	waterbird	Black-crowned Night-Heron	3	3	3	1	10	4	6	NA	NC	Freshwater marshes	LC	NA
+2813	Nyctidromus albicollis	Costa Rica	226	landbird	Common Pauraque	2	2	2	1	7	3	4	NA	NC	Tropical lowland evergreen forest	LC	NA
+2819	Nyctiphrynus ocellatus	Costa Rica	232	landbird	Ocellated Poorwill	5	3	3	2	13	5	8	NA	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+2836	Odontophorus gujanensis	Costa Rica	106	landbird	Marbled Wood-Quail	4	3	3	1	11	4	7	NA	NC	Tropical lowland evergreen forest	NT	NA
+2838	Odontophorus guttatus	Costa Rica	110	landbird	Spotted Wood-Quail	4	3	4	3	14	7	7	NA	Watch List - Yel-d	Montane evergreen forest	LC	NA
+2844	Odontophorus leucolaemus	Costa Rica	109	landbird	Black-breasted Wood-Quail	4	3	4	5	16	9	7	NA	Watch List - Red	Montane evergreen forest	LC	NA
+2848	Odontophorus melanotis	Costa Rica	107	landbird	Black-eared Wood-Quail	5	3	4	4	16	8	8	NA	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+2851	Oncostoma cinereigulare	Costa Rica	1177	landbird	Northern Bentbill	4	3	3	3	13	6	7	3	NC	Tropical lowland evergreen forest	LC	NA
+2862	Onychoprion anaethetus	Costa Rica	595	waterbird	Bridled Tern	4	3	3	1	11	4	7	NA	NC	Pelagic waters	LC	NA
+2873	Onychorhynchus coronatus	Costa Rica	1191	landbird	Royal Flycatcher	4	3	4	1	12	5	7	3	NC	Tropical lowland evergreen forest	LC	NA
+2878	Oreothlypis gutturalis	Costa Rica	1775	landbird	Flame-throated Warbler	3	3	5	5	16	10	6	2	Watch List - Red	Montane evergreen forest	LC	NA
+2884	Leiothlypis peregrina	Costa Rica	1776	landbird	Tennessee Warbler	3	NA	1	1	5	2	3	3	NC	Secondary forest	LC	NA
+2893	Ornithion brunneicapillus	Costa Rica	1145	landbird	Brown-capped Tyrannulet	3	3	3	4	13	7	6	2	NC	Tropical lowland evergreen forest	LC	NA
+2896	Ornithion semiflavum	Costa Rica	1144	landbird	Yellow-bellied Tyrannulet	4	3	4	4	15	8	7	2	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+2904	Ortalis cinereiceps	Costa Rica	79	landbird	Gray-headed Chachalaca	2	3	3	4	12	7	5	NA	NC	Tropical lowland evergreen forest	LC	NA
+2915	Ortalis vetula	Costa Rica	78	landbird	Plain Chachalaca	3	3	3	3	12	6	6	NA	NC	Tropical lowland evergreen forest	LC	NA
+2916	Oxyruncus cristatus	Costa Rica	1315	landbird	Sharpbill	4	3	4	2	13	6	7	3	NC	Montane evergreen forest	LC	NA
+2918	Oxyura jamaicensis	Costa Rica	77	waterfowl	Ruddy Duck	3	NA	3	1	7	4	3	NA	NC	freshwater lakes	LC	NA
+2925	Pachyramphus aglaiae	Costa Rica	1291	landbird	Rose-throated Becard	3	3	3	2	11	5	6	3	NC	Gallery forest	LC	NA
+2930	Pachyramphus albogriseus	Costa Rica	1289	landbird	Black-and-white Becard	3	3	3	3	12	6	6	2	NC	Montane evergreen forest	LC	NA
+2933	Pachyramphus cinnamomeus	Costa Rica	1287	landbird	Cinnamon Becard	4	3	4	3	14	7	7	2	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+2947	Pachyramphus polychopterus	Costa Rica	1288	landbird	White-winged Becard	3	3	2	1	9	3	6	3	NC	Tropical lowland evergreen forest	LC	NA
+2950	Pachyramphus versicolor	Costa Rica	1285	landbird	Barred Becard	3	3	3	3	12	6	6	2	NC	Montane evergreen forest	LC	NA
+2954	Pachysylvia decurtata	Costa Rica	1325	landbird	Lesser Greenlet	4	3	3	3	13	6	7	3	NC	Tropical lowland evergreen forest	LC	NA
+2962	Pandion haliaetus	Costa Rica	763	landbird	Osprey	1	NA	3	1	5	4	1	NA	NC	Coastal waters	LC	NA
+2967	Panterpe insignis	Costa Rica	308	landbird	Fiery-throated Hummingbird	2	2	4	5	13	9	4	NA	Watch List - Yel-r	Montane evergreen forest	LC	NA
+2970	Panyptila cayennensis	Costa Rica	272	landbird	Lesser Swallow-tailed Swift	4	3	3	1	11	4	7	NA	NC	Tropical lowland evergreen forest	LC	NA
+2980	Parabuteo unicinctus	Costa Rica	799	landbird	Harris's Hawk	4	2	3	1	10	4	6	3	NC	Arid lowland scrub	LC	NA
+2985	Pardirallus maculatus	Costa Rica	421	waterbird	Spotted Rail	3	3	5	2	13	7	6	NA	NC	Freshwater marshes	LC	NA
+2995	Parkesia motacilla	Costa Rica	1766	landbird	Louisiana Waterthrush	2	NA	4	2	8	6	2	2	NC	Streams	LC	NA
+3001	Parkesia noveboracensis	Costa Rica	1767	landbird	Northern Waterthrush	1	NA	2	1	4	3	1	2	NC	mangrove forest	LC	NA
+3005	Passerina caerulea	Costa Rica	2059	landbird	Blue Grosbeak	2	2	2	1	7	3	4	3	NC	Gallery forest	LC	NA
+3016	Passerina ciris	Costa Rica	2065	landbird	Painted Bunting	3	NA	2	2	7	4	3	2	NC	Riparian thickets	NT	NA
+3022	Passerina cyanea	Costa Rica	2061	landbird	Indigo Bunting	4	NA	1	1	6	2	4	3	NC	Second-growth scrub	LC	NA
+3024	Patagioenas cayennensis	Costa Rica	147	landbird	Pale-vented Pigeon	3	2	2	1	8	3	5	NA	NC	Gallery forest	LC	NA
+3035	Patagioenas fasciata	Costa Rica	153	landbird	Band-tailed Pigeon	5	3	3	2	13	5	8	NA	Watch List - Yel-d	Montane evergreen forest	LC	NA
+3037	Patagioenas flavirostris	Costa Rica	151	landbird	Red-billed Pigeon	3	2	3	3	11	6	5	NA	NC	Tropical deciduous forest	LC	NA
+3046	Patagioenas nigrirostris	Costa Rica	157	landbird	Short-billed Pigeon	4	3	4	3	14	7	7	NA	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+3055	Patagioenas speciosa	Costa Rica	148	landbird	Scaled Pigeon	4	3	3	1	11	4	7	NA	NC	Tropical lowland evergreen forest	LC	NA
+3059	Patagioenas subvinacea	Costa Rica	156	landbird	Ruddy Pigeon	3	3	2	1	9	3	6	NA	NC	Tropical lowland evergreen forest	VU	NA
+3066	Pelecanus occidentalis	Costa Rica	718	waterbird	Brown Pelican	1	2	4	2	9	6	3	NA	NC	Coastal waters	LC	NA
+3074	Penelope purpurascens	Costa Rica	84	landbird	Crested Guan	5	3	4	2	14	6	8	NA	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+3085	Petrochelidon pyrrhonota	Costa Rica	1421	landbird	Cliff Swallow	2	NA	1	1	4	2	2	2	NC	Northern temperate grassland	LC	NA
+3089	Peucaea botterii	Costa Rica	1976	landbird	Botteri's Sparrow	3	4	4	3	14	7	7	2	NC	Northern temperate grassland	LC	NA
+3093	Peucaea ruficauda	Costa Rica	1973	landbird	Stripe-headed Sparrow	2	2	3	4	11	7	4	2	NC	Arid lowland scrub	LC	NA
+3102	Pezopetes capitalis	Costa Rica	1945	landbird	Large-footed Finch	3	3	5	5	16	10	6	2	Watch List - Red	Montane evergreen forest	LC	NA
+3104	Phaenostictus mcleannani	Costa Rica	1089	landbird	Ocellated Antbird	5	3	4	4	16	8	8	NA	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+3111	Phaeochroa cuvierii	Costa Rica	357	landbird	Scaly-breasted Hummingbird	2	2	4	4	12	8	4	NA	NC	Secondary forest	LC	NA
+3114	Phaeomyias murina	Costa Rica	1148	landbird	Mouse-colored Tyrannulet	2	2	2	1	7	3	4	3	NC	Arid lowland scrub	LC	NA
+3122	Phaethornis guy	Costa Rica	280	landbird	Green Hermit	3	3	3	3	12	6	6	NA	NC	Montane evergreen forest	LC	NA
+3127	Phaethornis longirostris	Costa Rica	282	landbird	Long-billed Hermit	4	3	4	3	14	7	7	NA	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+3132	Phaethornis striigularis	Costa Rica	284	landbird	Stripe-throated Hermit	4	3	4	3	14	7	7	NA	NC	Tropical lowland evergreen forest	LC	NA
+3135	Phainoptila melanoxantha	Costa Rica	1632	landbird	Black-and-yellow Silky-flycatcher	3	3	5	5	16	10	6	2	Watch List - Red	Montane evergreen forest	LC	NA
+3143	Phalacrocorax brasilianus	Costa Rica	711	waterbird	Neotropic Cormorant	1	2	2	1	6	3	3	NA	NC	Coastal waters	LC	NA
+3159	Pharomachrus mocinno	Costa Rica	882	landbird	Resplendent Quetzal	5	3	4	4	16	8	8	NA	Watch List - Red	Montane evergreen forest	NT	NA
+3167	Pheucticus ludovicianus	Costa Rica	2052	landbird	Rose-breasted Grosbeak	4	NA	3	2	9	5	4	2	NC	Secondary forest	LC	NA
+3168	Pheucticus tibialis	Costa Rica	2051	landbird	Black-thighed Grosbeak	3	3	4	5	15	9	6	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+3170	Pheugopedius atrogularis	Costa Rica	1474	landbird	Black-throated Wren	3	3	4	5	15	9	6	2	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+3175	Pheugopedius fasciatoventris	Costa Rica	1478	landbird	Black-bellied Wren	4	3	3	4	14	7	7	2	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+3179	Pheugopedius maculipectus	Costa Rica	1476	landbird	Spot-breasted Wren	4	3	3	3	13	6	7	3	NC	Tropical lowland evergreen forest	LC	NA
+3182	Pheugopedius rutilus	Costa Rica	1475	landbird	Rufous-breasted Wren	4	3	3	4	14	7	7	2	Watch List - Yel-r	Second-growth scrub	LC	NA
+3186	Philydor rufum	Costa Rica	1128	landbird	Buff-fronted Foliage-gleaner	3	3	3	2	11	5	6	3	NC	Montane evergreen forest	LC	NA
+3189	Phyllomyias burmeisteri	Costa Rica	1169	landbird	Rough-legged Tyrannulet	4	3	3	3	13	6	7	3	NC	Tropical lowland evergreen forest	LC	NA
+3192	Phylloscartes superciliaris	Costa Rica	1168	landbird	Rufous-browed Tyrannulet	3	3	4	5	15	9	6	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+3198	Piaya cayana	Costa Rica	200	landbird	Squirrel Cuckoo	3	2	2	1	8	3	5	NA	NC	Tropical lowland evergreen forest	LC	NA
+3201	Dryobates fumigatus	Costa Rica	955	landbird	Smoky-brown Woodpecker	4	3	4	2	13	6	7	3	NC	Montane evergreen forest	LC	NA
+3214	Picoides villosus	Costa Rica	956	landbird	Hairy Woodpecker	1	3	2	1	7	3	4	3	NC	Pine forest	LC	NA
+3221	Piculus simplex	Costa Rica	964	landbird	Rufous-winged Woodpecker	5	3	4	4	16	8	8	NA	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+3226	Picumnus olivaceus	Costa Rica	926	landbird	Olivaceous Piculet	4	3	3	3	13	6	7	3	NC	Tropical lowland evergreen forest	LC	NA
+3229	Pinaroloxias inornata	Costa Rica	1915	landbird	Cocos Finch	2	3	5	5	15	10	5	2	Watch List - Yel-r	Tropical lowland evergreen forest	VU	NA
+3231	Pionus menstruus	Costa Rica	1035	landbird	Blue-headed Parrot	2	3	2	1	8	3	5	3	NC	River-edge forest	LC	NA
+3236	Pionus senilis	Costa Rica	1036	landbird	White-crowned Parrot	4	3	4	3	14	7	7	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+3240	Piprites griseiceps	Costa Rica	1279	landbird	Gray-headed Piprites	5	3	5	4	17	9	8	1	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+3244	Piranga bidentata	Costa Rica	2037	landbird	Flame-colored Tanager	4	2	4	3	13	7	6	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+2035	Piranga olivacea	Costa Rica	22222	landbird	Scarlet Tanager	4	2	3	3	3	3	12	2	NC	tropical lowland evergreen forest	LC	
+3251	Piranga flava	Costa Rica	2033	landbird	Hepatic Tanager	1	3	2	1	7	3	4	3	NC	Pine-oak forest	LC	NA
+3258	Piranga leucoptera	Costa Rica	2038	landbird	White-winged Tanager	4	3	4	3	14	7	7	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+3269	Piranga ludoviciana	Costa Rica	2036	landbird	Western Tanager	1	NA	2	2	5	4	1	2	NC	Pine-oak forest	LC	NA
+3280	Piranga rubra	Costa Rica	2034	landbird	Summer Tanager	2	NA	2	2	6	4	2	2	NC	Gallery forest	LC	NA
+3287	Pitangus sulphuratus	Costa Rica	1255	landbird	Great Kiskadee	2	1	1	1	5	2	3	3	NC	Secondary forest	LC	NA
+3290	Pittasoma michleri	Costa Rica	1090	landbird	Black-crowned Antpitta	4	4	5	5	18	10	8	1	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+3292	Platalea ajaja	Costa Rica	757	waterbird	Roseate Spoonbill	2	3	4	1	10	5	5	NA	NC	Freshwater marshes	LC	NA
+3297	Platyrinchus cancrominus	Costa Rica	1188	landbird	Stub-tailed Spadebill	4	3	4	3	14	7	7	2	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+3306	Platyrinchus coronatus	Costa Rica	1190	landbird	Golden-crowned Spadebill	5	3	2	1	11	3	8	3	CBSD	Tropical lowland evergreen forest	LC	NA
+3308	Platyrinchus mystaceus	Costa Rica	1189	landbird	White-throated Spadebill	4	3	2	1	10	3	7	3	NC	Montane evergreen forest	LC	NA
+3312	Plegadis falcinellus	Costa Rica	752	waterbird	Glossy Ibis	1	3	3	1	8	4	4	NA	NC	Freshwater marshes	LC	NA
+3324	Pluvialis squatarola	Costa Rica	444	shorebird	Black-bellied Plover	3	NA	3	2	8	5	3	NA	NC	Coastal sand beaches/mudflats	LC	NA
+3332	Podilymbus podiceps	Costa Rica	138	waterbird	Pied-billed Grebe	2	3	3	1	9	4	5	NA	NC	Freshwater lakes	LC	NA
+3338	Poecilotriccus sylvia	Costa Rica	1179	landbird	Slate-headed Tody-Flycatcher	4	2	3	2	11	5	6	3	NC	Second-growth scrub	LC	NA
+3340	Polioptila albiloris	Costa Rica	1501	landbird	White-lored Gnatcatcher	4	2	4	4	14	8	6	2	Watch List - Yel-r	Tropical deciduous forest	LC	NA
+3349	Polioptila plumbea	Costa Rica	1502	landbird	Tropical Gnatcatcher	4	3	2	1	10	3	7	3	NC	Tropical deciduous forest	LC	NA
+3358	Porphyrio martinicus	Costa Rica	422	waterbird	Purple Gallinule	4	2	3	1	10	4	6	NA	NC	Freshwater marshes	LC	NA
+3367	Porzana carolina	Costa Rica	413	waterbird	Sora	2	NA	3	1	6	4	2	NA	NC	Freshwater marshes	LC	NA
+3371	Premnoplex brunnescens	Costa Rica	1135	landbird	Spotted Barbtail	4	3	3	3	13	6	7	3	NC	Montane evergreen forest	LC	NA
+3372	Procnias tricarunculatus	Costa Rica	1300	landbird	Three-wattled Bellbird	5	3	5	5	18	10	8	1	Watch List - Red	Montane evergreen forest	VU	NA
+3378	Progne chalybea	Costa Rica	1407	landbird	Gray-breasted Martin	2	2	2	1	7	3	4	3	NC	Second-growth scrub	LC	NA
+3390	Protonotaria citrea	Costa Rica	1772	landbird	Prothonotary Warbler	4	NA	3	2	9	5	4	2	Watch List - Yel-d	Mangrove forest	LC	NA
+3393	Psarocolius decumanus	Costa Rica	2124	landbird	Crested Oropendola	3	2	2	1	8	3	5	3	NC	Tropical lowland evergreen forest	LC	NA
+3396	Psarocolius montezuma	Costa Rica	2126	landbird	Montezuma Oropendola	4	2	3	3	12	6	6	2	NC	Tropical lowland evergreen forest	LC	NA
+3402	Psarocolius wagleri	Costa Rica	2125	landbird	Chestnut-headed Oropendola	4	2	3	3	12	6	6	2	NC	Tropical lowland evergreen forest	LC	NA
+3410	Pselliophorus tibialis	Costa Rica	1943	landbird	Yellow-thighed Finch	3	3	4	5	15	9	6	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+3418	Pseudastur albicollis	Costa Rica	801	landbird	White Hawk	5	3	4	1	13	5	8	3	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+3420	Pseudocolaptes lawrencii	Costa Rica	1125	landbird	Buffy Tuftedcheek	3	3	5	5	16	10	6	2	Watch List - Red	Montane evergreen forest	LC	NA
+3427	Pseudoscops clamator	Costa Rica	859	landbird	Striped Owl	4	3	3	1	11	4	7	3	NC	"Low, seasonally wet grassland"	LC	NA
+3431	Psilorhinus morio	Costa Rica	1364	landbird	Brown Jay	2	2	3	3	10	6	4	2	NC	Gallery forest	LC	NA
+3435	Psittacara finschi	Costa Rica	1018	landbird	Crimson-fronted Parakeet	2	1	3	4	10	7	3	2	NC	secondary forest	LC	NA
+3449	Pteroglossus frantzii	Costa Rica	921	landbird	Fiery-billed Aracari	3	3	4	5	15	9	6	2	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+3454	Pteroglossus torquatus	Costa Rica	920	landbird	Collared Aracari	4	3	3	3	13	6	7	3	NC	Tropical lowland evergreen forest	LC	NA
+3457	Ptiliogonys caudatus	Costa Rica	1634	landbird	Long-tailed Silky-flycatcher	3	3	5	5	16	10	6	2	Watch List - Red	Montane evergreen forest	LC	NA
+3466	Pulsatrix perspicillata	Costa Rica	837	landbird	Spectacled Owl	4	3	3	1	11	4	7	3	NC	Flooded evergreen forest	LC	NA
+3474	Pygochelidon cyanoleuca	Costa Rica	1415	landbird	Blue-and-white Swallow	3	2	2	1	8	3	5	3	NC	Second-growth scrub	LC	NA
+3477	Pyrilia haematotis	Costa Rica	1033	landbird	Brown-hooded Parrot	4	3	4	3	14	7	7	2	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+3487	Pyrrhura hoffmanni	Costa Rica	1002	landbird	Sulphur-winged Parakeet	3	3	5	5	16	10	6	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+3490	Querula purpurata	Costa Rica	1294	landbird	Purple-throated Fruitcrow	4	3	2	1	10	3	7	3	NC	Tropical lowland evergreen forest	LC	NA
+3492	Quiscalus mexicanus	Costa Rica	2085	landbird	Great-tailed Grackle	1	2	1	1	5	2	3	3	NC	Second-growth scrub	LC	NA
+3499	Quiscalus nicaraguensis	Costa Rica	2087	landbird	Nicaraguan Grackle	5	4	5	5	19	10	9	1	Watch List - Red	Freshwater marshes	LC	NA
+3507	Rallus longirostris	Costa Rica	405.5	waterbird	Mangrove Rail	3	3	4	3	13	7	6	NA	NC	NA	LC	NA
+3508	Ramphastos ambiguus	Costa Rica	924	landbird	Yellow-throated Toucan	4	3	3	3	13	6	7	3	NC	Montane evergreen forest	NT	NA
+3515	Ramphastos sulfuratus	Costa Rica	923	landbird	Keel-billed Toucan	4	3	4	3	14	7	7	2	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+3519	Ramphocaenus melanurus	Costa Rica	1495	landbird	Long-billed Gnatwren	4	3	2	1	10	3	7	3	NC	Tropical lowland evergreen forest	LC	NA
+3525	Ramphocelus costaricensis	Costa Rica	1894	landbird	Cherrie's Tanager	2	2	4	5	13	9	4	2	NC	Tropical lowland evergreen forest	LC	NA
+3529	Ramphocelus passerinii	Costa Rica	1893	landbird	Passerini's Tanager	2	2	3	4	11	7	4	2	NC	Tropical lowland evergreen forest	LC	NA
+3535	Ramphocelus sanguinolentus	Costa Rica	1891	landbird	Crimson-collared Tanager	4	2	3	4	13	7	6	2	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+3541	Recurvirostra americana	Costa Rica	438	shorebird	American Avocet	2	NA	4	2	8	6	2	NA	NC	Freshwater marshes	LC	NA
+3544	Rhodinocichla rosea	Costa Rica	1937	landbird	Rosy Thrush-Tanager	4	3	5	4	16	9	7	2	Watch List - Red	Tropical deciduous forest	LC	NA
+3551	Rhynchocyclus brevirostris	Costa Rica	1183	landbird	Eye-ringed Flatbill	4	3	4	3	14	7	7	2	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+3554	Rhynchortyx cinctus	Costa Rica	90	landbird	Tawny-faced Quail	5	3	4	4	16	8	8	NA	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+3559	Rhytipterna holerythra	Costa Rica	1238	landbird	Rufous Mourner	4	3	4	3	14	7	7	2	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+3575	Rostrhamus sociabilis	Costa Rica	769	landbird	Snail Kite	2	2	3	1	8	4	4	NA	NC	Freshwater marshes	LC	NA
+3581	Rupornis magnirostris	Costa Rica	798	landbird	Roadside Hawk	1	2	2	1	6	3	3	2	NC	Secondary forest	LC	NA
+3584	Rynchops niger	Costa Rica	615	waterbird	Black Skimmer	5	NA	4	1	10	5	5	NA	Watch List - Yel-d	Rivers	LC	NA
+3591	Salpinctes obsoletus	Costa Rica	1444	landbird	Rock Wren	4	4	3	1	12	4	8	3	NC	Arid montane scrub	LC	NA
+3595	Saltator atriceps	Costa Rica	1926	landbird	Black-headed Saltator	3	2	3	3	11	6	5	2	NC	Tropical lowland evergreen forest	LC	NA
+3602	Saltator coerulescens	Costa Rica	1930	landbird	Grayish Saltator	2	2	2	1	7	3	4	3	NC	Second-growth scrub	LC	NA
+3609	Saltator grossus	Costa Rica	1928	landbird	Slate-colored Grosbeak	5	3	2	1	11	3	8	3	CBSD	Tropical lowland evergreen forest	LC	NA
+3613	Saltator maximus	Costa Rica	1927	landbird	Buff-throated Saltator	3	2	2	1	8	3	5	3	NC	Tropical lowland evergreen forest	LC	NA
+3619	Saltator striatipectus	Costa Rica	1931	landbird	Streaked Saltator	2	2	2	3	9	5	4	2	NC	Tropical deciduous forest	LC	NA
+3622	Sarcoramphus papa	Costa Rica	762	landbird	King Vulture	5	3	4	1	13	5	8	NA	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+3634	Sayornis nigricans	Costa Rica	1229	landbird	Black Phoebe	2	2	2	2	8	4	4	2	NC	Riparian thickets	LC	NA
+3637	Schiffornis veraepacis	Costa Rica	1280	landbird	Northern Schiffornis	4	2	4	3	13	7	6	2	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+3644	Sclerurus albigularis	Costa Rica	1102	landbird	Gray-throated Leaftosser	4	3	3	3	13	6	7	3	Watch List - Yel-d	Montane evergreen forest	NT	NA
+3647	Sclerurus guatemalensis	Costa Rica	1103	landbird	Scaly-throated Leaftosser	4	4	5	3	16	8	8	2	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+3652	Sclerurus mexicanus	Costa Rica	1101	landbird	Tawny-throated Leaftosser	4	3	3	1	11	4	7	3	NC	Tropical lowland evergreen forest	LC	NA
+3659	Scytalopus argentifrons	Costa Rica	1097	landbird	Silvery-fronted Tapaculo	4	3	4	5	16	9	7	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+3665	Seiurus aurocapilla	Costa Rica	1764	landbird	Ovenbird	2	NA	2	1	5	3	2	2	NC	Tropical lowland evergreen forest	LC	NA
+3669	Selasphorus flammula	Costa Rica	339	landbird	Volcano Hummingbird	2	3	5	5	15	10	5	NA	Watch List - Yel-r	Paramo grassland	LC	NA
+3671	Selasphorus scintilla	Costa Rica	341	landbird	Scintillant Hummingbird	4	3	5	5	17	10	7	NA	Watch List - Red	Second-growth scrub	LC	NA
+3673	Selenidera spectabilis	Costa Rica	922	landbird	Yellow-eared Toucanet	5	4	4	4	17	8	9	1	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+3678	Semnornis frantzii	Costa Rica	918	landbird	Prong-billed Barbet	3	3	5	5	16	10	6	2	Watch List - Red	Montane evergreen forest	LC	NA
+3680	Serpophaga cinerea	Costa Rica	1162	landbird	Torrent Tyrannulet	3	4	3	3	13	6	7	3	NC	Rivers	LC	NA
+3703	Setophaga citrina	Costa Rica	1800	landbird	Hooded Warbler	1	NA	2	2	5	4	1	2	NC	Tropical lowland evergreen forest	LC	NA
+3716	Setophaga dominica	Costa Rica	1818	landbird	Yellow-throated Warbler	2	NA	3	2	7	5	2	2	NC	Pine forest	LC	NA
+37111	Setophaga castanea	Costa Rica	1818	landbird	Bay-breasted Warbler	1	NA	2	2	5	4	1	2	NC	Montane evergreen forest	LC	NA
+3721	Setophaga fusca	Costa Rica	1809	landbird	Blackburnian Warbler	2	NA	2	2	6	4	2	2	NC	Tropical lowland evergreen forest	LC	NA
+3732	Setophaga magnolia	Costa Rica	1807	landbird	Magnolia Warbler	1	NA	2	2	5	4	1	2	NC	Secondary forest	LC	NA
+3737	Setophaga occidentalis	Costa Rica	1828	landbird	Hermit Warbler	2	NA	3	3	8	6	2	2	NC	Pine forest	LC	NA
+3747	Setophaga pensylvanica	Costa Rica	1811	landbird	Chestnut-sided Warbler	4	NA	2	2	8	4	4	2	NC	Tropical lowland evergreen forest	LC	NA
+3758	Setophaga petechia	Costa Rica	1810	landbird	Yellow Warbler	4	NA	1	1	6	2	4	3	NC	Mangrove forest	LC	NA
+3762	Setophaga pitiayumi	Costa Rica	1806	landbird	Tropical Parula	4	3	2	1	10	3	7	3	NC	Montane evergreen forest	LC	NA
+3770	Setophaga ruticilla	Costa Rica	1801	landbird	American Redstart	3	NA	2	1	6	3	3	2	NC	mangrove forest	LC	NA
+3777	Setophaga townsendi	Costa Rica	1827	landbird	Townsend's Warbler	3	NA	2	2	7	4	3	2	NC	pine-oak forest	LC	NA
+3783	Setophaga virens	Costa Rica	1830	landbird	Black-throated Green Warbler	2	NA	2	2	6	4	2	2	NC	Montane evergreen forest	LC	NA
+3800	Sittasomus griseicapillus	Costa Rica	1104	landbird	Olivaceous Woodcreeper	3	3	2	1	9	3	6	3	NC	Tropical lowland evergreen forest	LC	NA
+3808	Sphyrapicus varius	Costa Rica	947	landbird	Yellow-bellied Sapsucker	2	NA	2	1	5	3	2	2	NC	Secondary forest	LC	NA
+3820	Spinus psaltria	Costa Rica	1748	landbird	Lesser Goldfinch	2	2	2	2	8	4	4	2	NC	Arid lowland scrub	LC	NA
+3825	Spinus xanthogastrus	Costa Rica	1745	landbird	Yellow-bellied Siskin	3	3	3	4	13	7	6	2	NC	Montane evergreen forest	LC	NA
+3829	Spiza americana	Costa Rica	2066	landbird	Dickcissel	3	NA	2	2	7	4	3	2	NC	pastures/agricultural lands	LC	NA
+3830	Spizaetus melanoleucus	Costa Rica	820	landbird	Black-and-white Hawk-Eagle	5	3	5	1	14	6	8	3	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+3837	Spizaetus ornatus	Costa Rica	819	landbird	Ornate Hawk-Eagle	5	3	4	1	13	5	8	3	Watch List - Yel-d	Tropical lowland evergreen forest	NT	NA
+3843	Spizaetus tyrannus	Costa Rica	818	landbird	Black Hawk-Eagle	4	3	4	1	12	5	7	3	NC	Tropical lowland evergreen forest	LC	NA
+3855	Sporophila morelleti	Costa Rica	1920	landbird	Variable Seedeater	2	2	3	3	10	6	4	2	NC	Second-growth scrub	LC	NA
+3855	Sporophila corvina	Costa Rica	1920	landbird	Variable Seedeater	2	2	3	3	10	6	4	2	NC	Second-growth scrub	LC	NA
+3862	Sporophila funerea	Costa Rica	1917	landbird	Thick-billed Seed-Finch	3	2	3	3	11	6	5	2	NC	Second-growth scrub	LC	NA
+3868	Sporophila minuta	Costa Rica	1924	landbird	Ruddy-breasted Seedeater	3	2	3	2	10	5	5	2	NC	"Low, seasonally wet grassland"	LC	NA
+3874	Sporophila nigricollis	Costa Rica	1923	landbird	Yellow-bellied Seedeater	2	2	2	1	7	3	4	3	NC	Second-growth scrub	LC	NA
+3877	Sporophila nuttingi	Costa Rica	1919	landbird	Nicaraguan Seed-Finch	5	3	4	5	17	9	8	1	Watch List - Red	Riparian thickets	LC	NA
+3880	Sporophila schistacea	Costa Rica	1921	landbird	Slate-colored Seedeater	5	3	4	2	14	6	8	3	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+3885	Sporophila torqueola	Costa Rica	1922	landbird	White-collared Seedeater	1	2	2	2	7	4	3	2	NC	Second-growth scrub	LC	NA
+3894	Stelgidopteryx ruficollis	Costa Rica	1419	landbird	Southern Rough-winged Swallow	2	2	1	1	6	2	4	3	NC	Second-growth scrub	LC	NA
+3901	Stelgidopteryx serripennis	Costa Rica	1418	landbird	Northern Rough-winged Swallow	4	2	2	1	9	3	6	3	NC	Second-growth scrub	LC	NA
+3938	Streptoprocne rutila	Costa Rica	254	landbird	Chestnut-collared Swift	3	3	3	2	11	5	6	NA	NC	Montane evergreen forest	LC	NA
+3950	Streptoprocne zonaris	Costa Rica	255	landbird	White-collared Swift	3	3	2	1	9	3	6	NA	NC	Montane evergreen forest	LC	NA
+3954	Sturnella magna	Costa Rica	2076	landbird	Eastern Meadowlark	5	2	2	1	10	3	7	3	CBSD	Northern temperate grassland	LC	NA
+3961	Sturnella militaris	Costa Rica	2075	landbird	Red-breasted Blackbird	1	2	2	2	7	4	3	2	NC	Pastures/agricultural lands	LC	NA
+3964	Sublegatus arenarum	Costa Rica	1172	landbird	Northern Scrub-Flycatcher	3	3	3	3	12	6	6	2	NC	Tropical deciduous forest	LC	NA
+3982	Synallaxis albescens	Costa Rica	1141	landbird	Pale-breasted Spinetail	2	2	1	1	6	2	4	3	NC	Cerrado	LC	NA
+3983	Synallaxis brachyura	Costa Rica	1142	landbird	Slaty Spinetail	3	2	3	3	11	6	5	2	NC	Second-growth scrub	LC	NA
+3991	Syndactyla subalaris	Costa Rica	1130	landbird	Lineated Foliage-gleaner	3	3	3	4	13	7	6	2	NC	Montane evergreen forest	LC	NA
+3994	Tachybaptus dominicus	Costa Rica	137	waterbird	Least Grebe	2	2	3	1	8	4	4	NA	NC	Freshwater marshes	LC	NA
+4005	Tachycineta albilinea	Costa Rica	1411	landbird	Mangrove Swallow	3	2	3	3	11	6	5	2	NC	Mangrove forest	LC	NA
+4011	Tachycineta bicolor	Costa Rica	1410	landbird	Tree Swallow	4	NA	2	1	7	3	4	3	NC	Freshwater marshes	LC	NA
+4014	Tachycineta thalassina	Costa Rica	1413	landbird	Violet-green Swallow	4	NA	2	1	7	3	4	3	NC	Pine forest	LC	NA
+4016	Tachyphonus delatrii	Costa Rica	1887	landbird	Tawny-crested Tanager	5	3	3	4	15	7	8	3	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+4020	Tachyphonus luctuosus	Costa Rica	1886	landbird	White-shouldered Tanager	5	3	2	1	11	3	8	3	CBSD	Tropical lowland evergreen forest	LC	NA
+4024	Tachyphonus rufus	Costa Rica	1888	landbird	White-lined Tanager	2	2	2	1	7	3	4	3	NC	Secondary forest	LC	NA
+4028	Tangara dowii	Costa Rica	1866	landbird	Spangle-cheeked Tanager	3	3	4	5	15	9	6	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+4030	Tangara florida	Costa Rica	1870	landbird	Emerald Tanager	3	3	4	5	15	9	6	2	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+4033	Tangara guttata	Costa Rica	1864	landbird	Speckled Tanager	3	3	3	3	12	6	6	2	NC	Montane evergreen forest	LC	NA
+4037	Tangara gyrola	Costa Rica	1869	landbird	Bay-headed Tanager	4	2	2	1	9	3	6	3	NC	Montane evergreen forest	LC	NA
+4038	Tangara icterocephala	Costa Rica	1871	landbird	Silver-throated Tanager	3	2	3	5	13	8	5	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+4040	Tangara inornata	Costa Rica	1867	landbird	Plain-colored Tanager	2	2	3	4	11	7	4	2	NC	Tropical lowland evergreen forest	LC	NA
+4045	Stilpnia larvata	Costa Rica	1863	landbird	Golden-hooded Tanager	4	2	3	3	12	6	6	2	NC	Tropical lowland evergreen forest	LC	NA
+4051	Tangara lavinia	Costa Rica	1868	landbird	Rufous-winged Tanager	4	3	4	4	15	8	7	2	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+4054	Tapera naevia	Costa Rica	213	landbird	Striped Cuckoo	2	2	3	1	8	4	4	NA	NC	Second-growth scrub	LC	NA
+4063	Taraba major	Costa Rica	1060	landbird	Great Antshrike	3	3	2	1	9	3	6	3	NC	Tropical lowland evergreen forest	LC	NA
+4066	Terenotriccus erythrurus	Costa Rica	1192	landbird	Ruddy-tailed Flycatcher	4	3	3	1	11	4	7	3	NC	Tropical lowland evergreen forest	LC	NA
+4076	Thalasseus elegans	Costa Rica	614	waterbird	Elegant Tern	3	NA	4	5	12	9	3	NA	Watch List - Yel-r	Coastal waters	NT	NA
+4083	Thalasseus maximus	Costa Rica	611	waterbird	Royal Tern	2	NA	4	2	8	6	2	NA	NC	Coastal waters	LC	NA
+4088	Thalasseus sandvicensis	Costa Rica	613	waterbird	Sandwich Tern	2	NA	4	2	8	6	2	NA	NC	Coastal waters	LC	NA
+4093	Thalurania colombica	Costa Rica	372	landbird	Crowned Woodnymph	4	2	2	3	11	5	6	NA	NC	Tropical lowland evergreen forest	LC	NA
+4101	Thamnistes anabatinus	Costa Rica	1066	landbird	Russet Antshrike	5	3	4	3	15	7	8	3	Watch List - Red	Montane evergreen forest	LC	NA
+4105	Thamnophilus atrinucha	Costa Rica	1064	landbird	Black-crowned Antshrike	5	3	3	3	14	6	8	3	Watch List - Yel-d	Tropical deciduous forest	LC	NA
+4111	Thamnophilus bridgesi	Costa Rica	1063	landbird	Black-hooded Antshrike	4	3	4	5	16	9	7	2	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+4113	Thamnophilus doliatus	Costa Rica	1061	landbird	Barred Antshrike	2	2	1	1	6	2	4	3	NC	Second-growth scrub	LC	NA
+4119	Thraupis abbas	Costa Rica	1858	landbird	Yellow-winged Tanager	1	2	3	3	9	6	3	2	NC	Tropical lowland evergreen forest	LC	NA
+4125	Thraupis episcopus	Costa Rica	1857	landbird	Blue-gray Tanager	1	2	1	1	5	2	3	3	NC	Tropical lowland evergreen forest	LC	NA
+4134	Thraupis palmarum	Costa Rica	1859	landbird	Palm Tanager	2	2	1	1	6	2	4	3	NC	Tropical lowland evergreen forest	LC	NA
+4140	Threnetes ruckeri	Costa Rica	279	landbird	Band-tailed Barbthroat	4	3	3	3	13	6	7	NA	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+4142	Thripadectes rufobrunneus	Costa Rica	1132	landbird	Streak-breasted Treehunter	3	3	5	5	16	10	6	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+4146	Thryophilus pleurostictus	Costa Rica	1481	landbird	Banded Wren	4	3	4	4	15	8	7	2	Watch List - Yel-r	Tropical deciduous forest	LC	NA
+4148	Thryophilus rufalbus	Costa Rica	1479	landbird	Rufous-and-white Wren	4	3	4	3	14	7	7	2	Watch List - Yel-d	Tropical deciduous forest	LC	NA
+4154	Thryorchilus browni	Costa Rica	1458	landbird	Timberline Wren	3	4	5	5	17	10	7	1	Watch List - Red	Elfin forest	LC	NA
+4160	Tiaris olivaceus	Costa Rica	1905	landbird	Yellow-faced Grassquit	1	2	2	3	8	5	3	2	NC	Second-growth scrub	LC	NA
+4167	Tigrisoma fasciatum	Costa Rica	725	waterbird	Fasciated Tiger-Heron	3	3	5	2	13	7	6	NA	Watch List - Yel-r	Rivers	LC	NA
+4173	Tigrisoma lineatum	Costa Rica	724	waterbird	Rufescent Tiger-Heron	3	3	4	1	11	5	6	NA	NC	Freshwater marshes	LC	NA
+4178	Tigrisoma mexicanum	Costa Rica	726	waterbird	Bare-throated Tiger-Heron	3	3	4	3	13	7	6	NA	NC	Freshwater marshes	LC	NA
+4186	Tinamus major	Costa Rica	2	landbird	Great Tinamou	4	3	2	1	10	3	7	NA	NC	Tropical lowland evergreen forest	NT	NA
+4193	Tityra inquisitor	Costa Rica	1284	landbird	Black-crowned Tityra	4	3	3	1	11	4	7	3	NC	Tropical lowland evergreen forest	LC	NA
+4198	Tityra semifasciata	Costa Rica	1283	landbird	Masked Tityra	3	3	2	1	9	3	6	3	NC	Tropical lowland evergreen forest	LC	NA
+4210	Todirostrum cinereum	Costa Rica	1180	landbird	Common Tody-Flycatcher	2	2	2	1	7	3	4	3	NC	Tropical lowland evergreen forest	LC	NA
+4213	Todirostrum nigriceps	Costa Rica	1181	landbird	Black-headed Tody-Flycatcher	5	3	3	3	14	6	8	3	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+4215	Tolmomyias assimilis	Costa Rica	1186	landbird	Yellow-margined Flycatcher	3	3	2	1	9	3	6	3	NC	Tropical lowland evergreen forest	LC	NA
+4224	Tolmomyias sulphurescens	Costa Rica	1185	landbird	Yellow-olive Flycatcher	4	3	2	1	10	3	7	3	NC	Tropical lowland evergreen forest	LC	NA
+4226	Touit costaricensis	Costa Rica	1031	landbird	Red-fronted Parrotlet	5	3	5	5	18	10	8	1	Watch List - Red	Montane evergreen forest	VU	NA
+4234	Tringa flavipes	Costa Rica	521	shorebird	Lesser Yellowlegs	4	NA	3	1	8	4	4	NA	NC	Saltwater/brackish marshes	LC	NA
+4238	Tringa melanoleuca	Costa Rica	518	shorebird	Greater Yellowlegs	2	NA	4	1	7	5	2	NA	NC	coastal sand beaches/mudflats	LC	NA
+4246	Tringa semipalmata	Costa Rica	520	shorebird	Willet	4	NA	4	2	10	6	4	NA	Watch List - Yel-d	Saltwater/brackish marshes	LC	NA
+4253	Tringa solitaria	Costa Rica	514	shorebird	Solitary Sandpiper	2	NA	4	1	7	5	2	NA	NC	Freshwater marshes	LC	NA
+4258	Troglodytes aedon	Costa Rica	1451	landbird	House Wren	2	1	1	1	5	2	3	3	NC	Second-growth scrub	LC	NA
+4266	Troglodytes ochraceus	Costa Rica	1455	landbird	Ochraceous Wren	3	3	4	5	15	9	6	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+4271	Trogon aurantiiventris	Costa Rica	879	landbird	Orange-bellied Trogon	4	2	5	5	16	10	6	2	Watch List - Red	Montane evergreen forest	LC	1
+4274	Trogon bairdii	Costa Rica	873	landbird	Baird's Trogon	4	4	5	5	18	10	8	1	Watch List - Red	Tropical lowland evergreen forest	NT	NA
+4281	Trogon caligatus	Costa Rica	874	landbird	Gartered Trogon	3	2	3	1	9	4	5	3	NC	Tropical lowland evergreen forest	LC	1
+4285	Trogon clathratus	Costa Rica	867	landbird	Lattice-tailed Trogon	5	4	5	5	19	10	9	1	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+4287	Trogon collaris	Costa Rica	878	landbird	Collared Trogon	4	2	2	1	9	3	6	3	NC	Tropical lowland evergreen forest	LC	1
+4293	Trogon elegans	Costa Rica	876	landbird	Elegant Trogon	4	3	4	3	14	7	7	2	Watch List - Yel-r	Tropical deciduous forest	LC	NA
+4299	Trogon massena	Costa Rica	868	landbird	Slaty-tailed Trogon	4	3	4	3	14	7	7	2	Watch List - Yel-r	Tropical lowland evergreen forest	LC	NA
+4304	Trogon melanocephalus	Costa Rica	870	landbird	Black-headed Trogon	4	2	3	3	12	6	6	2	NC	Tropical lowland evergreen forest	LC	NA
+4316	Trogon rufus	Costa Rica	875	landbird	Black-throated Trogon	5	3	3	1	12	4	8	3	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+4319	Tunchiornis ochraceiceps	Costa Rica	1324	landbird	Tawny-crowned Greenlet	4	3	3	1	11	4	7	3	NC	Tropical lowland evergreen forest	LC	NA
+4330	Turdus assimilis	Costa Rica	1587	landbird	White-throated Thrush	4	3	3	3	13	6	7	3	NC	Montane evergreen forest	LC	NA
+4331	Turdus grayi	Costa Rica	1584	landbird	Clay-colored Thrush	2	2	2	2	8	4	4	2	NC	Tropical lowland evergreen forest	LC	NA
+4341	Turdus nigrescens	Costa Rica	1579	landbird	Sooty Thrush	3	3	5	5	16	10	6	2	Watch List - Red	Montane evergreen forest	LC	NA
+4343	Turdus obsoletus	Costa Rica	1583	landbird	Pale-vented Thrush	4	3	3	4	14	7	7	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+4345	Turdus plebejus	Costa Rica	1581	landbird	Mountain Thrush	4	2	4	4	14	8	6	2	Watch List - Yel-r	Montane evergreen forest	LC	NA
+4355	Tyrannulus elatus	Costa Rica	1151	landbird	Yellow-crowned Tyrannulet	2	2	1	1	6	2	4	3	NC	River-edge forest	LC	NA
+4366	Tyrannus forficatus	Costa Rica	1277	landbird	Scissor-tailed Flycatcher	4	NA	2	2	8	4	4	2	NC	Pastures/agricultural lands	LC	NA
+4368	Tyrannus melancholicus	Costa Rica	1268	landbird	Tropical Kingbird	1	2	1	1	5	2	3	3	NC	Secondary forest	LC	NA
+4378	Tyrannus savana	Costa Rica	1278	landbird	Fork-tailed Flycatcher	2	2	2	1	7	3	4	3	NC	"Low, seasonally wet grassland"	LC	NA
+4388	Tyrannus verticalis	Costa Rica	1272	landbird	Western Kingbird	2	NA	2	1	5	3	2	2	NC	Pastures/agricultural lands	LC	NA
+4394	Tyto alba	Costa Rica	821	landbird	Barn Owl	2	3	2	1	8	3	5	3	NC	Second-growth scrub	LC	NA
+4406	Vanellus chilensis	Costa Rica	443	shorebird	Southern Lapwing	1	1	2	1	5	3	2	NA	NC	"Low, seasonally wet grassland"	LC	NA
+4408	Veniliornis kirkii	Costa Rica	963	landbird	Red-rumped Woodpecker	4	3	3	3	13	6	7	3	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+4413	Vermivora chrysoptera	Costa Rica	1769	landbird	Golden-winged Warbler	5	NA	4	2	11	6	5	2	Watch List - Red	Montane evergreen forest	NT	NA
+4422	Vireo carmioli	Costa Rica	1345	landbird	Yellow-winged Vireo	3	3	5	5	16	10	6	2	Watch List - Red	Montane evergreen forest	LC	NA
+4424	Vireo flavifrons	Costa Rica	1344	landbird	Yellow-throated Vireo	1	NA	3	2	6	5	1	2	NC	Tropical lowland evergreen forest	LC	NA
+4432	Vireo flavoviridis	Costa Rica	1353	landbird	Yellow-green Vireo	3	3	3	2	11	5	6	3	NC	Secondary forest	LC	NA
+4437	Vireo gilvus	Costa Rica	1350	landbird	Warbling Vireo	1	NA	1	1	3	2	1	2	NC	Pine-oak forest	LC	NA
+4448	Vireo leucophrys	Costa Rica	1351	landbird	Brown-capped Vireo	4	3	4	3	14	7	7	2	Watch List - Yel-d	Montane evergreen forest	LC	NA
+4455	Vireo olivaceus	Costa Rica	1352	landbird	Red-eyed Vireo	2	NA	1	1	4	2	2	2	NC	Tropical lowland evergreen forest	LC	NA
+4458	Vireo pallens	Costa Rica	1334	landbird	Mangrove Vireo	4	3	3	4	14	7	7	2	Watch List - Yel-r	Tropical deciduous forest	LC	NA
+4467	Vireo philadelphicus	Costa Rica	1349	landbird	Philadelphia Vireo	2	NA	3	2	7	5	2	2	NC	Tropical lowland evergreen forest	LC	NA
+4473	Vireo solitarius	Costa Rica	1347	landbird	Blue-headed Vireo	1	NA	2	2	5	4	1	2	NC	Pine-oak forest	LC	NA
+4480	Vireolanius pulchellus	Costa Rica	1322	landbird	Green Shrike-Vireo	4	3	4	3	14	7	7	2	Watch List - Yel-d	Tropical lowland evergreen forest	LC	NA
+4486	Volatinia jacarina	Costa Rica	1884	landbird	Blue-black Grassquit	1	2	1	1	5	2	3	3	NC	Second-growth scrub	LC	NA
+4503	Xenops minutus	Costa Rica	1123	landbird	Plain Xenops	4	3	2	1	10	3	7	3	NC	Tropical lowland evergreen forest	LC	NA
+4506	Xenops rutilans	Costa Rica	1124	landbird	Streaked Xenops	3	3	2	1	9	3	6	3	NC	Montane evergreen forest	LC	NA
+4514	Xiphocolaptes promeropirhynchus	Costa Rica	1112	landbird	Strong-billed Woodcreeper	5	3	4	1	13	5	8	3	Watch List - Yel-d	Montane evergreen forest	LC	NA
+4518	Xiphorhynchus erythropygius	Costa Rica	1116	landbird	Spotted Woodcreeper	4	3	4	3	14	7	7	2	Watch List - Yel-d	Montane evergreen forest	LC	NA
+4527	Xiphorhynchus flavigaster	Costa Rica	1114	landbird	Ivory-billed Woodcreeper	4	3	3	3	13	6	7	3	NC	Tropical lowland evergreen forest	LC	NA
+4531	Xiphorhynchus lachrymosus	Costa Rica	1115	landbird	Black-striped Woodcreeper	5	3	4	4	16	8	8	NA	Watch List - Red	Tropical lowland evergreen forest	LC	NA
+4534	Xiphorhynchus susurrans	Costa Rica	1113	landbird	Cocoa Woodcreeper	4	3	3	3	13	6	7	3	NC	Tropical lowland evergreen forest	LC	NA
+4538	Zeledonia coronata	Costa Rica	1848	landbird	Wrenthrush	3	3	5	5	16	10	6	2	Watch List - Red	Montane evergreen forest	LC	NA
+4546	Zenaida asiatica	Costa Rica	192	landbird	White-winged Dove	3	2	1	2	8	3	5	NA	NC	Tropical deciduous forest	LC	NA
+4548	Zenaida macroura	Costa Rica	195	landbird	Mourning Dove	3	2	1	1	7	2	5	NA	NC	Pastures/agricultural lands	LC	NA
+4557	Zentrygon chiriquensis	Costa Rica	190	landbird	Chiriqui Quail-Dove	4	3	5	5	17	10	7	NA	Watch List - Red	Montane evergreen forest	LC	NA
+4560	Zentrygon costaricensis	Costa Rica	187	landbird	Buff-fronted Quail-Dove	4	3	5	5	17	10	7	NA	Watch List - Red	Montane evergreen forest	LC	NA
+4563	Zentrygon lawrencii	Costa Rica	188	landbird	Purplish-backed Quail-Dove	3	3	5	5	16	10	6	NA	Watch List - Yel-r	Montane evergreen forest	LC	NA
+4565	Zimmerius parvus	Costa Rica	1171	landbird	Mistletoe Tyrannulet	3	2	3	3	11	6	5	2	NC	Montane evergreen forest	LC	NA
+4571	Zonotrichia capensis	Costa Rica	2008	landbird	Rufous-collared Sparrow	1	2	2	1	6	3	3	2	NC	Arid lowland scrub	LC	NA
