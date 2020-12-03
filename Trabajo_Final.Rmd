@@ -19,11 +19,25 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### 1. ¿Cuál es la pregunta específica de investigación?
 
-Identificar umbrales donde cambia la probabilidad de ocupación de especies de aves prioritarias  para la conservación, en relación con la complejidad estructural vegetal del paisaje.
+¿Hay una relación entre la complejidad esturctural vegetal y la probabilidad de ocupación de especies de aves prioritarias para la conservación en las fincas cafetaleras de San Ramón?
 
-Los datos para estimar la complejidad vegetal no los tendremos sino hasta enero 2021 por lo que para este ejercicio utilizaré información de biomasa vegetal. 
+Los datos para estimar la complejidad vegetal y las demás covariables no los tendremos listos sino hasta enero 2021 por lo que para este ejercicio utilizaré información de biomasa vegetal sobre el suelo como si fuera representativa de la complejidad vegetal e información del porcentaje de bosque. 
 
 ### 2. ¿Cuáles son las variables relevantes y cuál es su relación, conocida y/o hipotética? Para esta pregunta debe presentar al menos un DAG, a menos que la pregunta sea 100% descriptiva y no causal. 
+
+La variable **independiente** es la Biomasa vegetal sobre el suelo= **B**
+La variable **dependiente** es la probabilidad de ocupación = **O**
+B depende del **porcentaje de bosque (P)** y del tipo de cultivo, pero en este caso todas las fincas son de café. Además el porcentaje de bosque y la biomasa dependen el tipo de manejo de cada **finca (FI)** es decir si conservan el bosque ripario, si mantienen árboles de sombra en el café, si tienen remanentes de bosque en las fincas.
+
+
+```{r, include=FALSE}
+library(ggdag)
+```
+
+```{r}
+DAG <- dagify(O~B, B~P, O~P, P~FI, B~FI, exposure = "B", outcome = "O")
+ggdag(DAG, layout = "circle")+ theme_dag()
+```
 
 La variable respuesta es la probabilidad de ocupación de las distintas especies de aves (ψ). 
 La variable predictora es en este caso la Biomasa Vegetal sobre el suelo (BVSS) en radios de 30 y 100 m.
@@ -35,31 +49,6 @@ Los datos vienen del trabajo de campo hecho desde finales de 2019 al 2020. Utili
 
 ## Procesamiento de los datos:
 
-A continueción todas las librerías que necesito pero antes me aseguro de tener los respectivos paquetes:
-
-library(sf)
-
-library(rnaturalearth)
-
-library(lubridate)
-
-library(tidyverse)
-
-library(readr)
-
-library(dplyr)
-
-library(plyr)
-
-library(tidyr)
-
-library(readr)
-
-library(unmarked)
-
-library(MuMIn)
-
-library(AICcmodavg)
 
 ```{r, include=FALSE}
 
@@ -75,7 +64,6 @@ library(readr)
 library(unmarked)
 library(MuMIn)
 library(AICcmodavg)
-
 ```
 
 Ahora leemos todos los datos que tenemos de los puntos de conteo hechos en Costa Rica
@@ -132,7 +120,9 @@ Datos_BPI_CR$Location
 ```
 
 
-Luego separamos la fecha varias columnas para año, mes y día. Esto porque luego nos es más fácil seleccionar datos de un sólo mes, por ejemplo. La columna rec_1 es simplemente para colocar un 1 en cada observación.
+Luego separamos la fecha en varias columnas para año, mes y día. Esto porque luego nos es más fácil seleccionar datos de un sólo mes, por ejemplo (Pensando en que estos datos pueden ser utilizados por otras personas con otras preguntas dentro del mismo proyecto o fuera de este). 
+La columna rec_1 es simplemente para colocar un 1 en cada observación.
+
 ```{r}
 Data.CR.2020.BPI <- Data.CR.2020.BPI %>% 
   dplyr::mutate(year = lubridate::year(Date), 
@@ -146,7 +136,7 @@ head(Data.CR.2020.BPI)
 
 ```
 
-Confirmo la cantidad de especies que hemos visto entre 2019 y 2020. Además cargo la información sobre la categoria de conservación de Centro América y la categoría a nivel nacional. Uso dos listas porque algunas especies migratorias no están en la lista nacional y algunas especies endémicas no esntán en la centroamericana. **Esas listas ya tienen la taxonomía actualizada**
+Confirmo la cantidad de especies que hemos visto entre 2019 y 2020. Además cargo la información sobre la categoria de conservación de Centro América y la categoría a nivel nacional. Uso dos listas porque algunas especies migratorias no están en la lista nacional y algunas especies endémicas no están en la centroamericana. **Esas listas ya tienen la taxonomía actualizada**
 
 ```{r}
 Lista.especies.total <- unique(Data.CR.2020.BPI$Scientific.Name)
@@ -243,7 +233,6 @@ IUCN_NT_CR <- Aves_CR_sub$Sci_name[which(Aves_CR_sub$Red_list_16 == "NT")]
 Aves_CR_sub[26,]
 ```
 
-Y cuantas estan en las listas de especies amenazadas de Costa Rica y Centroamérica 
 ```{r}
 
 WatchList_counts <- Aves_CR_sub %>%
@@ -272,7 +261,7 @@ Count_sp_obs <- ddply(Data.CR.2020.BPI,~Scientific.Name,summarise,species_count=
 Count_sp_obs <- Count_sp_obs[order(Count_sp_obs$species_count),]
 ```
 
-Por el momento no quiero usar todas las aves, escogí las que tienen más de 100 observaciones pero menos de 500. Parece un poco arbitrario  pero es que las especies que están presentes en gran cantidad en todos los sitios no nos van a brindar mucha información.
+Por el momento no quiero usar todas las aves, escogí las que tienen más de 100 observaciones pero menos de 500. Parece un poco arbitrario  pero es que las especies que están presentes en gran cantidad en todos los sitios no nos van a brindar mucha información (Para observar esto haremos un ejemplo con *B. rufifrons* que está en practicamnte todas las réplicas de todos los puntos)
 
 ```{r}
 Count_sp_obs.red <- Count_sp_obs[Count_sp_obs$species_count >=100 & Count_sp_obs$species_count <= 500,]
@@ -283,6 +272,7 @@ Count_sp_obs
 
 
 Ahora podemos comenzar a hacer la matriz con la que vamos a trabajar. Primero necesito los datos correspondientes al año 2020
+
 ```{r}
 Count_BPI_samp2020 <- ddply(Data.CR.2020.BPI[Data.CR.2020.BPI$year==2020,],~Location,summarise,Sampled_days=length(unique(Date)))
 
@@ -300,7 +290,7 @@ Sites <- Datos_BPI_CR[,1]
 CR_2020_Matrix <- matrix(0, nrow=n, ncol=J,dimnames=list(1:n, paste("survey", 1:J, sep="")))
 ```
 
-En este momento agrego la información de la biomasa sobre el suelo y del tipo de uso del suelo. (cuando con una resolución a 30m y otra a 100m)
+En este momento agrego la información de la biomasa sobre el suelo y del tipo de uso del suelo (en el tipo de uso tengo el porcentaje de bosque). (contamos con una resolución a 30m y otra a 100m)
 
 ```{r}
 LandUseCR_30m <- read.csv("C:/Users/in/Documents/MAESTRIA/Cursos/Estrategias/Trabajo_Final/LandUseCR_30m.csv")
@@ -324,7 +314,7 @@ CR_Hab_BPI2 <- as.data.frame(CR_Hab_BPI[,c(3,2,5,6)])
 
 ```
 
-Seguidamente estandarizo las variables que voy a utilizar para ver como está distribuidas
+Seguidamente estandarizo las variables que voy a utilizar para ver como está distribuidas (El histograma de porcentaje de bosque no es muy alentador sin embargo como estas no son las covariables que realmente voy a utlizar, vamos a dejarlo pasar, para fines del ejercicio).
 
 ```{r}
 CR_HAB_BPI <- as.data.frame(scale(CR_Hab_BPI2[,-c(1)]))
@@ -332,13 +322,14 @@ hist(CR_HAB_BPI$Biomass_30m)
 hist(CR_HAB_BPI$Biomass_100m)
 hist(log(CR_HAB_BPI$Per_Forest))
 ```
-El histograma de porcentaje de bosque no muestra una distribución normal.
 
 Acá nada más me interesa poner el nombre de los sitios como un caractér 
+
 ```{r}
 Sites_BPI_Obvs <- as.character(CR_Hab_BPI2[,1])
 ```
 
+Ahora, voy a escoger sólo algunas especies para fines de este ejercicio. Por ejemplo: Especies que se encuentran en casi todos los puntos como *B.rufifrons*. Especies más "raras" y de interés turístico como *C. linearis*, especies migratorias que han visto sus poblaciones reducidas *I. galbula* y especies dependientes de bosque *L. souleyetii* 
 
 ```{r}
 
@@ -346,9 +337,14 @@ Species_CR <- c("Lepidocolaptes souleyetii","Chiroxiphia linearis","Basileuterus
                  "Momotus lessonii","Icterus galbula","Catharus ustulatus","Sittasomus griseicapillus")
 
 #Species_CR <- Count_sp_obs.red[-1,1]
+```
 
+Y ahora vamos a explorar utilizando distintas especies una por una.
+La reinita cafetalera primero
 
-    sp.name <- Species_CR[2] 
+```{r}
+
+    sp.name <- Species_CR[3] 
     temp.det.mat <- CR_2020_Matrix  #esta es la matriz de presencia ausencia para cada una de las réplicas
     temp.data <- Data.CR.2020.BPI %>%
     filter(Scientific.Name == sp.name) %>%
@@ -364,7 +360,7 @@ Species_CR <- c("Lepidocolaptes souleyetii","Chiroxiphia linearis","Basileuterus
         n.obs <- nrow(temp.site)
         if(n.obs > 4){
           n.obs <- 4;
-        } #acá hice este ajuste porque hay sitios que tienen más de 4 réplicas en 2020 pero es porque son del 2019 que se terminaron tarde.
+        } #acá hice este ajuste porque hay sitios que tienen más de 4 réplicas en 2020 pero es porque son réplicas que correspondían al 2019 que se terminaron tarde y calleron en la primera temporada de muestreo de este año. Pero lo importante es que tengamos 4 réplicas de cada punto
         for(n in 1:n.obs){
           temp.det.mat[ii,n] <- 1;
         }
@@ -374,7 +370,6 @@ Species_CR <- c("Lepidocolaptes souleyetii","Chiroxiphia linearis","Basileuterus
     }
 ```
 
-Y ahora vamos a explorar utilizando a la reinita cafetalera como ejemplo :
 
 ```{r}
 BasRufUMF <- unmarkedFrameOccu(y = temp.det.mat,siteCovs = CR_HAB_BPI)
@@ -404,10 +399,11 @@ occ_dredge <- dredge(full)
 occ_dredge_table <- occ_dredge%>%
   mutate_all(~ round(., 3))
 
+#Acá con la tabla de selección del modelo se puede observar cuales modelos tienen el mayor apoyo en el caso de esta especie here you can see which models have the most support for this species
 Occ_res <- as.data.frame(occ_dredge_table)
 
 Occ_res
-#Acá con la tabla de selección del modelo se puede observar cuales modelos tienen el mayor apoyo en el caso de esta especie here you can see which models have the most support for this species
+
 
 ```
 
@@ -440,7 +436,7 @@ Biomass_30m <- seq(min(CR_Hab_BPI2$Biomass_30m),max(CR_Hab_BPI2$Biomass_30m), le
 # par(mfrow=c(2,3))
 plot(Biomass_30m, occ_pred$fit, xlab="Above Ground Biomass at 30m",
        ylab="Occupancy Probability", pch=16, ylim=0:1, type="l",
-       lwd=2, main = Species_CR[2])
+       lwd=2, main = Species_CR[3])
 lines(Biomass_30m, occ_pred$fit-occ_pred$se.fit, lty=3,col=3)
 lines(Biomass_30m, occ_pred$fit+occ_pred$se.fit, lty=3,col=3)
 
@@ -461,28 +457,243 @@ newDatHab2 <- data.frame(Biomass_100m = seq(min(CR_HAB_BPI$Biomass_100m),max(CR_
  plot(Biomass_100m, occ_pred2$fit, xlab="Above Ground Biomass at 100m",
       ylab="Occupancy Probability", pch=16, ylim=0:1, type="l",
        #lwd=2, main = Species_CR[i])
-      lwd=3, main = Species_CR[2],col=3)
+      lwd=3, main = Species_CR[3],col=3)
  lines(Biomass_100m, occ_pred2$fit-occ_pred2$se.fit, lty=3,col=3)
 lines(Biomass_100m, occ_pred2$fit+occ_pred2$se.fit, lty=3,col=3)
 
 ```
 
 
-Ahora probamos con otra especie, 
+Ahora probamos con otra especie, el Toledo *C. linearis*
 
 ```{r}
+
+ sp.name <- Species_CR[2] 
+    temp.det.mat <- CR_2020_Matrix  #esta es la matriz de presencia ausencia para cada una de las réplicas
+    temp.data <- Data.CR.2020.BPI %>%
+    filter(Scientific.Name == sp.name) %>%
+    filter(year == 2020) %>%
+    filter(month %in% Months2020[1:3])
+    temp.sites <- unique(temp.data$Location)
+    site.match <- match(Sites_BPI_Obvs,temp.sites)
+    site.idx <- !is.na(match(Sites_BPI_Obvs,temp.sites))
+    for(ii in 1:length(Sites_BPI_Obvs)){
+      if(site.idx[ii] == TRUE){
+      temp.site <- temp.data %>%
+        filter(Location == temp.sites[site.match[ii]])
+        n.obs <- nrow(temp.site)
+        if(n.obs > 4){
+          n.obs <- 4;
+        } 
+        for(n in 1:n.obs){
+          temp.det.mat[ii,n] <- 1;
+        }
+      }else if(site.idx[ii] == FALSE){ 
+      temp.det.mat <- temp.det.mat
+      }
+    }
+    
+    ChiLinUMF <- unmarkedFrameOccu(y = temp.det.mat,siteCovs = CR_HAB_BPI)
+summary(ChiLinUMF)
+str(ChiLinUMF)
+ChiLinUMF[1:5,]  
+
+#Acontinuación el modelo nulo:
+
+(null <- occu(~1 ~1, ChiLinUMF))
+
+## Backtransform: transforma "de vuelta" psi y p a la escala original
+# NOTA: esta función sólo funciona en el modelo nulo
+backTransform(null, "state") #probabilidad de ocupación
+backTransform(null, "det") #probabilidad de detección
+
+# Modelo global (ie, con biomasa en ambas resoluciones)
+full <- occu(~Biomass_100m +Biomass_30m ~Biomass_100m + Biomass_30m + Per_Forest, ChiLinUMF)
+
+occ_dredge <- dredge(full)
+
+#Comparación de modelos para explorar los resultados para ocupación: 
+occ_dredge_table <- occ_dredge%>%
+  mutate_all(~ round(., 3))
+
+#Acá con la tabla de selección del modelo se puede observar cuales modelos tienen el mayor apoyo en el caso de esta especie here you can see which models have the most support for this species
+Occ_res <- as.data.frame(occ_dredge_table)
+
+Occ_res
+
+
+#Procedemos a la escogencia del mejor modelo utilizando el criterio de información de AKAIKE
+
+# Los modelos con menos de 2.5 Delta AICc)
+occ_dredge_Delta <- get.models(occ_dredge, subset = delta <= 2.5)
+
+# modelos promediados basados en el peso del modelo  
+occ_avg <- model.avg(occ_dredge_Delta, fit = TRUE)
+
+#  coeficientes de los modelos promediados para lsa probabilidades de ocupación y detección. fr the models with the most support from the data
+coef(occ_avg)
+
+#crear un data frame nuevo
+
+newDatHab <- data.frame(Biomass_100m = mean(CR_HAB_BPI$Biomass_100m),
+                        Biomass_30m = seq(min(CR_HAB_BPI$Biomass_30m),max(CR_HAB_BPI$Biomass_30m), length=100),
+                        Per_Forest = mean(CR_HAB_BPI$Per_Forest))
+
+
+occ_pred <- predict(occ_avg,
+                    newdata = newDatHab,
+                    type = "state")
+
+Biomass_30m <- seq(min(CR_Hab_BPI2$Biomass_30m),max(CR_Hab_BPI2$Biomass_30m), length=100)
+
+ par(mfrow=c(2,3))
 plot(Biomass_30m, occ_pred$fit, xlab="Above Ground Biomass at 30m",
        ylab="Occupancy Probability", pch=16, ylim=0:1, type="l",
        lwd=2, main = Species_CR[2])
 lines(Biomass_30m, occ_pred$fit-occ_pred$se.fit, lty=3,col=3)
 lines(Biomass_30m, occ_pred$fit+occ_pred$se.fit, lty=3,col=3)
 
+
+
+#create a new data frame Prediciendo ocupación basandonos
+
+newDatHab2 <- data.frame(Biomass_100m = seq(min(CR_HAB_BPI$Biomass_100m),max(CR_HAB_BPI$Biomass_100m), length=100),
+                        Biomass_30m = mean(CR_HAB_BPI$Biomass_30m),
+                         Per_Forest = mean(CR_HAB_BPI$Per_Forest))
+ 
+ 
+ occ_pred2 <- predict(occ_avg,
+                     newdata = newDatHab2,
+                     type = "state")
+ 
+ Biomass_100m <- seq(min(CR_Hab_BPI2$Biomass_100m),max(CR_Hab_BPI2$Biomass_100m), length=100)
+ 
+ plot(Biomass_100m, occ_pred2$fit, xlab="Above Ground Biomass at 100m",
+      ylab="Occupancy Probability", pch=16, ylim=0:1, type="l",
+       #lwd=2, main = Species_CR[i])
+      lwd=3, main = Species_CR[2],col=3)
+ lines(Biomass_100m, occ_pred2$fit-occ_pred2$se.fit, lty=3,col=3)
+lines(Biomass_100m, occ_pred2$fit+occ_pred2$se.fit, lty=3,col=3)
+
+
 ```
 
+Ahora queremos saber que sucede en el caso de 
 
-# save(data1, data2, file = "data.RData")
+```{r}
+
+ sp.name <- Species_CR[1] 
+    temp.det.mat <- CR_2020_Matrix  #esta es la matriz de presencia ausencia para cada una de las réplicas
+    temp.data <- Data.CR.2020.BPI %>%
+    filter(Scientific.Name == sp.name) %>%
+    filter(year == 2020) %>%
+    filter(month %in% Months2020[1:3])
+    temp.sites <- unique(temp.data$Location)
+    site.match <- match(Sites_BPI_Obvs,temp.sites)
+    site.idx <- !is.na(match(Sites_BPI_Obvs,temp.sites))
+    for(ii in 1:length(Sites_BPI_Obvs)){
+      if(site.idx[ii] == TRUE){
+      temp.site <- temp.data %>%
+        filter(Location == temp.sites[site.match[ii]])
+        n.obs <- nrow(temp.site)
+        if(n.obs > 4){
+          n.obs <- 4;
+        } 
+        for(n in 1:n.obs){
+          temp.det.mat[ii,n] <- 1;
+        }
+      }else if(site.idx[ii] == FALSE){ 
+      temp.det.mat <- temp.det.mat
+      }
+    }
+    
+    LepSouUMF <- unmarkedFrameOccu(y = temp.det.mat,siteCovs = CR_HAB_BPI)
+summary(LepSouUMF)
+str(LepSouUMF)
+LepSouUMF[1:5,]  
+
+#Acontinuación el modelo nulo:
+
+(null <- occu(~1 ~1, LepSouUMF))
+
+## Backtransform: transforma "de vuelta" psi y p a la escala original
+# NOTA: esta función sólo funciona en el modelo nulo
+backTransform(null, "state") #probabilidad de ocupación
+backTransform(null, "det") #probabilidad de detección
+
+# Modelo global (ie, con biomasa en ambas resoluciones)
+full <- occu(~Biomass_100m +Biomass_30m ~Biomass_100m + Biomass_30m + Per_Forest, LepSouUMF)
+
+occ_dredge <- dredge(full)
+
+#Comparación de modelos para explorar los resultados para ocupación: 
+occ_dredge_table <- occ_dredge%>%
+  mutate_all(~ round(., 3))
+
+#Acá con la tabla de selección del modelo se puede observar cuales modelos tienen el mayor apoyo en el caso de esta especie here you can see which models have the most support for this species
+Occ_res <- as.data.frame(occ_dredge_table)
+
+Occ_res
+
+
+#Procedemos a la escogencia del mejor modelo utilizando el criterio de información de AKAIKE
+
+# Los modelos con menos de 2.5 Delta AICc)
+occ_dredge_Delta <- get.models(occ_dredge, subset = delta <= 2.5)
+
+# modelos promediados basados en el peso del modelo  
+occ_avg <- model.avg(occ_dredge_Delta, fit = TRUE)
+
+#  coeficientes de los modelos promediados para lsa probabilidades de ocupación y detección. fr the models with the most support from the data
+coef(occ_avg)
+
+#crear un data frame nuevoy usar la función predict() para predecir como sería la probabilidad de ocupación al aumentar la biomasa. Primero basandonos en biomasa a 30m.
+
+newDatHab <- data.frame(Biomass_100m = mean(CR_HAB_BPI$Biomass_100m),
+                        Biomass_30m = seq(min(CR_HAB_BPI$Biomass_30m),max(CR_HAB_BPI$Biomass_30m), length=100),
+                        Per_Forest = mean(CR_HAB_BPI$Per_Forest))
+
+
+occ_pred <- predict(occ_avg,
+                    newdata = newDatHab,
+                    type = "state")
+
+Biomass_30m <- seq(min(CR_Hab_BPI2$Biomass_30m),max(CR_Hab_BPI2$Biomass_30m), length=100)
+
+ par(mfrow=c(2,3))
+plot(Biomass_30m, occ_pred$fit, xlab="Above Ground Biomass at 30m",
+       ylab="Occupancy Probability", pch=16, ylim=0:1, type="l",
+       lwd=2, main = Species_CR[1])
+lines(Biomass_30m, occ_pred$fit-occ_pred$se.fit, lty=3,col=3)
+lines(Biomass_30m, occ_pred$fit+occ_pred$se.fit, lty=3,col=3)
+
+
+
+#create a new data frame Prediciendo ocupación basandonos en la biomasa a escala de 100m
+
+newDatHab2 <- data.frame(Biomass_100m = seq(min(CR_HAB_BPI$Biomass_100m),max(CR_HAB_BPI$Biomass_100m), length=100),
+                        Biomass_30m = mean(CR_HAB_BPI$Biomass_30m),
+                         Per_Forest = mean(CR_HAB_BPI$Per_Forest))
+ 
+ 
+ occ_pred2 <- predict(occ_avg,
+                     newdata = newDatHab2,
+                     type = "state")
+ 
+ Biomass_100m <- seq(min(CR_Hab_BPI2$Biomass_100m),max(CR_Hab_BPI2$Biomass_100m), length=100)
+ 
+ plot(Biomass_100m, occ_pred2$fit, xlab="Above Ground Biomass at 100m",
+      ylab="Occupancy Probability", pch=16, ylim=0:1, type="l",
+       #lwd=2, main = Species_CR[i])
+      lwd=3, main = Species_CR[1],col=3)
+ lines(Biomass_100m, occ_pred2$fit-occ_pred2$se.fit, lty=3,col=3)
+lines(Biomass_100m, occ_pred2$fit+occ_pred2$se.fit, lty=3,col=3)
+
+
+```
+
 
 
 5. Interpretación breve de los resultados con respecto a la  pregunta de investigación y la hipótesis causal. Máximo un párrafo.
 
-
+En el caso de B. rufifrons 
