@@ -341,11 +341,14 @@ Sites_BPI_Obvs <- as.character(CR_Hab_BPI2[,1])
 
 
 ```{r}
-i=1
 
-Species_CR <- Count_sp_obs.red[-1,1]
+Species_CR <- c("Lepidocolaptes souleyetii","Chiroxiphia linearis","Basileuterus rufifrons","Catharus aurantiirostris",
+                 "Momotus lessonii","Icterus galbula","Catharus ustulatus","Sittasomus griseicapillus")
 
-    sp.name <- Species_CR[i] 
+#Species_CR <- Count_sp_obs.red[-1,1]
+
+
+    sp.name <- Species_CR[2] 
     temp.det.mat <- CR_2020_Matrix  #esta es la matriz de presencia ausencia para cada una de las réplicas
     temp.data <- Data.CR.2020.BPI %>%
     filter(Scientific.Name == sp.name) %>%
@@ -393,7 +396,7 @@ backTransform(null, "det") #probabilidad de detección
 Acá el modelo global: 
 ```{r}
 # Modelo global (ie, con biomasa en ambas resoluciones)
-full <- occu(~Biomass_100m +Biomass_30m ~Biomass_100m + Biomass_30m, BasRufUMF)
+full <- occu(~Biomass_100m +Biomass_30m ~Biomass_100m + Biomass_30m + Per_Forest, BasRufUMF)
 
 occ_dredge <- dredge(full)
 
@@ -420,6 +423,7 @@ occ_avg <- model.avg(occ_dredge_Delta, fit = TRUE)
 coef(occ_avg)
 ```
 
+
 #create a new data frame
 ```{r}
 newDatHab <- data.frame(Biomass_100m = mean(CR_HAB_BPI$Biomass_100m),
@@ -436,32 +440,45 @@ Biomass_30m <- seq(min(CR_Hab_BPI2$Biomass_30m),max(CR_Hab_BPI2$Biomass_30m), le
 # par(mfrow=c(2,3))
 plot(Biomass_30m, occ_pred$fit, xlab="Above Ground Biomass at 30m",
        ylab="Occupancy Probability", pch=16, ylim=0:1, type="l",
-       lwd=2, main = Species_CR[28])
+       lwd=2, main = Species_CR[2])
 lines(Biomass_30m, occ_pred$fit-occ_pred$se.fit, lty=3,col=3)
 lines(Biomass_30m, occ_pred$fit+occ_pred$se.fit, lty=3,col=3)
 
 ```
 
-#create a new data frame
+#create a new data frame Prediciendo ocupación basandonos
 ```{r}
-# newDatHab2 <- data.frame(Biomass_100m = seq(min(CR_HAB_BPI$Biomass_100m),max(CR_HAB_BPI$Biomass_100m), length=100),
-#                         Biomass_30m = mean(CR_HAB_BPI$Biomass_30m),
-#                         Per_Forest = mean(CR_HAB_BPI$Per_Forest))
-# 
-# 
-# occ_pred2 <- predict(occ_avg,
-#                     newdata = newDatHab2,
-#                     type = "state")
-# 
-# Biomass_100m <- seq(min(CR_Hab_BPI2$Biomass_100m),max(CR_Hab_BPI2$Biomass_100m), length=100)
-# plot(Biomass_100m, occ_pred2$fit, xlab="Above Ground Biomass at 100m",
-#      ylab="Occupancy Probability", pch=16, ylim=0:1, type="l",
-#      # lwd=2, main = Species_CR[i])
-#      lwd=3, main = Species_Res_names[i],col=3)
-# lines(Biomass_100m, occ_pred2$fit-occ_pred2$se.fit, lty=3,col=3)
-# lines(Biomass_100m, occ_pred2$fit+occ_pred2$se.fit, lty=3,col=3)
+newDatHab2 <- data.frame(Biomass_100m = seq(min(CR_HAB_BPI$Biomass_100m),max(CR_HAB_BPI$Biomass_100m), length=100),
+                        Biomass_30m = mean(CR_HAB_BPI$Biomass_30m),
+                         Per_Forest = mean(CR_HAB_BPI$Per_Forest))
+ 
+ 
+ occ_pred2 <- predict(occ_avg,
+                     newdata = newDatHab2,
+                     type = "state")
+ 
+ Biomass_100m <- seq(min(CR_Hab_BPI2$Biomass_100m),max(CR_Hab_BPI2$Biomass_100m), length=100)
+ plot(Biomass_100m, occ_pred2$fit, xlab="Above Ground Biomass at 100m",
+      ylab="Occupancy Probability", pch=16, ylim=0:1, type="l",
+       #lwd=2, main = Species_CR[i])
+      lwd=3, main = Species_CR[2],col=3)
+ lines(Biomass_100m, occ_pred2$fit-occ_pred2$se.fit, lty=3,col=3)
+lines(Biomass_100m, occ_pred2$fit+occ_pred2$se.fit, lty=3,col=3)
 
 ```
+
+
+Ahora probamos con otra especie, 
+
+```{r}
+plot(Biomass_30m, occ_pred$fit, xlab="Above Ground Biomass at 30m",
+       ylab="Occupancy Probability", pch=16, ylim=0:1, type="l",
+       lwd=2, main = Species_CR[2])
+lines(Biomass_30m, occ_pred$fit-occ_pred$se.fit, lty=3,col=3)
+lines(Biomass_30m, occ_pred$fit+occ_pred$se.fit, lty=3,col=3)
+
+```
+
 
 # save(data1, data2, file = "data.RData")
 
