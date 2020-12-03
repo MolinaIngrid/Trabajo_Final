@@ -198,15 +198,15 @@ code span.er { color: #a61717; background-color: #e3d2d2; }
 <div id="cuál-es-la-pregunta-específica-de-investigación" class="section level3">
 <h3>1. ¿Cuál es la pregunta específica de investigación?</h3>
 <p>Identificar umbrales donde cambia la probabilidad de ocupación de especies de aves prioritarias para la conservación, en relación con la complejidad estructural vegetal del paisaje.</p>
-<p>Los datos para estimar la complejidad vegetal no los tendremos sino hasta enero 2021 por lo que para este ejercicio utilizaré información menos reciente de biomasa y cobertura.</p>
+<p>Los datos para estimar la complejidad vegetal no los tendremos sino hasta enero 2021 por lo que para este ejercicio utilizaré información de biomasa vegetal.</p>
 </div>
 <div id="cuáles-son-las-variables-relevantes-y-cuál-es-su-relación-conocida-yo-hipotética-para-esta-pregunta-debe-presentar-al-menos-un-dag-a-menos-que-la-pregunta-sea-100-descriptiva-y-no-causal." class="section level3">
 <h3>2. ¿Cuáles son las variables relevantes y cuál es su relación, conocida y/o hipotética? Para esta pregunta debe presentar al menos un DAG, a menos que la pregunta sea 100% descriptiva y no causal.</h3>
-<p>La variable respuesta es la probabilidad de ocupación de las distintas especies de aves (ψ). La variable predictora es en este caso la Biomasa Vegetal sobre el suelo (BVSS) en radios de 30 y 100 m. Otras covariables son el tipo de uso del suelo y el porcentaje de bosque.</p>
+<p>La variable respuesta es la probabilidad de ocupación de las distintas especies de aves (ψ). La variable predictora es en este caso la Biomasa Vegetal sobre el suelo (BVSS) en radios de 30 y 100 m.</p>
 </div>
 <div id="de-dónde-vienen-los-datos-si-son-datos-empíricos-debe-incluir-el-código-para-su-procesamiento-desde-datos-crudos-hasta-datos-analizables." class="section level3">
 <h3>3. ¿De dónde vienen los datos? Si son datos empíricos debe incluir el código para su procesamiento desde datos crudos, hasta datos analizables.</h3>
-<p>Los datos vienen del trabajo de campo hecho desde finales de 2019 a Agosto 2020. Utilicé puntos de conteo de radio fijo y la aplicación ebird para anotar todas las especies detectadas en cada uno de los 160 puntos. Al bajar de la aplicación toda la información obtengo unas tablas muy grandes por eso debo procesar los datos</p>
+<p>Los datos vienen del trabajo de campo hecho desde finales de 2019 al 2020. Utilicé puntos de conteo de radio fijo y la aplicación ebird para anotar todas las especies detectadas en cada uno de los 160 puntos. Al bajar de la aplicación toda la información obtengo unas tablas muy grandes por eso debo procesar los datos</p>
 </div>
 <div id="procesamiento-de-los-datos" class="section level2">
 <h2>Procesamiento de los datos:</h2>
@@ -308,8 +308,10 @@ code span.er { color: #a61717; background-color: #e3d2d2; }
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">dim</span>(Data.CR.<span class="fl">2020.</span>BPI)</a></code></pre></div>
 <pre><code>## [1] 18435    23</code></pre>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1">Datos_fincas &lt;-<span class="st"> </span>Data.CR.<span class="fl">2020.</span>BPI[,<span class="kw">c</span>(<span class="st">&quot;Location&quot;</span>,<span class="st">&quot;Latitude&quot;</span>,<span class="st">&quot;Longitude&quot;</span>)]</a>
-<a class="sourceLine" id="cb13-2" title="2">Datos_BPI_CR &lt;-<span class="st"> </span><span class="kw">distinct</span>(Datos_fincas)</a>
-<a class="sourceLine" id="cb13-3" title="3"><span class="kw">dim</span>(Datos_BPI_CR)</a></code></pre></div>
+<a class="sourceLine" id="cb13-2" title="2"></a>
+<a class="sourceLine" id="cb13-3" title="3"><span class="co"># Acá con distinct quito los dublicados </span></a>
+<a class="sourceLine" id="cb13-4" title="4">Datos_BPI_CR &lt;-<span class="st"> </span><span class="kw">distinct</span>(Datos_fincas)</a>
+<a class="sourceLine" id="cb13-5" title="5"><span class="kw">dim</span>(Datos_BPI_CR)</a></code></pre></div>
 <pre><code>## [1] 161   3</code></pre>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">head</span>(Datos_fincas)</a></code></pre></div>
 <pre><code>##     Location Latitude Longitude
@@ -356,7 +358,7 @@ code span.er { color: #a61717; background-color: #e3d2d2; }
 ## [151] &quot;BPI-159-CR&quot; &quot;BPI-074-CR&quot; &quot;BPI-023-CR&quot; &quot;BPI-033-CR&quot; &quot;BPI-078-CR&quot;
 ## [156] &quot;BPI-079-CR&quot; &quot;BPI-118-CR&quot; &quot;BPI-119-CR&quot; &quot;BPI-120-CR&quot; &quot;BPI-121-CR&quot;
 ## [161] &quot;BPI-148-CR&quot;</code></pre>
-<p>Luego separamos la fecha varias columnas para año, mes y día. Esto porque luego nos es más fácil seleccionar datos de un sólo mes, por ejemplo.</p>
+<p>Luego separamos la fecha varias columnas para año, mes y día. Esto porque luego nos es más fácil seleccionar datos de un sólo mes, por ejemplo. La columna rec_1 es simplemente para colocar un 1 en cada observación.</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1">Data.CR.<span class="fl">2020.</span>BPI &lt;-<span class="st"> </span>Data.CR.<span class="fl">2020.</span>BPI <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb19-2" title="2"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(<span class="dt">year =</span> lubridate<span class="op">::</span><span class="kw">year</span>(Date), </a>
 <a class="sourceLine" id="cb19-3" title="3">                <span class="dt">month =</span> lubridate<span class="op">::</span><span class="kw">month</span>(Date), </a>
@@ -409,15 +411,763 @@ code span.er { color: #a61717; background-color: #e3d2d2; }
 ## 4     1
 ## 5     1
 ## 6     1</code></pre>
+<p>Confirmo la cantidad de especies que hemos visto entre 2019 y 2020. Además cargo la información sobre la categoria de conservación de Centro América y la categoría a nivel nacional. Uso dos listas porque algunas especies migratorias no están en la lista nacional y algunas especies endémicas no esntán en la centroamericana. <strong>Esas listas ya tienen la taxonomía actualizada</strong></p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1">Lista.especies.total &lt;-<span class="st"> </span><span class="kw">unique</span>(Data.CR.<span class="fl">2020.</span>BPI<span class="op">$</span>Scientific.Name)</a>
 <a class="sourceLine" id="cb25-2" title="2"><span class="kw">length</span>(Lista.especies.total)</a></code></pre></div>
 <pre><code>## [1] 213</code></pre>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1">CR_bird_info &lt;-<span class="st"> </span><span class="kw">read.delim</span>(<span class="st">&quot;C:/Users/in/Documents/MAESTRIA/Cursos/Estrategias/Trabajo_Final/Lista_Costa_Rica.txt&quot;</span>,<span class="dt">stringsAsFactors=</span><span class="ot">FALSE</span>)</a>
 <a class="sourceLine" id="cb27-2" title="2">PIF_bird_info &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;C:/Users/in/Documents/MAESTRIA/Cursos/Estrategias/Trabajo_Final/CA_PIF_DataBase.csv&quot;</span>,<span class="dt">stringsAsFactors=</span><span class="ot">FALSE</span>)</a>
 <a class="sourceLine" id="cb27-3" title="3">PIF_bird_info.red &lt;-<span class="st"> </span>PIF_bird_info[,<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>)]</a></code></pre></div>
+<p>Posteriormente quiero sustraer sólo las columnas de interés para el análisis que son los nombres científicos, familias y orden.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1"><span class="kw">names</span>(CR_bird_info)</a></code></pre></div>
+<pre><code>##  [1] &quot;X&quot;            &quot;Sci_name&quot;     &quot;Region&quot;       &quot;AOS_57&quot;       &quot;type&quot;        
+##  [6] &quot;C_name&quot;       &quot;PT.c&quot;         &quot;TB.r&quot;         &quot;PS.g&quot;         &quot;BD.g&quot;        
+## [11] &quot;CS&quot;           &quot;PS_BD&quot;        &quot;PT_TB&quot;        &quot;WatchList&quot;    &quot;Cont_concern&quot;
+## [16] &quot;Major_hab&quot;    &quot;Red_list_16&quot;  &quot;NOT_IUCN&quot;</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" title="1"><span class="kw">names</span>(PIF_bird_info.red) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Sci_name&quot;</span>,<span class="st">&quot;Oder&quot;</span>,<span class="st">&quot;Family&quot;</span>)</a>
+<a class="sourceLine" id="cb30-2" title="2"></a>
+<a class="sourceLine" id="cb30-3" title="3"><span class="co">#acá lo que hacemos es juntar la información de la lista &quot;PIF&quot; con la lista que tenemos de los conteos para tener todo en una sóla</span></a>
+<a class="sourceLine" id="cb30-4" title="4">CR_bird_info2 &lt;-<span class="st"> </span>CR_bird_info <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">left_join</span>(PIF_bird_info.red)</a></code></pre></div>
+<pre><code>## Joining, by = &quot;Sci_name&quot;</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" title="1"><span class="kw">dim</span>(CR_bird_info2)</a></code></pre></div>
+<pre><code>## [1] 758  20</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" title="1"><span class="kw">names</span>(CR_bird_info2)</a></code></pre></div>
+<pre><code>##  [1] &quot;X&quot;            &quot;Sci_name&quot;     &quot;Region&quot;       &quot;AOS_57&quot;       &quot;type&quot;        
+##  [6] &quot;C_name&quot;       &quot;PT.c&quot;         &quot;TB.r&quot;         &quot;PS.g&quot;         &quot;BD.g&quot;        
+## [11] &quot;CS&quot;           &quot;PS_BD&quot;        &quot;PT_TB&quot;        &quot;WatchList&quot;    &quot;Cont_concern&quot;
+## [16] &quot;Major_hab&quot;    &quot;Red_list_16&quot;  &quot;NOT_IUCN&quot;     &quot;Oder&quot;         &quot;Family&quot;</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" title="1"><span class="co">#Acá sólo queremos tener las 213 especies que corresponden a nuestros conteos </span></a>
+<a class="sourceLine" id="cb36-2" title="2"></a>
+<a class="sourceLine" id="cb36-3" title="3">Aves_CR_sub &lt;-<span class="st"> </span><span class="kw">subset</span>(CR_bird_info2, Sci_name <span class="op">%in%</span><span class="st"> </span>Lista.especies.total)</a>
+<a class="sourceLine" id="cb36-4" title="4"><span class="kw">names</span>(Aves_CR_sub)</a></code></pre></div>
+<pre><code>##  [1] &quot;X&quot;            &quot;Sci_name&quot;     &quot;Region&quot;       &quot;AOS_57&quot;       &quot;type&quot;        
+##  [6] &quot;C_name&quot;       &quot;PT.c&quot;         &quot;TB.r&quot;         &quot;PS.g&quot;         &quot;BD.g&quot;        
+## [11] &quot;CS&quot;           &quot;PS_BD&quot;        &quot;PT_TB&quot;        &quot;WatchList&quot;    &quot;Cont_concern&quot;
+## [16] &quot;Major_hab&quot;    &quot;Red_list_16&quot;  &quot;NOT_IUCN&quot;     &quot;Oder&quot;         &quot;Family&quot;</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" title="1"><span class="kw">dim</span>(Aves_CR_sub)</a></code></pre></div>
+<pre><code>## [1] 213  20</code></pre>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" title="1">Lista.especies.info &lt;-<span class="st"> </span><span class="kw">unique</span>(CR_bird_info<span class="op">$</span>Sci_name)</a></code></pre></div>
+<p>Acontinuación, hay algunas especies en esas listas que usamos a las cuales no se les asignó un orden y/o familia, entonces las rellenamos acá.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" title="1"><span class="co"># missing_info &lt;- setdiff(Lista.especies.total,Lista.especies.info)</span></a>
+<a class="sourceLine" id="cb41-2" title="2"></a>
+<a class="sourceLine" id="cb41-3" title="3"><span class="co">#Acá relleno la información sobre los ordenes y familias que no estaban incluidas en las listas rojas.</span></a>
+<a class="sourceLine" id="cb41-4" title="4"><span class="kw">which</span>(<span class="kw">is.na</span>(Aves_CR_sub<span class="op">$</span>Oder))</a></code></pre></div>
+<pre><code>## [1]   2  26  62 104 122 141 176 184 212</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" title="1"><span class="co"># 2  26  62 104 122 141 176 184 212</span></a>
+<a class="sourceLine" id="cb43-2" title="2">Aves_CR_sub[<span class="dv">2</span>,]</a></code></pre></div>
+<pre><code>##      X           Sci_name     Region AOS_57     type                  C_name
+## 18 105 Amazilia hoffmanni Costa Rica    381 landbird Blue-vented Hummingbird
+##    PT.c TB.r PS.g BD.g CS PS_BD PT_TB WatchList       Cont_concern
+## 18    4    2    3    4 13     7     6        NA Watch List - Yel-r
+##           Major_hab Red_list_16 NOT_IUCN Oder Family
+## 18 Secondary forest          LC       NA &lt;NA&gt;   &lt;NA&gt;</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" title="1">Aves_CR_sub<span class="op">$</span>Oder[<span class="dv">2</span>] &lt;-<span class="st"> &quot;Caprimulgiformes&quot;</span></a>
+<a class="sourceLine" id="cb45-2" title="2">Aves_CR_sub<span class="op">$</span>Family[<span class="dv">2</span>] &lt;-<span class="st"> &quot;Throchilidae&quot;</span></a>
+<a class="sourceLine" id="cb45-3" title="3"></a>
+<a class="sourceLine" id="cb45-4" title="4">Aves_CR_sub[<span class="dv">26</span>,]</a></code></pre></div>
+<pre><code>##       X           Sci_name     Region AOS_57     type                    C_name
+## 100 646 Philodice bryantae Costa Rica    321 landbird Magenta-throated Woodstar
+##     PT.c TB.r PS.g BD.g CS PS_BD PT_TB WatchList     Cont_concern
+## 100    4    3    5    5 17    10     7        NA Watch List - Red
+##                    Major_hab Red_list_16 NOT_IUCN Oder Family
+## 100 Montane evergreen forest          NT       NA &lt;NA&gt;   &lt;NA&gt;</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" title="1">Aves_CR_sub<span class="op">$</span>Oder[<span class="dv">26</span>] &lt;-<span class="st"> &quot;Caprimulgiformes&quot;</span></a>
+<a class="sourceLine" id="cb47-2" title="2">Aves_CR_sub<span class="op">$</span>Family[<span class="dv">26</span>] &lt;-<span class="st"> &quot;Throchilidae&quot;</span></a>
+<a class="sourceLine" id="cb47-3" title="3"></a>
+<a class="sourceLine" id="cb47-4" title="4">Aves_CR_sub[<span class="dv">62</span>,]</a></code></pre></div>
+<pre><code>##        X             Sci_name     Region AOS_57     type              C_name
+## 201 1275 Cyanoloxia cyanoides Costa Rica   2057 landbird Blue-black Grosbeak
+##     PT.c TB.r PS.g BD.g CS PS_BD PT_TB WatchList Cont_concern
+## 201    4    3    3    1 11     4     7         3           NC
+##                             Major_hab Red_list_16 NOT_IUCN Oder Family
+## 201 Tropical lowland evergreen forest          LC       NA &lt;NA&gt;   &lt;NA&gt;</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" title="1">Aves_CR_sub<span class="op">$</span>Oder[<span class="dv">62</span>] &lt;-<span class="st"> &quot;Passeriformes&quot;</span></a>
+<a class="sourceLine" id="cb49-2" title="2">Aves_CR_sub<span class="op">$</span>Family[<span class="dv">62</span>] &lt;-<span class="st"> &quot;Cardinalidae&quot;</span></a>
+<a class="sourceLine" id="cb49-3" title="3"></a>
+<a class="sourceLine" id="cb49-4" title="4">Aves_CR_sub[<span class="dv">104</span>,]</a></code></pre></div>
+<pre><code>##         X          Sci_name     Region AOS_57     type                   C_name
+## 403 24444 Melozone cabanisi Costa Rica  19999 landbird Cabanis&#39;s Ground-Sparrow
+##     PT.c TB.r PS.g BD.g CS PS_BD PT_TB WatchList     Cont_concern
+## 403    4    4    5    5 18    10     8         1 Watch List - Red
+##                    Major_hab Red_list_16 NOT_IUCN Oder Family
+## 403 Montane evergreen forest          LC       NA &lt;NA&gt;   &lt;NA&gt;</code></pre>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" title="1">Aves_CR_sub<span class="op">$</span>Oder[<span class="dv">104</span>] &lt;-<span class="st"> &quot;Passeriformes&quot;</span></a>
+<a class="sourceLine" id="cb51-2" title="2">Aves_CR_sub<span class="op">$</span>Family[<span class="dv">104</span>] &lt;-<span class="st"> &quot;Passerellidae&quot;</span></a>
+<a class="sourceLine" id="cb51-3" title="3"></a>
+<a class="sourceLine" id="cb51-4" title="4">Aves_CR_sub[<span class="dv">122</span>,]</a></code></pre></div>
+<pre><code>##        X              Sci_name     Region AOS_57     type            C_name
+## 480 2884 Leiothlypis peregrina Costa Rica   1776 landbird Tennessee Warbler
+##     PT.c TB.r PS.g BD.g CS PS_BD PT_TB WatchList Cont_concern        Major_hab
+## 480    3   NA    1    1  5     2     3         3           NC Secondary forest
+##     Red_list_16 NOT_IUCN Oder Family
+## 480          LC       NA &lt;NA&gt;   &lt;NA&gt;</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" title="1">Aves_CR_sub<span class="op">$</span>Oder[<span class="dv">122</span>] &lt;-<span class="st"> &quot;Passeriformes&quot;</span></a>
+<a class="sourceLine" id="cb53-2" title="2">Aves_CR_sub<span class="op">$</span>Family[<span class="dv">122</span>] &lt;-<span class="st"> &quot;Parulidae&quot;</span></a>
+<a class="sourceLine" id="cb53-3" title="3"></a>
+<a class="sourceLine" id="cb53-4" title="4">Aves_CR_sub[<span class="dv">141</span>,]</a></code></pre></div>
+<pre><code>##        X            Sci_name     Region AOS_57     type                 C_name
+## 534 3201 Dryobates fumigatus Costa Rica    955 landbird Smoky-brown Woodpecker
+##     PT.c TB.r PS.g BD.g CS PS_BD PT_TB WatchList Cont_concern
+## 534    4    3    4    2 13     6     7         3           NC
+##                    Major_hab Red_list_16 NOT_IUCN Oder Family
+## 534 Montane evergreen forest          LC       NA &lt;NA&gt;   &lt;NA&gt;</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" title="1">Aves_CR_sub<span class="op">$</span>Oder[<span class="dv">141</span>] &lt;-<span class="st"> &quot;Piciformes&quot;</span></a>
+<a class="sourceLine" id="cb55-2" title="2">Aves_CR_sub<span class="op">$</span>Family[<span class="dv">141</span>] &lt;-<span class="st"> &quot;Dryobates&quot;</span></a>
+<a class="sourceLine" id="cb55-3" title="3"></a>
+<a class="sourceLine" id="cb55-4" title="4">Aves_CR_sub[<span class="dv">176</span>,]</a></code></pre></div>
+<pre><code>##        X             Sci_name     Region AOS_57     type             C_name
+## 639 3855 Sporophila morelleti Costa Rica   1920 landbird Variable Seedeater
+##     PT.c TB.r PS.g BD.g CS PS_BD PT_TB WatchList Cont_concern
+## 639    2    2    3    3 10     6     4         2           NC
+##               Major_hab Red_list_16 NOT_IUCN Oder Family
+## 639 Second-growth scrub          LC       NA &lt;NA&gt;   &lt;NA&gt;</code></pre>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" title="1">Aves_CR_sub<span class="op">$</span>Oder[<span class="dv">176</span>] &lt;-<span class="st"> &quot;Passeriformes&quot;</span></a>
+<a class="sourceLine" id="cb57-2" title="2">Aves_CR_sub<span class="op">$</span>Family[<span class="dv">176</span>] &lt;-<span class="st"> &quot;Sporophila&quot;</span></a>
+<a class="sourceLine" id="cb57-3" title="3"></a>
+<a class="sourceLine" id="cb57-4" title="4">Aves_CR_sub[<span class="dv">184</span>,]</a></code></pre></div>
+<pre><code>##        X         Sci_name     Region AOS_57     type                C_name PT.c
+## 670 4045 Stilpnia larvata Costa Rica   1863 landbird Golden-hooded Tanager    4
+##     TB.r PS.g BD.g CS PS_BD PT_TB WatchList Cont_concern
+## 670    2    3    3 12     6     6         2           NC
+##                             Major_hab Red_list_16 NOT_IUCN Oder Family
+## 670 Tropical lowland evergreen forest          LC       NA &lt;NA&gt;   &lt;NA&gt;</code></pre>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" title="1">Aves_CR_sub<span class="op">$</span>Oder[<span class="dv">184</span>] &lt;-<span class="st"> &quot;Passeriformes&quot;</span></a>
+<a class="sourceLine" id="cb59-2" title="2">Aves_CR_sub<span class="op">$</span>Family[<span class="dv">184</span>] &lt;-<span class="st"> &quot;Thraupidae&quot;</span></a>
+<a class="sourceLine" id="cb59-3" title="3"></a>
+<a class="sourceLine" id="cb59-4" title="4">Aves_CR_sub[<span class="dv">212</span>,]</a></code></pre></div>
+<pre><code>##        X         Sci_name     Region AOS_57     type               C_name PT.c
+## 757 4565 Zimmerius parvus Costa Rica   1171 landbird Mistletoe Tyrannulet    3
+##     TB.r PS.g BD.g CS PS_BD PT_TB WatchList Cont_concern
+## 757    2    3    3 11     6     5         2           NC
+##                    Major_hab Red_list_16 NOT_IUCN Oder Family
+## 757 Montane evergreen forest          LC       NA &lt;NA&gt;   &lt;NA&gt;</code></pre>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" title="1">Aves_CR_sub<span class="op">$</span>Oder[<span class="dv">212</span>] &lt;-<span class="st"> &quot;Passeriformes&quot;</span></a>
+<a class="sourceLine" id="cb61-2" title="2">Aves_CR_sub<span class="op">$</span>Family[<span class="dv">212</span>] &lt;-<span class="st"> &quot;Tyrannidae&quot;</span></a>
+<a class="sourceLine" id="cb61-3" title="3"></a>
+<a class="sourceLine" id="cb61-4" title="4"></a>
+<a class="sourceLine" id="cb61-5" title="5"><span class="kw">names</span>(Aves_CR_sub) </a></code></pre></div>
+<pre><code>##  [1] &quot;X&quot;            &quot;Sci_name&quot;     &quot;Region&quot;       &quot;AOS_57&quot;       &quot;type&quot;        
+##  [6] &quot;C_name&quot;       &quot;PT.c&quot;         &quot;TB.r&quot;         &quot;PS.g&quot;         &quot;BD.g&quot;        
+## [11] &quot;CS&quot;           &quot;PS_BD&quot;        &quot;PT_TB&quot;        &quot;WatchList&quot;    &quot;Cont_concern&quot;
+## [16] &quot;Major_hab&quot;    &quot;Red_list_16&quot;  &quot;NOT_IUCN&quot;     &quot;Oder&quot;         &quot;Family&quot;</code></pre>
+<p>Ahora quiero saber cuantas especies de las que tenemos registradas están en las listas de la IUCN</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" title="1">IUCN_counts &lt;-<span class="st"> </span>Aves_CR_sub <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb63-2" title="2"><span class="st">  </span><span class="kw">group_by</span>(Red_list_<span class="dv">16</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb63-3" title="3"><span class="st">  </span>tally</a>
+<a class="sourceLine" id="cb63-4" title="4"></a>
+<a class="sourceLine" id="cb63-5" title="5">IUCN_VU_CR &lt;-<span class="st"> </span>Aves_CR_sub<span class="op">$</span>Sci_name[<span class="kw">which</span>(Aves_CR_sub<span class="op">$</span>Red_list_<span class="dv">16</span> <span class="op">==</span><span class="st"> &quot;VU&quot;</span>)]</a>
+<a class="sourceLine" id="cb63-6" title="6">IUCN_NT_CR &lt;-<span class="st"> </span>Aves_CR_sub<span class="op">$</span>Sci_name[<span class="kw">which</span>(Aves_CR_sub<span class="op">$</span>Red_list_<span class="dv">16</span> <span class="op">==</span><span class="st"> &quot;NT&quot;</span>)]</a>
+<a class="sourceLine" id="cb63-7" title="7"></a>
+<a class="sourceLine" id="cb63-8" title="8"></a>
+<a class="sourceLine" id="cb63-9" title="9">Aves_CR_sub[<span class="dv">26</span>,]</a></code></pre></div>
+<pre><code>##       X           Sci_name     Region AOS_57     type                    C_name
+## 100 646 Philodice bryantae Costa Rica    321 landbird Magenta-throated Woodstar
+##     PT.c TB.r PS.g BD.g CS PS_BD PT_TB WatchList     Cont_concern
+## 100    4    3    5    5 17    10     7        NA Watch List - Red
+##                    Major_hab Red_list_16 NOT_IUCN             Oder       Family
+## 100 Montane evergreen forest          NT       NA Caprimulgiformes Throchilidae</code></pre>
+<p>Y cuantas estan en las listas de especies amenazadas de Costa Rica y Centroamérica</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" title="1">WatchList_counts &lt;-<span class="st"> </span>Aves_CR_sub <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb65-2" title="2"><span class="st">  </span><span class="kw">group_by</span>(Cont_concern) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb65-3" title="3"><span class="st">  </span>tally</a>
+<a class="sourceLine" id="cb65-4" title="4"></a>
+<a class="sourceLine" id="cb65-5" title="5">Family_counts &lt;-<span class="st"> </span>Aves_CR_sub <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb65-6" title="6"><span class="st">  </span><span class="kw">group_by</span>(Family) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb65-7" title="7"><span class="st">  </span>tally</a>
+<a class="sourceLine" id="cb65-8" title="8"></a>
+<a class="sourceLine" id="cb65-9" title="9">CR_Family_List &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(Family_counts)</a>
+<a class="sourceLine" id="cb65-10" title="10"></a>
+<a class="sourceLine" id="cb65-11" title="11">CR_Family_List</a></code></pre></div>
+<pre><code>##            Family  n
+## 1    Accipitridae  7
+## 2     Alcedinidae  2
+## 3        Anatidae  1
+## 4        Apodidae  2
+## 5        Ardeidae  4
+## 6   Caprimulgidae  2
+## 7    Cardinalidae  7
+## 8     Cathartidae  2
+## 9      Columbidae  8
+## 10       Corvidae  2
+## 11     Cotingidae  1
+## 12       Cracidae  3
+## 13      Cuculidae  4
+## 14      Dryobates  1
+## 15    Emberizidae  3
+## 16    Eurypygidae  1
+## 17     Falconidae  4
+## 18   Fringillidae  4
+## 19    Furnariidae  5
+## 20   Hirundinidae  4
+## 21      Icteridae 10
+## 22        Mimidae  1
+## 23      Momotidae  1
+## 24 Odontophoridae  2
+## 25      Parulidae 23
+## 26  Passerellidae  1
+## 27        Picidae  3
+## 28       Pipridae  1
+## 29    Psittacidae  7
+## 30       Rallidae  3
+## 31   Ramphastidae  3
+## 32 Rhinocryptidae  1
+## 33 Semnornithidae  1
+## 34     Sporophila  1
+## 35      Strigidae  2
+## 36 Thamnophilidae  1
+## 37     Thraupidae 17
+## 38   Throchilidae  2
+## 39      Tinamidae  2
+## 40      Tityridae  3
+## 41    Trochilidae 15
+## 42  Troglodytidae  9
+## 43     Trogonidae  2
+## 44       Turdidae  5
+## 45     Tyrannidae 25
+## 46     Vireonidae  5</code></pre>
 <ol start="4" style="list-style-type: decimal">
-<li><p>Análisis de los datos. Se vale escoger un subconjunto de los datos para que esta sección sea concisa, pero debe ser un análisis coherente con el DAG del punto 2.</p></li>
-<li><p>Interpretación breve de los resultados con respecto a la pregunta de investigación y la hipótesis causal. Máximo un párrafo.</p></li>
+<li>Análisis de los datos. Se vale escoger un subconjunto de los datos para que esta sección sea concisa, pero debe ser un análisis coherente con el DAG del punto 2.</li>
+</ol>
+<p>Para comenzar con el análisis de los datos, quiero primero ver cuantos registros tengo de cada especie</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" title="1">Count_sp_obs &lt;-<span class="st"> </span><span class="kw">ddply</span>(Data.CR.<span class="fl">2020.</span>BPI,<span class="op">~</span>Scientific.Name,summarise,<span class="dt">species_count=</span><span class="kw">length</span>(<span class="kw">unique</span>(Submission.ID)))</a>
+<a class="sourceLine" id="cb67-2" title="2"></a>
+<a class="sourceLine" id="cb67-3" title="3">Count_sp_obs &lt;-<span class="st"> </span>Count_sp_obs[<span class="kw">order</span>(Count_sp_obs<span class="op">$</span>species_count),]</a></code></pre></div>
+<p>Por el momento no quiero usar todas las aves, escogí las que tienen más de 100 observaciones pero menos de 500. Parece un poco arbitrario pero es que las especies que están presentes en gran cantidad en todos los sitios no nos van a brindar mucha información.</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" title="1">Count_sp_obs.red &lt;-<span class="st"> </span>Count_sp_obs[Count_sp_obs<span class="op">$</span>species_count <span class="op">&gt;=</span><span class="dv">100</span> <span class="op">&amp;</span><span class="st"> </span>Count_sp_obs<span class="op">$</span>species_count <span class="op">&lt;=</span><span class="st"> </span><span class="dv">500</span>,]</a>
+<a class="sourceLine" id="cb68-2" title="2"></a>
+<a class="sourceLine" id="cb68-3" title="3">Count_sp_obs</a></code></pre></div>
+<pre><code>##                 Scientific.Name species_count
+## 5            Amazona autumnalis             1
+## 13          Atlapetes albinucha             1
+## 21            Buteo jamaicensis             1
+## 24          Butorides virescens             1
+## 25             Cairina moschata             1
+## 26            Calocitta formosa             1
+## 27          Camptostoma imberbe             1
+## 40       Chloroceryle americana             1
+## 45              Ciccaba virgata             1
+## 46             Coereba flaveola             1
+## 48             Colibri cyanotus             1
+## 62                Dacnis cayana             1
+## 73          Empidonax virescens             1
+## 79              Eurypyga helias             1
+## 82      Geothlypis philadelphia             1
+## 92           Hylocharis eliciae             1
+## 95         Lampornis calolaemus             1
+## 113        Molothrus oryzivorus             1
+## 127          Passerina caerulea             1
+## 132       Penelope purpurascens             1
+## 133    Petrochelidon pyrrhonota             1
+## 135    Phaethornis longirostris             1
+## 140              Philydor rufum             1
+## 147         Protonotaria citrea             1
+## 159  Ramphocelus sanguinolentus             1
+## 166         Seiurus aurocapilla             1
+## 172         Setophaga pitiayumi             1
+## 177        Sporophila morelleti             1
+## 178      Sporophila nigricollis             1
+## 183             Sturnella magna             1
+## 197       Troglodytes ochraceus             1
+## 209 Xiphorhynchus erythropygius             1
+## 1           Agelaius phoeniceus             2
+## 6      Amblycercus holosericeus             2
+## 12               Ardea herodias             2
+## 43      Chondrohierax uncinatus             2
+## 44       Chordeiles acutipennis             2
+## 51          Columbina passerina             2
+## 52          Columbina talpacoti             2
+## 70         Empidonax flavescens             2
+## 72           Empidonax traillii             2
+## 74             Eupherusa eximia             2
+## 81           Geothlypis formosa             2
+## 94         Icterus prosthemelas             2
+## 108                Mimus gilvus             2
+## 109        Mionectes oleagineus             2
+## 110         Mionectes olivaceus             2
+## 115     Morococcyx erythropygus             2
+## 128            Passerina cyanea             2
+## 137     Pheucticus ludovicianus             2
+## 152      Pteroglossus torquatus             2
+## 157   Ramphocelus costaricensis             2
+## 168          Setophaga castanea             2
+## 179   Stelgidopteryx ruficollis             2
+## 186       Thamnophilus doliatus             2
+## 201             Turdus plebejus             2
+## 7      Anthracothorax prevostii             3
+## 11                   Ardea alba             3
+## 16       Basileuterus melanotis             3
+## 35            Catharus fuscater             3
+## 69            Elvira cupreiceps             3
+## 75       Euphonia elegantissima             3
+## 80             Falco peregrinus             3
+## 104           Melozone cabanisi             3
+## 112            Molothrus aeneus             3
+## 120      Myiothlypis fulvicauda             3
+## 126     Parkesia noveboracensis             3
+## 139          Philodice bryantae             3
+## 143            Piranga olivacea             3
+## 165     Scytalopus argentifrons             3
+## 167          Semnornis frantzii             3
+## 174            Setophaga virens             3
+## 31        Cardellina canadensis             4
+## 65          Dryobates fumigatus             4
+## 86             Heliodoxa jacula             4
+## 88     Heliomaster longirostris             4
+## 89       Henicorhina leucophrys             4
+## 90      Henicorhina leucosticta             4
+## 96       Laterallus albigularis             4
+## 131    Patagioenas nigrirostris             4
+## 149       Pseudastur albicollis             4
+## 154          Pyrilia haematotis             4
+## 184       Tangara icterocephala             4
+## 15     Basileuterus culicivorus             5
+## 106     Microcerculus philomela             5
+## 129        Patagioenas fasciata             5
+## 173         Setophaga ruticilla             5
+## 191               Tinamus major             5
+## 192           Tityra inquisitor             5
+## 210     Xiphorhynchus susurrans             5
+## 119      Myiodynastes maculatus             6
+## 61         Cyanoloxia cyanoides             7
+## 68         Elanoides forficatus             7
+## 160  Rhynchocyclus brevirostris             7
+## 199             Trogon collaris             7
+## 54             Contopus cooperi             8
+## 63        Dendrortyx leucophrys             8
+## 8          Aramides albiventris             9
+## 30            Caracara cheriway             9
+## 38         Chamaepetes unicolor             9
+## 101         Megaceryle torquata             9
+## 203       Vermivora chrysoptera            10
+## 10         Archilochus colubris            11
+## 107          Milvago chimachima            11
+## 117          Myioborus miniatus            11
+## 195    Tolmomyias sulphurescens            11
+## 71       Empidonax flaviventris            12
+## 164          Sayornis nigricans            12
+## 176          Sporophila corvina            12
+## 185               Tapera naevia            12
+## 206             Vireo olivaceus            12
+## 181            Stilpnia larvata            13
+## 136    Phaethornis striigularis            14
+## 188           Thraupis palmarum            14
+## 207        Vireo philadelphicus            14
+## 122      Nyctidromus albicollis            15
+## 146    Procnias tricarunculatus            15
+## 53            Contopus cinereus            16
+## 84       Glaucidium brasilianum            16
+## 124        Pachyramphus aglaiae            17
+## 23            Buteo platypterus            18
+## 49            Colinus cristatus            18
+## 97          Legatus leucophaius            18
+## 37               Chaetura vauxi            19
+## 169             Setophaga fusca            19
+## 42      Chlorostilbon canivetii            20
+## 182       Streptoprocne zonaris            22
+## 19                Bubulcus ibis            23
+## 111             Mniotilta varia            24
+## 56              Contopus virens            25
+## 158      Ramphocelus passerinii            28
+## 41      Chlorophonia callophrys            31
+## 14      Aulacorhynchus prasinus            32
+## 59            Crypturellus soui            32
+## 134             Phaethornis guy            32
+## 198            Trogon caligatus            33
+## 83      Geothlypis poliocephala            34
+## 125       Pachysylvia decurtata            38
+## 161           Saltator atriceps            38
+## 208          Volatinia jacarina            38
+## 211            Zenaida asiatica            39
+## 32           Cardellina pusilla            42
+## 213        Zonotrichia capensis            42
+## 87       Heliomaster constantii            44
+## 194        Todirostrum cinereum            45
+## 20             Buteo brachyurus            47
+## 204            Vireo flavifrons            48
+## 55          Contopus sordidulus            50
+## 180  Stelgidopteryx serripennis            54
+## 9             Aramides cajaneus            56
+## 50               Columbina inca            57
+## 85                 Habia rubica            60
+## 58      Crotophaga sulcirostris            64
+## 67          Elaenia flavogaster            64
+## 66           Dryocopus lineatus            65
+## 118   Myiodynastes luteiventris            67
+## 47         Colaptes rubiginosus            72
+## 144               Piranga rubra            72
+## 170      Setophaga pensylvanica            73
+## 18         Brotogeris jugularis            77
+## 175   Sittasomus griseicapillus            80
+## 93              Icterus galbula            81
+## 77        Euphonia luteicapilla            85
+## 91     Herpetotheres cachinnans            87
+## 36           Catharus ustulatus            91
+## 2            Amazilia hoffmanni            93
+## 60            Cyanerpes cyaneus            93
+## 141                Piaya cayana            94
+## 98        Leiothlypis peregrina            96
+## 28    Campylorhynchus rufinucha            99
+## 155         Quiscalus mexicanus           105
+## 162       Saltator coerulescens           105
+## 205          Vireo flavoviridis           108
+## 193         Tityra semifasciata           111
+## 114            Momotus lessonii           112
+## 22              Buteo plagiatus           122
+## 121         Myiozetetes similis           125
+## 153     Pygochelidon cyanoleuca           155
+## 99    Lepidocolaptes souleyetii           160
+## 171          Setophaga petechia           161
+## 212            Zimmerius parvus           169
+## 39         Chiroxiphia linearis           180
+## 4             Amazona albifrons           204
+## 33               Cathartes aura           204
+## 34     Catharus aurantiirostris           214
+## 78       Eupsittula canicularis           226
+## 202      Tyrannus melancholicus           248
+## 123         Ortalis cinereiceps           249
+## 130    Patagioenas flavirostris           255
+## 189        Thryophilus rufalbus           255
+## 156       Ramphastos sulfuratus           286
+## 57             Coragyps atratus           333
+## 102        Megarynchus pitangua           340
+## 142              Pionus senilis           362
+## 187          Thraupis episcopus           383
+## 190            Tiaris olivaceus           387
+## 116      Myiarchus tuberculifer           402
+## 151          Psittacara finschi           407
+## 105           Melozone leucotis           421
+## 163            Saltator maximus           429
+## 145        Pitangus sulphuratus           451
+## 148       Psarocolius montezuma           454
+## 196           Troglodytes aedon           465
+## 100         Leptotila verreauxi           467
+## 138        Pheugopedius rutilus           495
+## 64                  Dives dives           497
+## 76        Euphonia hirundinacea           526
+## 200                Turdus grayi           545
+## 103       Melanerpes hoffmannii           556
+## 3              Amazilia tzacatl           768
+## 150           Psilorhinus morio           850
+## 17       Basileuterus rufifrons           979
+## 29        Cantorchilus modestus          1044</code></pre>
+<p>Ahora podemos comenzar a hacer la matriz con la que vamos a trabajar. Primero necesito los datos correspondientes al año 2020</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" title="1">Count_BPI_samp2020 &lt;-<span class="st"> </span><span class="kw">ddply</span>(Data.CR.<span class="fl">2020.</span>BPI[Data.CR.<span class="fl">2020.</span>BPI<span class="op">$</span>year<span class="op">==</span><span class="dv">2020</span>,],<span class="op">~</span>Location,summarise,<span class="dt">Sampled_days=</span><span class="kw">length</span>(<span class="kw">unique</span>(Date)))</a>
+<a class="sourceLine" id="cb70-2" title="2"></a>
+<a class="sourceLine" id="cb70-3" title="3"><span class="co">#Acá sólo quiero asegurarme de cuales fueron los meses muestreados este año</span></a>
+<a class="sourceLine" id="cb70-4" title="4">Months2020 &lt;-<span class="st"> </span><span class="kw">sort</span>(<span class="kw">unique</span>(Data.CR.<span class="fl">2020.</span>BPI<span class="op">$</span>month[Data.CR.<span class="fl">2020.</span>BPI<span class="op">$</span>year<span class="op">==</span><span class="dv">2020</span>]))</a>
+<a class="sourceLine" id="cb70-5" title="5">Months2020</a></code></pre></div>
+<pre><code>## [1] 1 2 3 7 8 9</code></pre>
+<p>Acá ya puedo crear la matiz para todos los datos de Costa Rica en el año 2020</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" title="1">J=<span class="st"> </span><span class="dv">4</span> <span class="co">#el número de réplicas</span></a>
+<a class="sourceLine" id="cb72-2" title="2">n=<span class="st"> </span><span class="kw">nrow</span>(Datos_BPI_CR)</a>
+<a class="sourceLine" id="cb72-3" title="3">Sites &lt;-<span class="st"> </span>Datos_BPI_CR[,<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb72-4" title="4">CR_<span class="dv">2020</span>_Matrix &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>, <span class="dt">nrow=</span>n, <span class="dt">ncol=</span>J,<span class="dt">dimnames=</span><span class="kw">list</span>(<span class="dv">1</span><span class="op">:</span>n, <span class="kw">paste</span>(<span class="st">&quot;survey&quot;</span>, <span class="dv">1</span><span class="op">:</span>J, <span class="dt">sep=</span><span class="st">&quot;&quot;</span>)))</a></code></pre></div>
+<p>En este momento agrego la información de la biomasa sobre el suelo y del tipo de uso del suelo. (cuando con una resolución a 30m y otra a 100m)</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" title="1">LandUseCR_30m &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;C:/Users/in/Documents/MAESTRIA/Cursos/Estrategias/Trabajo_Final/LandUseCR_30m.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb73-2" title="2"><span class="kw">head</span>(LandUseCR_30m)</a></code></pre></div>
+<pre><code>##   IDs Bosque.maduro Bosque.secundario No.forestal Nubes Pastos Sombra.de.nubes
+## 1   1            17                13           0     0      0               0
+## 2   2            27                 0           0     0      0               0
+## 3   3             0                 0          29     0      0               0
+## 4   4            11                 0          16     0      0               0
+## 5   5            28                 0           0     0      0               0
+## 6   6            21                 0           6     0      0               0
+##   totales X..Bosque.maduro X..Bosque.secundario X..No.forestal X..Nubes
+## 1      30        0.5666667            0.4333333      0.0000000        0
+## 2      27        1.0000000            0.0000000      0.0000000        0
+## 3      29        0.0000000            0.0000000      1.0000000        0
+## 4      27        0.4074074            0.0000000      0.5925926        0
+## 5      28        1.0000000            0.0000000      0.0000000        0
+## 6      27        0.7777778            0.0000000      0.2222222        0
+##   X..Pastos X..Sombra.de.nubes
+## 1         0                  0
+## 2         0                  0
+## 3         0                  0
+## 4         0                  0
+## 5         0                  0
+## 6         0                  0</code></pre>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" title="1">LandUseCR_100m &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;C:/Users/in/Documents/MAESTRIA/Cursos/Estrategias/Trabajo_Final/LandUseCR_100m.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb75-2" title="2"><span class="kw">head</span>(LandUseCR_100m)</a></code></pre></div>
+<pre><code>##   IDs Bosque.maduro Bosque.secundario Pastos No.forestal Nubes Sombra.de.nubes
+## 1   1           135               132     50           0     0               0
+## 2   2           275                 0      0          37     0               0
+## 3   3            52                 0      0         265     0               0
+## 4   4           114                 0      0         199     0               0
+## 5   5           267                24      0          23     0               0
+## 6   6           210                26      0          77     0               0
+##   totales X..Bosque.maduro X..Bosque.secundario X..No.forestal X..Nubes
+## 1     317        0.4258675           0.41640379     0.00000000        0
+## 2     312        0.8814103           0.00000000     0.11858974        0
+## 3     317        0.1640379           0.00000000     0.83596215        0
+## 4     313        0.3642173           0.00000000     0.63578275        0
+## 5     314        0.8503185           0.07643312     0.07324841        0
+## 6     313        0.6709265           0.08306709     0.24600639        0
+##   X..Pastos X..Sombra.de.nubes
+## 1 0.1577287                  0
+## 2 0.0000000                  0
+## 3 0.0000000                  0
+## 4 0.0000000                  0
+## 5 0.0000000                  0
+## 6 0.0000000                  0</code></pre>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" title="1">LandUseCR_100m_red &lt;-<span class="st"> </span>LandUseCR_100m[,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">9</span>)]</a>
+<a class="sourceLine" id="cb77-2" title="2">CRbuff30_aboveGbio &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;C:/Users/in/Documents/MAESTRIA/Cursos/Estrategias/Trabajo_Final/CRbuff30_aboveGbio.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb77-3" title="3"><span class="kw">head</span>(CRbuff30_aboveGbio)</a></code></pre></div>
+<pre><code>##   ID X10N_090W_t_aboveground_biomass_ha_2000   Location
+## 1  1                                     732 BPI-014-CR
+## 2  2                                     874 BPI-029-CR
+## 3  3                                     494 BPI-047-CR
+## 4  4                                     698 BPI-049-CR
+## 5  5                                     591 BPI-065-CR
+## 6  6                                     636 BPI-017-CR
+##                     geometry
+## 1 c(-84.5569653, 10.1127216)
+## 2 c(-84.5518021, 10.1059736)
+## 3 c(-84.5130944, 10.1287986)
+## 4 c(-84.5127065, 10.1281729)
+## 5 c(-84.5532837, 10.1217769)
+## 6 c(-84.5571165, 10.1112232)</code></pre>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb79-1" title="1"><span class="kw">names</span>(CRbuff30_aboveGbio) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;ID&quot;</span>,<span class="st">&quot;Biomass_30m&quot;</span>,<span class="st">&quot;Location&quot;</span>,<span class="st">&quot;Coordinates&quot;</span>)</a>
+<a class="sourceLine" id="cb79-2" title="2">CRbuff100_aboveGbio &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;C:/Users/in/Documents/MAESTRIA/Cursos/Estrategias/Trabajo_Final/CRbuff100_aboveGbio.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb79-3" title="3"><span class="kw">head</span>(CRbuff100_aboveGbio)</a></code></pre></div>
+<pre><code>##   ID X10N_090W_t_aboveground_biomass_ha_2000   Location
+## 1  1                                    6532 BPI-014-CR
+## 2  2                                    7921 BPI-029-CR
+## 3  3                                    6730 BPI-047-CR
+## 4  4                                    7240 BPI-049-CR
+## 5  5                                    6297 BPI-065-CR
+## 6  6                                    8836 BPI-017-CR
+##                     geometry
+## 1 c(-84.5569653, 10.1127216)
+## 2 c(-84.5518021, 10.1059736)
+## 3 c(-84.5130944, 10.1287986)
+## 4 c(-84.5127065, 10.1281729)
+## 5 c(-84.5532837, 10.1217769)
+## 6 c(-84.5571165, 10.1112232)</code></pre>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb81-1" title="1"><span class="kw">names</span>(CRbuff100_aboveGbio) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;ID&quot;</span>,<span class="st">&quot;Biomass_100m&quot;</span>,<span class="st">&quot;Location&quot;</span>,<span class="st">&quot;Coordinates&quot;</span>)</a>
+<a class="sourceLine" id="cb81-2" title="2"></a>
+<a class="sourceLine" id="cb81-3" title="3"></a>
+<a class="sourceLine" id="cb81-4" title="4"><span class="co">#acontinuación  lo unimos todo en un sólo archivo</span></a>
+<a class="sourceLine" id="cb81-5" title="5">CR_Hab1 &lt;-<span class="st"> </span>CRbuff30_aboveGbio <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">left_join</span>(CRbuff100_aboveGbio)</a></code></pre></div>
+<pre><code>## Joining, by = c(&quot;ID&quot;, &quot;Location&quot;, &quot;Coordinates&quot;)</code></pre>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" title="1"><span class="kw">names</span>(LandUseCR_100m_red) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;ID&quot;</span>,<span class="st">&quot;Per_Forest&quot;</span>)</a>
+<a class="sourceLine" id="cb83-2" title="2">CR_Hab_BPI &lt;-<span class="st"> </span>CR_Hab1 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">left_join</span>(LandUseCR_100m_red)</a></code></pre></div>
+<pre><code>## Joining, by = &quot;ID&quot;</code></pre>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" title="1">CR_Hab_BPI2 &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(CR_Hab_BPI[,<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">6</span>)])</a></code></pre></div>
+<p>Seguidamente estandarizo las variables que voy a utilizar para ver como está distribuidas</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" title="1">CR_HAB_BPI &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">scale</span>(CR_Hab_BPI2[,<span class="op">-</span><span class="kw">c</span>(<span class="dv">1</span>)]))</a>
+<a class="sourceLine" id="cb86-2" title="2"><span class="kw">hist</span>(CR_HAB_BPI<span class="op">$</span>Biomass_30m)</a></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" title="1"><span class="kw">hist</span>(CR_HAB_BPI<span class="op">$</span>Biomass_100m)</a></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb88-1" title="1"><span class="kw">hist</span>(<span class="kw">log</span>(CR_HAB_BPI<span class="op">$</span>Per_Forest))</a></code></pre></div>
+<pre><code>## Warning in log(CR_HAB_BPI$Per_Forest): Se han producido NaNs</code></pre>
+<p><img src="data:image/png;base64,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" /><!-- --> El histograma de porcentaje de bosque no muestra una distribución normal.</p>
+<p>Acá nada más me interesa poner el nombre de los sitios como un caractér</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb90-1" title="1">Sites_BPI_Obvs &lt;-<span class="st"> </span><span class="kw">as.character</span>(CR_Hab_BPI2[,<span class="dv">1</span>])</a></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb91-1" title="1">i=<span class="dv">1</span></a>
+<a class="sourceLine" id="cb91-2" title="2"></a>
+<a class="sourceLine" id="cb91-3" title="3">Species_CR &lt;-<span class="st"> </span>Count_sp_obs.red[<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb91-4" title="4"></a>
+<a class="sourceLine" id="cb91-5" title="5">    sp.name &lt;-<span class="st"> </span>Species_CR[i] </a>
+<a class="sourceLine" id="cb91-6" title="6">    temp.det.mat &lt;-<span class="st"> </span>CR_<span class="dv">2020</span>_Matrix  <span class="co">#esta es la matriz de presencia ausencia para cada una de las réplicas</span></a>
+<a class="sourceLine" id="cb91-7" title="7">    temp.data &lt;-<span class="st"> </span>Data.CR.<span class="fl">2020.</span>BPI <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb91-8" title="8"><span class="st">    </span><span class="kw">filter</span>(Scientific.Name <span class="op">==</span><span class="st"> </span>sp.name) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb91-9" title="9"><span class="st">    </span><span class="kw">filter</span>(year <span class="op">==</span><span class="st"> </span><span class="dv">2020</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb91-10" title="10"><span class="st">    </span><span class="kw">filter</span>(month <span class="op">%in%</span><span class="st"> </span>Months2020[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>])</a>
+<a class="sourceLine" id="cb91-11" title="11">    temp.sites &lt;-<span class="st"> </span><span class="kw">unique</span>(temp.data<span class="op">$</span>Location)</a>
+<a class="sourceLine" id="cb91-12" title="12">    site.match &lt;-<span class="st"> </span><span class="kw">match</span>(Sites_BPI_Obvs,temp.sites)</a>
+<a class="sourceLine" id="cb91-13" title="13">    site.idx &lt;-<span class="st"> </span><span class="op">!</span><span class="kw">is.na</span>(<span class="kw">match</span>(Sites_BPI_Obvs,temp.sites))</a>
+<a class="sourceLine" id="cb91-14" title="14">    <span class="cf">for</span>(ii <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(Sites_BPI_Obvs)){</a>
+<a class="sourceLine" id="cb91-15" title="15">      <span class="cf">if</span>(site.idx[ii] <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span>){</a>
+<a class="sourceLine" id="cb91-16" title="16">      temp.site &lt;-<span class="st"> </span>temp.data <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb91-17" title="17"><span class="st">        </span><span class="kw">filter</span>(Location <span class="op">==</span><span class="st"> </span>temp.sites[site.match[ii]])</a>
+<a class="sourceLine" id="cb91-18" title="18">        n.obs &lt;-<span class="st"> </span><span class="kw">nrow</span>(temp.site)</a>
+<a class="sourceLine" id="cb91-19" title="19">        <span class="cf">if</span>(n.obs <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span>){</a>
+<a class="sourceLine" id="cb91-20" title="20">          n.obs &lt;-<span class="st"> </span><span class="dv">4</span>;</a>
+<a class="sourceLine" id="cb91-21" title="21">        } <span class="co">#acá hice este ajuste porque hay sitios que tienen más de 4 réplicas en 2020 pero es porque son del 2019 que se terminaron tarde.</span></a>
+<a class="sourceLine" id="cb91-22" title="22">        <span class="cf">for</span>(n <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n.obs){</a>
+<a class="sourceLine" id="cb91-23" title="23">          temp.det.mat[ii,n] &lt;-<span class="st"> </span><span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb91-24" title="24">        }</a>
+<a class="sourceLine" id="cb91-25" title="25">      }<span class="cf">else</span> <span class="cf">if</span>(site.idx[ii] <span class="op">==</span><span class="st"> </span><span class="ot">FALSE</span>){ </a>
+<a class="sourceLine" id="cb91-26" title="26">      temp.det.mat &lt;-<span class="st"> </span>temp.det.mat</a>
+<a class="sourceLine" id="cb91-27" title="27">      }</a>
+<a class="sourceLine" id="cb91-28" title="28">    }</a></code></pre></div>
+<p>Y ahora vamos a explorar utilizando a la reinita cafetalera como ejemplo :</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb92-1" title="1">BasRufUMF &lt;-<span class="st"> </span><span class="kw">unmarkedFrameOccu</span>(<span class="dt">y =</span> temp.det.mat,<span class="dt">siteCovs =</span> CR_HAB_BPI)</a>
+<a class="sourceLine" id="cb92-2" title="2"><span class="kw">summary</span>(BasRufUMF)</a></code></pre></div>
+<pre><code>## unmarkedFrame Object
+## 
+## 161 sites
+## Maximum number of observations per site: 4 
+## Mean number of observations per site: 4 
+## Sites with at least one detection: 21 
+## 
+## Tabulation of y observations:
+##   0   1 
+## 616  28 
+## 
+## Site-level covariates:
+##   Biomass_30m       Biomass_100m       Per_Forest     
+##  Min.   :-2.6100   Min.   :-2.8180   Min.   :-0.7831  
+##  1st Qu.:-0.4849   1st Qu.:-0.5031   1st Qu.:-0.7831  
+##  Median : 0.1484   Median : 0.1530   Median :-0.6622  
+##  Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000  
+##  3rd Qu.: 0.7561   3rd Qu.: 0.7653   3rd Qu.: 0.7142  
+##  Max.   : 2.2947   Max.   : 1.7268   Max.   : 2.1557</code></pre>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb94-1" title="1"><span class="kw">str</span>(BasRufUMF)</a></code></pre></div>
+<pre><code>## Formal class &#39;unmarkedFrameOccu&#39; [package &quot;unmarked&quot;] with 5 slots
+##   ..@ y       : num [1:161, 1:4] 0 0 0 0 0 0 0 0 0 0 ...
+##   .. ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. .. ..$ : chr [1:161] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##   .. .. ..$ : chr [1:4] &quot;survey1&quot; &quot;survey2&quot; &quot;survey3&quot; &quot;survey4&quot;
+##   ..@ obsCovs : NULL
+##   ..@ siteCovs:&#39;data.frame&#39;: 161 obs. of  3 variables:
+##   .. ..$ Biomass_30m : num [1:161] 0.467 1.071 -0.544 0.323 -0.132 ...
+##   .. ..$ Biomass_100m: num [1:161] -0.0145 0.6843 0.0851 0.3417 -0.1328 ...
+##   .. ..$ Per_Forest  : num [1:161] 0.468 1.807 -0.301 0.287 1.716 ...
+##   ..@ mapInfo : NULL
+##   ..@ obsToY  : num [1:4, 1:4] 1 0 0 0 0 1 0 0 0 0 ...</code></pre>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb96-1" title="1">BasRufUMF[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,]    </a></code></pre></div>
+<pre><code>## Data frame representation of unmarkedFrame object.
+##   y.1 y.2 y.3 y.4 Biomass_30m Biomass_100m Per_Forest
+## 1   0   0   0   0   0.4671274  -0.01453463  0.4684136
+## 2   0   0   0   0   1.0706576   0.68431817  1.8071451
+## 3   0   0   0   0  -0.5444232   0.08508586 -0.3010413
+## 4   0   0   0   0   0.3226202   0.34168408  0.2872382
+## 5   0   0   0   0  -0.1321526  -0.13277106  1.7157738</code></pre>
+<p>Acontinuación el modelo nulo:</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb98-1" title="1">(null &lt;-<span class="st"> </span><span class="kw">occu</span>(<span class="op">~</span><span class="dv">1</span> <span class="op">~</span><span class="dv">1</span>, BasRufUMF))</a></code></pre></div>
+<pre><code>## 
+## Call:
+## occu(formula = ~1 ~ 1, data = BasRufUMF)
+## 
+## Occupancy:
+##  Estimate    SE     z P(&gt;|z|)
+##     -1.21 0.393 -3.08 0.00206
+## 
+## Detection:
+##  Estimate   SE     z  P(&gt;|z|)
+##     -1.45 0.39 -3.73 0.000192
+## 
+## AIC: 221.6406</code></pre>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb100-1" title="1"><span class="co">## Backtransform: transforma &quot;de vuelta&quot; psi y p a la escala original</span></a>
+<a class="sourceLine" id="cb100-2" title="2"><span class="co"># NOTA: esta función sólo funciona en el modelo nulo</span></a>
+<a class="sourceLine" id="cb100-3" title="3"><span class="kw">backTransform</span>(null, <span class="st">&quot;state&quot;</span>) <span class="co">#probabilidad de ocupación</span></a></code></pre></div>
+<pre><code>## Backtransformed linear combination(s) of Occupancy estimate(s)
+## 
+##  Estimate     SE LinComb (Intercept)
+##     0.229 0.0695   -1.21           1
+## 
+## Transformation: logistic</code></pre>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb102-1" title="1"><span class="kw">backTransform</span>(null, <span class="st">&quot;det&quot;</span>) <span class="co">#probabilidad de detección</span></a></code></pre></div>
+<pre><code>## Backtransformed linear combination(s) of Detection estimate(s)
+## 
+##  Estimate     SE LinComb (Intercept)
+##     0.189 0.0599   -1.45           1
+## 
+## Transformation: logistic</code></pre>
+<p>Acá el modelo global:</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb104-1" title="1"><span class="co"># Modelo global (ie, con biomasa en ambas resoluciones)</span></a>
+<a class="sourceLine" id="cb104-2" title="2">full &lt;-<span class="st"> </span><span class="kw">occu</span>(<span class="op">~</span>Biomass_100m <span class="op">+</span>Biomass_30m <span class="op">~</span>Biomass_100m <span class="op">+</span><span class="st"> </span>Biomass_30m, BasRufUMF)</a>
+<a class="sourceLine" id="cb104-3" title="3"></a>
+<a class="sourceLine" id="cb104-4" title="4">occ_dredge &lt;-<span class="st"> </span><span class="kw">dredge</span>(full)</a></code></pre></div>
+<pre><code>## Fixed terms are &quot;p(Int)&quot; and &quot;psi(Int)&quot;</code></pre>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb106-1" title="1"><span class="co">#Comparación de modelos para explorar los resultados para ocupación: </span></a>
+<a class="sourceLine" id="cb106-2" title="2">occ_dredge_table &lt;-<span class="st"> </span>occ_dredge<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb106-3" title="3"><span class="st">  </span><span class="kw">mutate_all</span>(<span class="op">~</span><span class="st"> </span><span class="kw">round</span>(., <span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb106-4" title="4"></a>
+<a class="sourceLine" id="cb106-5" title="5">Occ_res &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(occ_dredge_table)</a>
+<a class="sourceLine" id="cb106-6" title="6"></a>
+<a class="sourceLine" id="cb106-7" title="7">Occ_res</a></code></pre></div>
+<pre><code>##    p(Int) psi(Int) p(Biomass_100m) p(Biomass_30m) psi(Biomass_100m)
+## 1  -1.608   -0.983              NA          0.553            -1.681
+## 2  -1.437   -0.991           0.652             NA            -1.987
+## 3  -1.523   -0.996           0.235          0.401            -1.838
+## 4  -1.570   -1.005              NA          0.576            -1.489
+## 5  -1.481   -0.945           0.647             NA            -2.359
+## 6  -1.539   -1.217              NA             NA            -0.654
+## 7  -1.885   -0.892          -1.135          0.689                NA
+## 8  -1.797   -0.944          -0.592             NA                NA
+## 9  -1.522   -1.001           0.210          0.424            -1.769
+## 10 -1.777   -0.911          -0.869          1.077                NA
+## 11 -1.529   -1.239              NA             NA            -0.942
+## 12 -1.453   -1.211              NA             NA                NA
+## 13 -1.417   -1.147              NA          0.519                NA
+## 14 -1.463   -1.234              NA             NA                NA
+## 15 -1.911   -0.800          -0.718             NA                NA
+## 16 -1.488   -1.183              NA         -0.063                NA
+##    psi(Biomass_30m) df   logLik    AICc delta weight
+## 1                NA  4 -104.025 216.307 0.000  0.258
+## 2                NA  4 -104.455 217.167 0.860  0.168
+## 3                NA  5 -103.916 218.219 1.912  0.099
+## 4            -0.209  5 -103.969 218.324 2.017  0.094
+## 5             0.352  5 -104.305 218.996 2.690  0.067
+## 6                NA  3 -106.425 219.004 2.697  0.067
+## 7                NA  4 -105.699 219.655 3.348  0.048
+## 8                NA  3 -107.063 220.279 3.972  0.035
+## 9            -0.056  6 -103.913 220.372 4.065  0.034
+## 10           -0.867  5 -105.043 220.474 4.167  0.032
+## 11            0.353  4 -106.163 220.582 4.275  0.030
+## 12               NA  2 -108.820 221.717 5.410  0.017
+## 13           -1.016  4 -106.772 221.800 5.493  0.017
+## 14           -0.356  3 -107.936 222.024 5.717  0.015
+## 15            0.150  4 -106.990 222.236 5.929  0.013
+## 16               NA  3 -108.794 223.741 7.434  0.006</code></pre>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb108-1" title="1"><span class="co">#Acá con la tabla de selección del modelo se puede observar cuales modelos tienen el mayor apoyo en el caso de esta especie here you can see which models have the most support for this species</span></a></code></pre></div>
+<p>Procedemos a la escogencia del mejor modelo utilizando el criterio de información de AKAIKE</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" title="1"><span class="co"># Los modelos con menos de 2.5 Delta AICc)</span></a>
+<a class="sourceLine" id="cb109-2" title="2">occ_dredge_Delta &lt;-<span class="st"> </span><span class="kw">get.models</span>(occ_dredge, <span class="dt">subset =</span> delta <span class="op">&lt;=</span><span class="st"> </span><span class="fl">2.5</span>)</a>
+<a class="sourceLine" id="cb109-3" title="3"></a>
+<a class="sourceLine" id="cb109-4" title="4"><span class="co"># modelos promediados basados en el peso del modelo  </span></a>
+<a class="sourceLine" id="cb109-5" title="5">occ_avg &lt;-<span class="st"> </span><span class="kw">model.avg</span>(occ_dredge_Delta, <span class="dt">fit =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb109-6" title="6"></a>
+<a class="sourceLine" id="cb109-7" title="7"><span class="co">#  coeficientes de los modelos promediados para lsa probabilidades de ocupación y detección. fr the models with the most support from the data</span></a>
+<a class="sourceLine" id="cb109-8" title="8"><span class="kw">coef</span>(occ_avg)</a></code></pre></div>
+<pre><code>##          psi(Int) psi(Biomass_100m)            p(Int)    p(Biomass_30m) 
+##        -0.9905924        -1.7599421        -1.5421493         0.5242179 
+##   p(Biomass_100m)  psi(Biomass_30m) 
+##         0.4975832        -0.2089401</code></pre>
+<p>#create a new data frame</p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" title="1">newDatHab &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Biomass_100m =</span> <span class="kw">mean</span>(CR_HAB_BPI<span class="op">$</span>Biomass_100m),</a>
+<a class="sourceLine" id="cb111-2" title="2">                        <span class="dt">Biomass_30m =</span> <span class="kw">seq</span>(<span class="kw">min</span>(CR_HAB_BPI<span class="op">$</span>Biomass_30m),<span class="kw">max</span>(CR_HAB_BPI<span class="op">$</span>Biomass_30m), <span class="dt">length=</span><span class="dv">100</span>),</a>
+<a class="sourceLine" id="cb111-3" title="3">                        <span class="dt">Per_Forest =</span> <span class="kw">mean</span>(CR_HAB_BPI<span class="op">$</span>Per_Forest))</a>
+<a class="sourceLine" id="cb111-4" title="4"></a>
+<a class="sourceLine" id="cb111-5" title="5"></a>
+<a class="sourceLine" id="cb111-6" title="6">occ_pred &lt;-<span class="st"> </span><span class="kw">predict</span>(occ_avg,</a>
+<a class="sourceLine" id="cb111-7" title="7">                    <span class="dt">newdata =</span> newDatHab,</a>
+<a class="sourceLine" id="cb111-8" title="8">                    <span class="dt">type =</span> <span class="st">&quot;state&quot;</span>)</a>
+<a class="sourceLine" id="cb111-9" title="9"></a>
+<a class="sourceLine" id="cb111-10" title="10">Biomass_30m &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="kw">min</span>(CR_Hab_BPI2<span class="op">$</span>Biomass_30m),<span class="kw">max</span>(CR_Hab_BPI2<span class="op">$</span>Biomass_30m), <span class="dt">length=</span><span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb111-11" title="11"></a>
+<a class="sourceLine" id="cb111-12" title="12"><span class="co"># par(mfrow=c(2,3))</span></a>
+<a class="sourceLine" id="cb111-13" title="13"><span class="kw">plot</span>(Biomass_30m, occ_pred<span class="op">$</span>fit, <span class="dt">xlab=</span><span class="st">&quot;Above Ground Biomass at 30m&quot;</span>,</a>
+<a class="sourceLine" id="cb111-14" title="14">       <span class="dt">ylab=</span><span class="st">&quot;Occupancy Probability&quot;</span>, <span class="dt">pch=</span><span class="dv">16</span>, <span class="dt">ylim=</span><span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb111-15" title="15">       <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">main =</span> Species_CR[<span class="dv">28</span>])</a>
+<a class="sourceLine" id="cb111-16" title="16"><span class="kw">lines</span>(Biomass_30m, occ_pred<span class="op">$</span>fit<span class="op">-</span>occ_pred<span class="op">$</span>se.fit, <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb111-17" title="17"><span class="kw">lines</span>(Biomass_30m, occ_pred<span class="op">$</span>fit<span class="op">+</span>occ_pred<span class="op">$</span>se.fit, <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">3</span>)</a></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<p>#create a new data frame</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb112-1" title="1"><span class="co"># newDatHab2 &lt;- data.frame(Biomass_100m = seq(min(CR_HAB_BPI$Biomass_100m),max(CR_HAB_BPI$Biomass_100m), length=100),</span></a>
+<a class="sourceLine" id="cb112-2" title="2"><span class="co">#                         Biomass_30m = mean(CR_HAB_BPI$Biomass_30m),</span></a>
+<a class="sourceLine" id="cb112-3" title="3"><span class="co">#                         Per_Forest = mean(CR_HAB_BPI$Per_Forest))</span></a>
+<a class="sourceLine" id="cb112-4" title="4"><span class="co"># </span></a>
+<a class="sourceLine" id="cb112-5" title="5"><span class="co"># </span></a>
+<a class="sourceLine" id="cb112-6" title="6"><span class="co"># occ_pred2 &lt;- predict(occ_avg,</span></a>
+<a class="sourceLine" id="cb112-7" title="7"><span class="co">#                     newdata = newDatHab2,</span></a>
+<a class="sourceLine" id="cb112-8" title="8"><span class="co">#                     type = &quot;state&quot;)</span></a>
+<a class="sourceLine" id="cb112-9" title="9"><span class="co"># </span></a>
+<a class="sourceLine" id="cb112-10" title="10"><span class="co"># Biomass_100m &lt;- seq(min(CR_Hab_BPI2$Biomass_100m),max(CR_Hab_BPI2$Biomass_100m), length=100)</span></a>
+<a class="sourceLine" id="cb112-11" title="11"><span class="co"># plot(Biomass_100m, occ_pred2$fit, xlab=&quot;Above Ground Biomass at 100m&quot;,</span></a>
+<a class="sourceLine" id="cb112-12" title="12"><span class="co">#      ylab=&quot;Occupancy Probability&quot;, pch=16, ylim=0:1, type=&quot;l&quot;,</span></a>
+<a class="sourceLine" id="cb112-13" title="13"><span class="co">#      # lwd=2, main = Species_CR[i])</span></a>
+<a class="sourceLine" id="cb112-14" title="14"><span class="co">#      lwd=3, main = Species_Res_names[i],col=3)</span></a>
+<a class="sourceLine" id="cb112-15" title="15"><span class="co"># lines(Biomass_100m, occ_pred2$fit-occ_pred2$se.fit, lty=3,col=3)</span></a>
+<a class="sourceLine" id="cb112-16" title="16"><span class="co"># lines(Biomass_100m, occ_pred2$fit+occ_pred2$se.fit, lty=3,col=3)</span></a></code></pre></div>
+</div>
+<div id="savedata1-data2-file-data.rdata" class="section level1">
+<h1>save(data1, data2, file = “data.RData”)</h1>
+<ol start="5" style="list-style-type: decimal">
+<li>Interpretación breve de los resultados con respecto a la pregunta de investigación y la hipótesis causal. Máximo un párrafo.</li>
 </ol>
 </div>
 </div><!-- /.entry-content -->
