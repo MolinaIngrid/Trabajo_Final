@@ -1,4 +1,4 @@
-###File to work with Costa Rica data from Nespresso
+###Archivo para trabajar con los datos de costa rica de  Nespresso
 install.packages("tidyverse")
 install.packages("dplyr")
 install.packages("rlang_0.4.7")
@@ -8,9 +8,7 @@ install.packages("lattice")
 install.packages("parallel")
 install.packages("Rcpp")
 install.packages("reshape2")
-
-library(rlang)
-sessionInfo() 
+install.packages("ggdag")
 
 library(sf)
 library(rnaturalearth)
@@ -21,10 +19,14 @@ library(dplyr)
 library(plyr)
 library(tidyr)
 library(readr)
+library(rlang)
 # library(wesanderson)
 library(unmarked)
 library(MuMIn)
 library(AICcmodavg)
+#
+library(ggdag)
+
 
 #Read in all of the CR data
 CRdatos_all <- read.csv("~/Desktop/Nespresso/CR_Nespresso/MyEBirdData.csv",stringsAsFactors=FALSE)
@@ -413,3 +415,5 @@ lines(Per_Forest, occ_pred3$fit+occ_pred3$se.fit, lty=3,col=3)
 }
 
 # save(data1, data2, file = "data.RData")
+
+sessionInfo()
