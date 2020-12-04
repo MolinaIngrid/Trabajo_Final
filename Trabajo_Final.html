@@ -203,8 +203,9 @@ code span.er { color: #a61717; background-color: #e3d2d2; }
 </div>
 <div style="text-align: left">
 
-<div id="antes-de-iniciar-acá-dejo-esta-lista-de-todos-lo-paquetes-que-vamos-a-necesitar-para-reproducir-este-análisis" class="section level2">
-<h2>Antes de iniciar acá dejo esta lista de todos lo paquetes que vamos a necesitar para reproducir este análisis:</h2>
+<div id="antes-de-iniciar-acá-dejo-esta-lista-de-todos-lo-paquetes-que-vamos-a-necesitar-para-reproducir-este-análisis" class="section level3">
+<h3>Antes de iniciar acá dejo esta lista de todos lo paquetes que vamos a necesitar para reproducir este análisis:</h3>
+</div>
 <div id="paquetes" class="section level3">
 <h3>Paquetes</h3>
 <p>install.packages(“tidyverse”)</p>
@@ -251,8 +252,7 @@ code span.er { color: #a61717; background-color: #e3d2d2; }
 </div>
 <div id="de-dónde-vienen-los-datos-si-son-datos-empíricos-debe-incluir-el-código-para-su-procesamiento-desde-datos-crudos-hasta-datos-analizables." class="section level3">
 <h3>3. ¿De dónde vienen los datos? Si son datos empíricos debe incluir el código para su procesamiento desde datos crudos, hasta datos analizables.</h3>
-<p>Los datos vienen del trabajo de campo hecho desde finales de 2019 al 2020. Utilicé puntos de conteo de radio fijo y la aplicación ebird para anotar todas las especies detectadas en cada uno de los 161 puntos. Al bajar de la aplicación toda la información obtengo unas tablas muy grandes por eso debo procesar los datos.</p>
-</div>
+<p>Los datos vienen del trabajo de campo hecho desde finales de 2019 al 2020. Utilicé puntos de conteo de radio fijo de dos bandas (Anotamos las especies detectadas de 0 a 30m del punto y las detectadas de 30 a 100m del punto). Utilizamos la aplicación ebird para anotar todas las especies detectadas en cada uno de los 161 puntos. Al bajar de la aplicación toda la información obtengo unas tablas muy grandes por eso debo procesar los datos.</p>
 </div>
 <div id="procesamiento-de-los-datos" class="section level2">
 <h2>Procesamiento de los datos:</h2>
@@ -650,8 +650,8 @@ code span.er { color: #a61717; background-color: #e3d2d2; }
 ## 45     Tyrannidae 25
 ## 46     Vireonidae  5</code></pre>
 </div>
-<div id="análisis-de-los-datos.-se-vale-escoger-un-subconjunto-de-los-datos-para-que-esta-sección-sea-concisa-pero-debe-ser-un-análisis-coherente-con-el-dag-del-punto-2." class="section level2">
-<h2>4. Análisis de los datos. Se vale escoger un subconjunto de los datos para que esta sección sea concisa, pero debe ser un análisis coherente con el DAG del punto 2.</h2>
+<div id="análisis-de-los-datos." class="section level2">
+<h2>4. Análisis de los datos.</h2>
 <p>Para comenzar con el análisis de los datos, quiero primero ver cuantos registros tengo de cada especie</p>
 <div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" title="1">Count_sp_obs &lt;-<span class="st"> </span><span class="kw">ddply</span>(Data.CR.<span class="fl">2020.</span>BPI,<span class="op">~</span>Scientific.Name,summarise,<span class="dt">species_count=</span><span class="kw">length</span>(<span class="kw">unique</span>(Submission.ID)))</a>
 <a class="sourceLine" id="cb67-2" title="2"></a>
@@ -886,7 +886,7 @@ code span.er { color: #a61717; background-color: #e3d2d2; }
 <a class="sourceLine" id="cb72-2" title="2">n=<span class="st"> </span><span class="kw">nrow</span>(Datos_BPI_CR)</a>
 <a class="sourceLine" id="cb72-3" title="3">Sites &lt;-<span class="st"> </span>Datos_BPI_CR[,<span class="dv">1</span>]</a>
 <a class="sourceLine" id="cb72-4" title="4">CR_<span class="dv">2020</span>_Matrix &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>, <span class="dt">nrow=</span>n, <span class="dt">ncol=</span>J,<span class="dt">dimnames=</span><span class="kw">list</span>(<span class="dv">1</span><span class="op">:</span>n, <span class="kw">paste</span>(<span class="st">&quot;survey&quot;</span>, <span class="dv">1</span><span class="op">:</span>J, <span class="dt">sep=</span><span class="st">&quot;&quot;</span>)))</a></code></pre></div>
-<p>En este momento agrego la información de la biomasa sobre el suelo y del tipo de uso del suelo (en el tipo de uso tengo el porcentaje de bosque). (contamos con una resolución a 30m y otra a 100m)</p>
+<p>En este momento agrego la información de la biomasa sobre el suelo (<strong>OJO</strong> hay dos archivos de biomasa para cada punto de conteo, uno con los valores de 0 a 30m y otro con los valores de 30 a 100m) y del tipo de uso del suelo (en el tipo de uso tenemos el porcentaje de bosque).</p>
 <div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" title="1">LandUseCR_30m &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;C:/Users/in/Documents/MAESTRIA/Cursos/Estrategias/Trabajo_Final/LandUseCR_30m.csv&quot;</span>)</a>
 <a class="sourceLine" id="cb73-2" title="2"><span class="kw">head</span>(LandUseCR_30m)</a></code></pre></div>
 <pre><code>##   IDs Bosque.maduro Bosque.secundario No.forestal Nubes Pastos Sombra.de.nubes
@@ -1096,14 +1096,86 @@ code span.er { color: #a61717; background-color: #e3d2d2; }
 <a class="sourceLine" id="cb105-3" title="3"></a>
 <a class="sourceLine" id="cb105-4" title="4">occ_dredge &lt;-<span class="st"> </span><span class="kw">dredge</span>(full)</a></code></pre></div>
 <pre><code>## Fixed terms are &quot;p(Int)&quot; and &quot;psi(Int)&quot;</code></pre>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb107-1" title="1"><span class="co">#Comparación de modelos para explorar los resultados para ocupación: </span></a>
-<a class="sourceLine" id="cb107-2" title="2">occ_dredge_table &lt;-<span class="st"> </span>occ_dredge<span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb107-3" title="3"><span class="st">  </span><span class="kw">mutate_all</span>(<span class="op">~</span><span class="st"> </span><span class="kw">round</span>(., <span class="dv">3</span>))</a>
-<a class="sourceLine" id="cb107-4" title="4"></a>
-<a class="sourceLine" id="cb107-5" title="5"><span class="co">#Acá con la tabla de selección del modelo se puede observar cuales modelos tienen el mayor apoyo en el caso de esta especie.</span></a>
-<a class="sourceLine" id="cb107-6" title="6">Occ_res &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(occ_dredge_table)</a>
-<a class="sourceLine" id="cb107-7" title="7"></a>
-<a class="sourceLine" id="cb107-8" title="8">Occ_res</a></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb107-1" title="1">occ_dredge</a></code></pre></div>
+<pre><code>## Global model call: occu(formula = ~Biomass_100m + Biomass_30m ~ Biomass_100m + Biomass_30m + 
+##     Per_Forest, data = BasRufUMF)
+## ---
+## Model selection table 
+##    p(Int) psi(Int) p(Bms_100) p(Bms_30m) psi(Bms_100) psi(Bms_30m) psi(Per_Frs)
+## 10 0.3494    2.035     0.2676                               0.5428             
+## 11 0.3439    2.032               0.25670                    0.5236             
+## 26 0.3480    2.080     0.2614                               0.6284     -0.26390
+## 2  0.3207    2.057     0.3403                                                  
+## 3  0.3090    2.088               0.34500                                       
+## 12 0.3438    2.035     0.1850    0.10930                    0.5165             
+## 14 0.3454    2.057     0.2784              -0.2287000       0.7254             
+## 7  0.3338    2.036               0.28260    0.4212000                          
+## 6  0.3465    1.996     0.2756               0.3999000                          
+## 27 0.3444    2.066               0.24740                    0.6041     -0.24450
+## 4  0.3089    2.096     0.1936    0.18970                                       
+## 15 0.3439    2.032               0.25670    0.0003192       0.5235             
+## 28 0.3441    2.070     0.1878    0.09786                    0.5982     -0.25000
+## 8  0.3347    2.022     0.1523    0.16470    0.3770000                          
+## 23 0.3359    2.059               0.27270    0.5170000                  -0.25540
+## 30 0.3464    2.085     0.2669              -0.1107000       0.7104     -0.24610
+## 18 0.3203    2.066     0.3428                                          -0.12160
+## 22 0.3480    2.022     0.2663               0.4989000                  -0.25550
+## 19 0.3093    2.094               0.34640                               -0.11020
+## 16 0.3419    2.047     0.2016    0.09787   -0.1680000       0.6526             
+## 20 0.3090    2.103     0.1963    0.18870                               -0.12180
+## 31 0.3443    2.068               0.24650    0.0985400       0.5283     -0.25980
+## 9  0.3686    2.058                                          0.6577             
+## 24 0.3376    2.040     0.1488    0.15730    0.4725000                  -0.24510
+## 32 0.3435    2.072     0.1932    0.09454   -0.0570300       0.6415     -0.24140
+## 25 0.3609    2.159                                          0.7888     -0.34200
+## 13 0.3685    2.059                          0.0203300       0.6415             
+## 5  0.3674    2.026                          0.5798000                          
+## 29 0.3593    2.176                          0.1605000       0.6728     -0.37480
+## 21 0.3607    2.115                          0.7294000                  -0.35790
+## 1  0.3702    1.891                                                             
+## 17 0.3702    1.893                                                     -0.06945
+##    df   logLik  AICc delta weight
+## 10  4 -423.044 854.3  0.00  0.132
+## 11  4 -423.455 855.2  0.82  0.088
+## 26  5 -422.636 855.7  1.31  0.069
+## 2   3 -424.871 855.9  1.55  0.061
+## 3   3 -424.913 856.0  1.63  0.058
+## 12  5 -422.840 856.1  1.72  0.056
+## 14  5 -422.946 856.3  1.93  0.050
+## 7   4 -424.048 856.4  2.01  0.048
+## 6   4 -424.103 856.5  2.12  0.046
+## 27  5 -423.108 856.6  2.26  0.043
+## 4   4 -424.236 856.7  2.38  0.040
+## 15  5 -423.455 857.3  2.95  0.030
+## 28  6 -422.472 857.5  3.15  0.027
+## 8   5 -423.642 857.7  3.33  0.025
+## 23  5 -423.691 857.8  3.42  0.024
+## 30  6 -422.614 857.8  3.43  0.024
+## 18  4 -424.771 857.8  3.45  0.024
+## 22  5 -423.721 857.8  3.48  0.023
+## 19  4 -424.834 857.9  3.58  0.022
+## 16  6 -422.789 858.1  3.78  0.020
+## 20  5 -424.139 858.7  4.32  0.015
+## 31  6 -423.088 858.7  4.38  0.015
+## 9   3 -426.406 859.0  4.62  0.013
+## 24  6 -423.300 859.1  4.80  0.012
+## 32  7 -422.467 859.7  5.32  0.009
+## 25  4 -425.800 859.9  5.51  0.008
+## 13  4 -426.405 861.1  6.72  0.005
+## 5   3 -427.475 861.1  6.76  0.005
+## 29  5 -425.746 861.9  7.53  0.003
+## 21  4 -426.835 861.9  7.58  0.003
+## 1   2 -430.169 864.4 10.07  0.001
+## 17  3 -430.131 866.4 12.07  0.000
+## Models ranked by AICc(x)</code></pre>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" title="1"><span class="co">#Comparación de modelos para explorar los resultados para ocupación: </span></a>
+<a class="sourceLine" id="cb109-2" title="2">occ_dredge_table &lt;-<span class="st"> </span>occ_dredge<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb109-3" title="3"><span class="st">  </span><span class="kw">mutate_all</span>(<span class="op">~</span><span class="st"> </span><span class="kw">round</span>(., <span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb109-4" title="4"></a>
+<a class="sourceLine" id="cb109-5" title="5"><span class="co">#Acá con la tabla de selección del modelo se puede observar cuales modelos tienen el mayor apoyo en el caso de esta especie.</span></a>
+<a class="sourceLine" id="cb109-6" title="6">Occ_res &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(occ_dredge_table)</a>
+<a class="sourceLine" id="cb109-7" title="7"></a>
+<a class="sourceLine" id="cb109-8" title="8">Occ_res</a></code></pre></div>
 <pre><code>##    p(Int) psi(Int) p(Biomass_100m) p(Biomass_30m) psi(Biomass_100m)
 ## 1   0.349    2.035           0.268             NA                NA
 ## 2   0.344    2.032              NA          0.257                NA
@@ -1171,83 +1243,83 @@ code span.er { color: #a61717; background-color: #e3d2d2; }
 ## 31               NA              NA  2 -430.169 864.415 10.070  0.001
 ## 32               NA          -0.069  3 -430.131 866.415 12.070  0.000</code></pre>
 <p>Procedemos a la escogencia del mejor modelo utilizando el criterio de información de AKAIKE</p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" title="1"><span class="co"># Los modelos con menos de 2.5 Delta AICc)</span></a>
-<a class="sourceLine" id="cb109-2" title="2">occ_dredge_Delta &lt;-<span class="st"> </span><span class="kw">get.models</span>(occ_dredge, <span class="dt">subset =</span> delta <span class="op">&lt;=</span><span class="st"> </span><span class="fl">2.5</span>)</a>
-<a class="sourceLine" id="cb109-3" title="3"></a>
-<a class="sourceLine" id="cb109-4" title="4"><span class="co"># modelos promediados basados en el peso del modelo  </span></a>
-<a class="sourceLine" id="cb109-5" title="5">occ_avg &lt;-<span class="st"> </span><span class="kw">model.avg</span>(occ_dredge_Delta, <span class="dt">fit =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb109-6" title="6"></a>
-<a class="sourceLine" id="cb109-7" title="7"><span class="co">#  coeficientes de los modelos promediados para lsa probabilidades de ocupación y detección. fr the models with the most support from the data</span></a>
-<a class="sourceLine" id="cb109-8" title="8"><span class="kw">coef</span>(occ_avg)</a></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" title="1"><span class="co"># Los modelos con menos de 2.5 Delta AICc)</span></a>
+<a class="sourceLine" id="cb111-2" title="2">occ_dredge_Delta &lt;-<span class="st"> </span><span class="kw">get.models</span>(occ_dredge, <span class="dt">subset =</span> delta <span class="op">&lt;=</span><span class="st"> </span><span class="fl">2.5</span>)</a>
+<a class="sourceLine" id="cb111-3" title="3"></a>
+<a class="sourceLine" id="cb111-4" title="4"><span class="co"># modelos promediados basados en el peso del modelo  </span></a>
+<a class="sourceLine" id="cb111-5" title="5">occ_avg &lt;-<span class="st"> </span><span class="kw">model.avg</span>(occ_dredge_Delta, <span class="dt">fit =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb111-6" title="6"></a>
+<a class="sourceLine" id="cb111-7" title="7"><span class="co">#  coeficientes de los modelos promediados para lsa probabilidades de ocupación y detección. fr the models with the most support from the data</span></a>
+<a class="sourceLine" id="cb111-8" title="8"><span class="kw">coef</span>(occ_avg)</a></code></pre></div>
 <pre><code>##          psi(Int)  psi(Biomass_30m)            p(Int)   p(Biomass_100m) 
 ##         2.0501393         0.5759756         0.3379331         0.2617100 
 ##    p(Biomass_30m)   psi(Per_Forest) psi(Biomass_100m) 
 ##         0.2419696        -0.2564731         0.1885313</code></pre>
-<p>Creamos un nuevo data frame y hacemos el gráfico de probabilidad de ocupación respecto a biomasa a 30m</p>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" title="1">newDatHab &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Biomass_100m =</span> <span class="kw">mean</span>(CR_HAB_BPI<span class="op">$</span>Biomass_100m),</a>
-<a class="sourceLine" id="cb111-2" title="2">                        <span class="dt">Biomass_30m =</span> <span class="kw">seq</span>(<span class="kw">min</span>(CR_HAB_BPI<span class="op">$</span>Biomass_30m),<span class="kw">max</span>(CR_HAB_BPI<span class="op">$</span>Biomass_30m), <span class="dt">length=</span><span class="dv">100</span>),</a>
-<a class="sourceLine" id="cb111-3" title="3">                        <span class="dt">Per_Forest =</span> <span class="kw">mean</span>(CR_HAB_BPI<span class="op">$</span>Per_Forest))</a>
-<a class="sourceLine" id="cb111-4" title="4"></a>
-<a class="sourceLine" id="cb111-5" title="5"></a>
-<a class="sourceLine" id="cb111-6" title="6">occ_pred &lt;-<span class="st"> </span><span class="kw">predict</span>(occ_avg,</a>
-<a class="sourceLine" id="cb111-7" title="7">                    <span class="dt">newdata =</span> newDatHab,</a>
-<a class="sourceLine" id="cb111-8" title="8">                    <span class="dt">type =</span> <span class="st">&quot;state&quot;</span>)</a>
-<a class="sourceLine" id="cb111-9" title="9"></a>
-<a class="sourceLine" id="cb111-10" title="10">Biomass_30m &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="kw">min</span>(CR_Hab_BPI2<span class="op">$</span>Biomass_30m),<span class="kw">max</span>(CR_Hab_BPI2<span class="op">$</span>Biomass_30m), <span class="dt">length=</span><span class="dv">100</span>)</a>
-<a class="sourceLine" id="cb111-11" title="11"></a>
-<a class="sourceLine" id="cb111-12" title="12"><span class="co"># par(mfrow=c(2,3))</span></a>
-<a class="sourceLine" id="cb111-13" title="13"><span class="kw">plot</span>(Biomass_30m, occ_pred<span class="op">$</span>fit, <span class="dt">xlab=</span><span class="st">&quot;Above Ground Biomass at 30m&quot;</span>,</a>
-<a class="sourceLine" id="cb111-14" title="14">       <span class="dt">ylab=</span><span class="st">&quot;Occupancy Probability&quot;</span>, <span class="dt">pch=</span><span class="dv">16</span>, <span class="dt">ylim=</span><span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
-<a class="sourceLine" id="cb111-15" title="15">       <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">main =</span> Species_CR[<span class="dv">3</span>])</a>
-<a class="sourceLine" id="cb111-16" title="16"><span class="kw">lines</span>(Biomass_30m, occ_pred<span class="op">$</span>fit<span class="op">-</span>occ_pred<span class="op">$</span>se.fit, <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb111-17" title="17"><span class="kw">lines</span>(Biomass_30m, occ_pred<span class="op">$</span>fit<span class="op">+</span>occ_pred<span class="op">$</span>se.fit, <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">3</span>)</a></code></pre></div>
+<p>Creamos un nuevo data frame y hacemos el gráfico de probabilidad de ocupación respecto a biomasa de 0 a 30m</p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb113-1" title="1">newDatHab &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Biomass_100m =</span> <span class="kw">mean</span>(CR_HAB_BPI<span class="op">$</span>Biomass_100m),</a>
+<a class="sourceLine" id="cb113-2" title="2">                        <span class="dt">Biomass_30m =</span> <span class="kw">seq</span>(<span class="kw">min</span>(CR_HAB_BPI<span class="op">$</span>Biomass_30m),<span class="kw">max</span>(CR_HAB_BPI<span class="op">$</span>Biomass_30m), <span class="dt">length=</span><span class="dv">100</span>),</a>
+<a class="sourceLine" id="cb113-3" title="3">                        <span class="dt">Per_Forest =</span> <span class="kw">mean</span>(CR_HAB_BPI<span class="op">$</span>Per_Forest))</a>
+<a class="sourceLine" id="cb113-4" title="4"></a>
+<a class="sourceLine" id="cb113-5" title="5"></a>
+<a class="sourceLine" id="cb113-6" title="6">occ_pred &lt;-<span class="st"> </span><span class="kw">predict</span>(occ_avg,</a>
+<a class="sourceLine" id="cb113-7" title="7">                    <span class="dt">newdata =</span> newDatHab,</a>
+<a class="sourceLine" id="cb113-8" title="8">                    <span class="dt">type =</span> <span class="st">&quot;state&quot;</span>)</a>
+<a class="sourceLine" id="cb113-9" title="9"></a>
+<a class="sourceLine" id="cb113-10" title="10">Biomass_30m &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="kw">min</span>(CR_Hab_BPI2<span class="op">$</span>Biomass_30m),<span class="kw">max</span>(CR_Hab_BPI2<span class="op">$</span>Biomass_30m), <span class="dt">length=</span><span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb113-11" title="11"></a>
+<a class="sourceLine" id="cb113-12" title="12"><span class="co"># par(mfrow=c(2,3))</span></a>
+<a class="sourceLine" id="cb113-13" title="13"><span class="kw">plot</span>(Biomass_30m, occ_pred<span class="op">$</span>fit, <span class="dt">xlab=</span><span class="st">&quot;Above Ground Biomass at 30m&quot;</span>,</a>
+<a class="sourceLine" id="cb113-14" title="14">       <span class="dt">ylab=</span><span class="st">&quot;Occupancy Probability&quot;</span>, <span class="dt">pch=</span><span class="dv">16</span>, <span class="dt">ylim=</span><span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb113-15" title="15">       <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">main =</span> Species_CR[<span class="dv">3</span>])</a>
+<a class="sourceLine" id="cb113-16" title="16"><span class="kw">lines</span>(Biomass_30m, occ_pred<span class="op">$</span>fit<span class="op">-</span>occ_pred<span class="op">$</span>se.fit, <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb113-17" title="17"><span class="kw">lines</span>(Biomass_30m, occ_pred<span class="op">$</span>fit<span class="op">+</span>occ_pred<span class="op">$</span>se.fit, <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">3</span>)</a></code></pre></div>
 <p><img src="data:image/png;base64,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" /><!-- --></p>
 <p>Creamos un nuevo data frame y hacemos el gráfico de probabilidad de ocupación respecto a biomasa a 100m</p>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb112-1" title="1">newDatHab2 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Biomass_100m =</span> <span class="kw">seq</span>(<span class="kw">min</span>(CR_HAB_BPI<span class="op">$</span>Biomass_100m),<span class="kw">max</span>(CR_HAB_BPI<span class="op">$</span>Biomass_100m), <span class="dt">length=</span><span class="dv">100</span>),</a>
-<a class="sourceLine" id="cb112-2" title="2">                        <span class="dt">Biomass_30m =</span> <span class="kw">mean</span>(CR_HAB_BPI<span class="op">$</span>Biomass_30m),</a>
-<a class="sourceLine" id="cb112-3" title="3">                         <span class="dt">Per_Forest =</span> <span class="kw">mean</span>(CR_HAB_BPI<span class="op">$</span>Per_Forest))</a>
-<a class="sourceLine" id="cb112-4" title="4"> </a>
-<a class="sourceLine" id="cb112-5" title="5"> </a>
-<a class="sourceLine" id="cb112-6" title="6"> occ_pred2 &lt;-<span class="st"> </span><span class="kw">predict</span>(occ_avg,</a>
-<a class="sourceLine" id="cb112-7" title="7">                     <span class="dt">newdata =</span> newDatHab2,</a>
-<a class="sourceLine" id="cb112-8" title="8">                     <span class="dt">type =</span> <span class="st">&quot;state&quot;</span>)</a>
-<a class="sourceLine" id="cb112-9" title="9"> </a>
-<a class="sourceLine" id="cb112-10" title="10"> Biomass_100m &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="kw">min</span>(CR_Hab_BPI2<span class="op">$</span>Biomass_100m),<span class="kw">max</span>(CR_Hab_BPI2<span class="op">$</span>Biomass_100m), <span class="dt">length=</span><span class="dv">100</span>)</a>
-<a class="sourceLine" id="cb112-11" title="11"> <span class="kw">plot</span>(Biomass_100m, occ_pred2<span class="op">$</span>fit, <span class="dt">xlab=</span><span class="st">&quot;Above Ground Biomass at 100m&quot;</span>,</a>
-<a class="sourceLine" id="cb112-12" title="12">      <span class="dt">ylab=</span><span class="st">&quot;Occupancy Probability&quot;</span>, <span class="dt">pch=</span><span class="dv">16</span>, <span class="dt">ylim=</span><span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
-<a class="sourceLine" id="cb112-13" title="13">       <span class="co">#lwd=2, main = Species_CR[i])</span></a>
-<a class="sourceLine" id="cb112-14" title="14">      <span class="dt">lwd=</span><span class="dv">3</span>, <span class="dt">main =</span> Species_CR[<span class="dv">3</span>],<span class="dt">col=</span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb112-15" title="15"> <span class="kw">lines</span>(Biomass_100m, occ_pred2<span class="op">$</span>fit<span class="op">-</span>occ_pred2<span class="op">$</span>se.fit, <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb112-16" title="16"><span class="kw">lines</span>(Biomass_100m, occ_pred2<span class="op">$</span>fit<span class="op">+</span>occ_pred2<span class="op">$</span>se.fit, <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb114-1" title="1">newDatHab2 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Biomass_100m =</span> <span class="kw">seq</span>(<span class="kw">min</span>(CR_HAB_BPI<span class="op">$</span>Biomass_100m),<span class="kw">max</span>(CR_HAB_BPI<span class="op">$</span>Biomass_100m), <span class="dt">length=</span><span class="dv">100</span>),</a>
+<a class="sourceLine" id="cb114-2" title="2">                        <span class="dt">Biomass_30m =</span> <span class="kw">mean</span>(CR_HAB_BPI<span class="op">$</span>Biomass_30m),</a>
+<a class="sourceLine" id="cb114-3" title="3">                         <span class="dt">Per_Forest =</span> <span class="kw">mean</span>(CR_HAB_BPI<span class="op">$</span>Per_Forest))</a>
+<a class="sourceLine" id="cb114-4" title="4"> </a>
+<a class="sourceLine" id="cb114-5" title="5"> </a>
+<a class="sourceLine" id="cb114-6" title="6"> occ_pred2 &lt;-<span class="st"> </span><span class="kw">predict</span>(occ_avg,</a>
+<a class="sourceLine" id="cb114-7" title="7">                     <span class="dt">newdata =</span> newDatHab2,</a>
+<a class="sourceLine" id="cb114-8" title="8">                     <span class="dt">type =</span> <span class="st">&quot;state&quot;</span>)</a>
+<a class="sourceLine" id="cb114-9" title="9"> </a>
+<a class="sourceLine" id="cb114-10" title="10"> Biomass_100m &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="kw">min</span>(CR_Hab_BPI2<span class="op">$</span>Biomass_100m),<span class="kw">max</span>(CR_Hab_BPI2<span class="op">$</span>Biomass_100m), <span class="dt">length=</span><span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb114-11" title="11"> <span class="kw">plot</span>(Biomass_100m, occ_pred2<span class="op">$</span>fit, <span class="dt">xlab=</span><span class="st">&quot;Above Ground Biomass at 100m&quot;</span>,</a>
+<a class="sourceLine" id="cb114-12" title="12">      <span class="dt">ylab=</span><span class="st">&quot;Occupancy Probability&quot;</span>, <span class="dt">pch=</span><span class="dv">16</span>, <span class="dt">ylim=</span><span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb114-13" title="13">       <span class="co">#lwd=2, main = Species_CR[i])</span></a>
+<a class="sourceLine" id="cb114-14" title="14">      <span class="dt">lwd=</span><span class="dv">3</span>, <span class="dt">main =</span> Species_CR[<span class="dv">3</span>],<span class="dt">col=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb114-15" title="15"> <span class="kw">lines</span>(Biomass_100m, occ_pred2<span class="op">$</span>fit<span class="op">-</span>occ_pred2<span class="op">$</span>se.fit, <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb114-16" title="16"><span class="kw">lines</span>(Biomass_100m, occ_pred2<span class="op">$</span>fit<span class="op">+</span>occ_pred2<span class="op">$</span>se.fit, <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">3</span>)</a></code></pre></div>
 <p><img src="data:image/png;base64,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" /><!-- --></p>
 <p>Ahora probamos con otra especie, el Toledo <em>C. linearis</em></p>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb113-1" title="1"> sp.name &lt;-<span class="st"> </span>Species_CR[<span class="dv">2</span>] <span class="co">#acá ponemos un 2 porque es la segunda especie en la lista que hicimos</span></a>
-<a class="sourceLine" id="cb113-2" title="2">    temp.det.mat &lt;-<span class="st"> </span>CR_<span class="dv">2020</span>_Matrix  <span class="co">#esta es la matriz de presencia ausencia para cada una de las réplicas</span></a>
-<a class="sourceLine" id="cb113-3" title="3">    temp.data &lt;-<span class="st"> </span>Data.CR.<span class="fl">2020.</span>BPI <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb113-4" title="4"><span class="st">    </span><span class="kw">filter</span>(Scientific.Name <span class="op">==</span><span class="st"> </span>sp.name) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb113-5" title="5"><span class="st">    </span><span class="kw">filter</span>(year <span class="op">==</span><span class="st"> </span><span class="dv">2020</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb113-6" title="6"><span class="st">    </span><span class="kw">filter</span>(month <span class="op">%in%</span><span class="st"> </span>Months2020[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>])</a>
-<a class="sourceLine" id="cb113-7" title="7">    temp.sites &lt;-<span class="st"> </span><span class="kw">unique</span>(temp.data<span class="op">$</span>Location)</a>
-<a class="sourceLine" id="cb113-8" title="8">    site.match &lt;-<span class="st"> </span><span class="kw">match</span>(Sites_BPI_Obvs,temp.sites)</a>
-<a class="sourceLine" id="cb113-9" title="9">    site.idx &lt;-<span class="st"> </span><span class="op">!</span><span class="kw">is.na</span>(<span class="kw">match</span>(Sites_BPI_Obvs,temp.sites))</a>
-<a class="sourceLine" id="cb113-10" title="10">    <span class="cf">for</span>(ii <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(Sites_BPI_Obvs)){</a>
-<a class="sourceLine" id="cb113-11" title="11">      <span class="cf">if</span>(site.idx[ii] <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span>){</a>
-<a class="sourceLine" id="cb113-12" title="12">      temp.site &lt;-<span class="st"> </span>temp.data <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb113-13" title="13"><span class="st">        </span><span class="kw">filter</span>(Location <span class="op">==</span><span class="st"> </span>temp.sites[site.match[ii]])</a>
-<a class="sourceLine" id="cb113-14" title="14">        n.obs &lt;-<span class="st"> </span><span class="kw">nrow</span>(temp.site)</a>
-<a class="sourceLine" id="cb113-15" title="15">        <span class="cf">if</span>(n.obs <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span>){</a>
-<a class="sourceLine" id="cb113-16" title="16">          n.obs &lt;-<span class="st"> </span><span class="dv">4</span>;</a>
-<a class="sourceLine" id="cb113-17" title="17">        } </a>
-<a class="sourceLine" id="cb113-18" title="18">        <span class="cf">for</span>(n <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n.obs){</a>
-<a class="sourceLine" id="cb113-19" title="19">          temp.det.mat[ii,n] &lt;-<span class="st"> </span><span class="dv">1</span>;</a>
-<a class="sourceLine" id="cb113-20" title="20">        }</a>
-<a class="sourceLine" id="cb113-21" title="21">      }<span class="cf">else</span> <span class="cf">if</span>(site.idx[ii] <span class="op">==</span><span class="st"> </span><span class="ot">FALSE</span>){ </a>
-<a class="sourceLine" id="cb113-22" title="22">      temp.det.mat &lt;-<span class="st"> </span>temp.det.mat</a>
-<a class="sourceLine" id="cb113-23" title="23">      }</a>
-<a class="sourceLine" id="cb113-24" title="24">    }</a>
-<a class="sourceLine" id="cb113-25" title="25">    </a>
-<a class="sourceLine" id="cb113-26" title="26">    ChiLinUMF &lt;-<span class="st"> </span><span class="kw">unmarkedFrameOccu</span>(<span class="dt">y =</span> temp.det.mat,<span class="dt">siteCovs =</span> CR_HAB_BPI)</a>
-<a class="sourceLine" id="cb113-27" title="27"><span class="kw">summary</span>(ChiLinUMF)</a></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" title="1"> sp.name &lt;-<span class="st"> </span>Species_CR[<span class="dv">2</span>] <span class="co">#acá ponemos un 2 porque es la segunda especie en la lista que hicimos</span></a>
+<a class="sourceLine" id="cb115-2" title="2">    temp.det.mat &lt;-<span class="st"> </span>CR_<span class="dv">2020</span>_Matrix  <span class="co">#esta es la matriz de presencia ausencia para cada una de las réplicas</span></a>
+<a class="sourceLine" id="cb115-3" title="3">    temp.data &lt;-<span class="st"> </span>Data.CR.<span class="fl">2020.</span>BPI <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb115-4" title="4"><span class="st">    </span><span class="kw">filter</span>(Scientific.Name <span class="op">==</span><span class="st"> </span>sp.name) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb115-5" title="5"><span class="st">    </span><span class="kw">filter</span>(year <span class="op">==</span><span class="st"> </span><span class="dv">2020</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb115-6" title="6"><span class="st">    </span><span class="kw">filter</span>(month <span class="op">%in%</span><span class="st"> </span>Months2020[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>])</a>
+<a class="sourceLine" id="cb115-7" title="7">    temp.sites &lt;-<span class="st"> </span><span class="kw">unique</span>(temp.data<span class="op">$</span>Location)</a>
+<a class="sourceLine" id="cb115-8" title="8">    site.match &lt;-<span class="st"> </span><span class="kw">match</span>(Sites_BPI_Obvs,temp.sites)</a>
+<a class="sourceLine" id="cb115-9" title="9">    site.idx &lt;-<span class="st"> </span><span class="op">!</span><span class="kw">is.na</span>(<span class="kw">match</span>(Sites_BPI_Obvs,temp.sites))</a>
+<a class="sourceLine" id="cb115-10" title="10">    <span class="cf">for</span>(ii <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(Sites_BPI_Obvs)){</a>
+<a class="sourceLine" id="cb115-11" title="11">      <span class="cf">if</span>(site.idx[ii] <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span>){</a>
+<a class="sourceLine" id="cb115-12" title="12">      temp.site &lt;-<span class="st"> </span>temp.data <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb115-13" title="13"><span class="st">        </span><span class="kw">filter</span>(Location <span class="op">==</span><span class="st"> </span>temp.sites[site.match[ii]])</a>
+<a class="sourceLine" id="cb115-14" title="14">        n.obs &lt;-<span class="st"> </span><span class="kw">nrow</span>(temp.site)</a>
+<a class="sourceLine" id="cb115-15" title="15">        <span class="cf">if</span>(n.obs <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span>){</a>
+<a class="sourceLine" id="cb115-16" title="16">          n.obs &lt;-<span class="st"> </span><span class="dv">4</span>;</a>
+<a class="sourceLine" id="cb115-17" title="17">        } </a>
+<a class="sourceLine" id="cb115-18" title="18">        <span class="cf">for</span>(n <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n.obs){</a>
+<a class="sourceLine" id="cb115-19" title="19">          temp.det.mat[ii,n] &lt;-<span class="st"> </span><span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb115-20" title="20">        }</a>
+<a class="sourceLine" id="cb115-21" title="21">      }<span class="cf">else</span> <span class="cf">if</span>(site.idx[ii] <span class="op">==</span><span class="st"> </span><span class="ot">FALSE</span>){ </a>
+<a class="sourceLine" id="cb115-22" title="22">      temp.det.mat &lt;-<span class="st"> </span>temp.det.mat</a>
+<a class="sourceLine" id="cb115-23" title="23">      }</a>
+<a class="sourceLine" id="cb115-24" title="24">    }</a>
+<a class="sourceLine" id="cb115-25" title="25">    </a>
+<a class="sourceLine" id="cb115-26" title="26">    ChiLinUMF &lt;-<span class="st"> </span><span class="kw">unmarkedFrameOccu</span>(<span class="dt">y =</span> temp.det.mat,<span class="dt">siteCovs =</span> CR_HAB_BPI)</a>
+<a class="sourceLine" id="cb115-27" title="27"><span class="kw">summary</span>(ChiLinUMF)</a></code></pre></div>
 <pre><code>## unmarkedFrame Object
 ## 
 ## 161 sites
@@ -1267,7 +1339,7 @@ code span.er { color: #a61717; background-color: #e3d2d2; }
 ##  Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000  
 ##  3rd Qu.: 0.7561   3rd Qu.: 0.7653   3rd Qu.: 0.7142  
 ##  Max.   : 2.2947   Max.   : 1.7268   Max.   : 2.1557</code></pre>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" title="1"><span class="kw">str</span>(ChiLinUMF)</a></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb117-1" title="1"><span class="kw">str</span>(ChiLinUMF)</a></code></pre></div>
 <pre><code>## Formal class &#39;unmarkedFrameOccu&#39; [package &quot;unmarked&quot;] with 5 slots
 ##   ..@ y       : num [1:161, 1:4] 0 0 1 0 1 0 0 1 1 0 ...
 ##   .. ..- attr(*, &quot;dimnames&quot;)=List of 2
@@ -1280,7 +1352,7 @@ code span.er { color: #a61717; background-color: #e3d2d2; }
 ##   .. ..$ Per_Forest  : num [1:161] 0.468 1.807 -0.301 0.287 1.716 ...
 ##   ..@ mapInfo : NULL
 ##   ..@ obsToY  : num [1:4, 1:4] 1 0 0 0 0 1 0 0 0 0 ...</code></pre>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb117-1" title="1">ChiLinUMF[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,]  </a></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb119-1" title="1">ChiLinUMF[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,]  </a></code></pre></div>
 <pre><code>## Data frame representation of unmarkedFrame object.
 ##   y.1 y.2 y.3 y.4 Biomass_30m Biomass_100m Per_Forest
 ## 1   0   0   0   0   0.4671274  -0.01453463  0.4684136
@@ -1288,9 +1360,9 @@ code span.er { color: #a61717; background-color: #e3d2d2; }
 ## 3   1   0   0   0  -0.5444232   0.08508586 -0.3010413
 ## 4   0   0   0   0   0.3226202   0.34168408  0.2872382
 ## 5   1   0   0   0  -0.1321526  -0.13277106  1.7157738</code></pre>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb119-1" title="1"><span class="co">#Acontinuación el modelo nulo:</span></a>
-<a class="sourceLine" id="cb119-2" title="2"></a>
-<a class="sourceLine" id="cb119-3" title="3">(null &lt;-<span class="st"> </span><span class="kw">occu</span>(<span class="op">~</span><span class="dv">1</span> <span class="op">~</span><span class="dv">1</span>, ChiLinUMF))</a></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb121-1" title="1"><span class="co">#Acontinuación el modelo nulo:</span></a>
+<a class="sourceLine" id="cb121-2" title="2"></a>
+<a class="sourceLine" id="cb121-3" title="3">(null &lt;-<span class="st"> </span><span class="kw">occu</span>(<span class="op">~</span><span class="dv">1</span> <span class="op">~</span><span class="dv">1</span>, ChiLinUMF))</a></code></pre></div>
 <pre><code>## 
 ## Call:
 ## occu(formula = ~1 ~ 1, data = ChiLinUMF)
@@ -1304,35 +1376,107 @@ code span.er { color: #a61717; background-color: #e3d2d2; }
 ##     -0.39 0.213 -1.83  0.0666
 ## 
 ## AIC: 342.4815</code></pre>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb121-1" title="1"><span class="co">## Backtransform: transforma &quot;de vuelta&quot; psi y p a la escala original</span></a>
-<a class="sourceLine" id="cb121-2" title="2"><span class="co"># NOTA: esta función sólo funciona en el modelo nulo</span></a>
-<a class="sourceLine" id="cb121-3" title="3"><span class="kw">backTransform</span>(null, <span class="st">&quot;state&quot;</span>) <span class="co">#probabilidad de ocupación</span></a></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb123-1" title="1"><span class="co">## Backtransform: transforma &quot;de vuelta&quot; psi y p a la escala original</span></a>
+<a class="sourceLine" id="cb123-2" title="2"><span class="co"># NOTA: esta función sólo funciona en el modelo nulo</span></a>
+<a class="sourceLine" id="cb123-3" title="3"><span class="kw">backTransform</span>(null, <span class="st">&quot;state&quot;</span>) <span class="co">#probabilidad de ocupación</span></a></code></pre></div>
 <pre><code>## Backtransformed linear combination(s) of Occupancy estimate(s)
 ## 
 ##  Estimate     SE LinComb (Intercept)
 ##     0.235 0.0382   -1.18           1
 ## 
 ## Transformation: logistic</code></pre>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb123-1" title="1"><span class="kw">backTransform</span>(null, <span class="st">&quot;det&quot;</span>) <span class="co">#probabilidad de detección</span></a></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb125-1" title="1"><span class="kw">backTransform</span>(null, <span class="st">&quot;det&quot;</span>) <span class="co">#probabilidad de detección</span></a></code></pre></div>
 <pre><code>## Backtransformed linear combination(s) of Detection estimate(s)
 ## 
 ##  Estimate     SE LinComb (Intercept)
 ##     0.404 0.0512   -0.39           1
 ## 
 ## Transformation: logistic</code></pre>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb125-1" title="1"><span class="co"># Modelo global (ie, con biomasa en ambas resoluciones)</span></a>
-<a class="sourceLine" id="cb125-2" title="2">full &lt;-<span class="st"> </span><span class="kw">occu</span>(<span class="op">~</span>Biomass_100m <span class="op">+</span>Biomass_30m <span class="op">~</span>Biomass_100m <span class="op">+</span><span class="st"> </span>Biomass_30m <span class="op">+</span><span class="st"> </span>Per_Forest, ChiLinUMF)</a>
-<a class="sourceLine" id="cb125-3" title="3"></a>
-<a class="sourceLine" id="cb125-4" title="4">occ_dredge &lt;-<span class="st"> </span><span class="kw">dredge</span>(full)</a></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb127-1" title="1"><span class="co"># Modelo global (ie, con biomasa en ambas resoluciones)</span></a>
+<a class="sourceLine" id="cb127-2" title="2">full &lt;-<span class="st"> </span><span class="kw">occu</span>(<span class="op">~</span>Biomass_100m <span class="op">+</span>Biomass_30m <span class="op">~</span>Biomass_100m <span class="op">+</span><span class="st"> </span>Biomass_30m <span class="op">+</span><span class="st"> </span>Per_Forest, ChiLinUMF)</a>
+<a class="sourceLine" id="cb127-3" title="3"></a>
+<a class="sourceLine" id="cb127-4" title="4">occ_dredge &lt;-<span class="st"> </span><span class="kw">dredge</span>(full)</a></code></pre></div>
 <pre><code>## Fixed terms are &quot;p(Int)&quot; and &quot;psi(Int)&quot;</code></pre>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb127-1" title="1"><span class="co">#Comparación de modelos para explorar los resultados para ocupación: </span></a>
-<a class="sourceLine" id="cb127-2" title="2">occ_dredge_table &lt;-<span class="st"> </span>occ_dredge<span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb127-3" title="3"><span class="st">  </span><span class="kw">mutate_all</span>(<span class="op">~</span><span class="st"> </span><span class="kw">round</span>(., <span class="dv">3</span>))</a>
-<a class="sourceLine" id="cb127-4" title="4"></a>
-<a class="sourceLine" id="cb127-5" title="5"><span class="co">#Acá con la tabla de selección del modelo se puede observar cuales modelos tienen el mayor apoyo en el caso de esta especie here you can see which models have the most support for this species</span></a>
-<a class="sourceLine" id="cb127-6" title="6">Occ_res &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(occ_dredge_table)</a>
-<a class="sourceLine" id="cb127-7" title="7"></a>
-<a class="sourceLine" id="cb127-8" title="8">Occ_res</a></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb129-1" title="1">occ_dredge</a></code></pre></div>
+<pre><code>## Global model call: occu(formula = ~Biomass_100m + Biomass_30m ~ Biomass_100m + Biomass_30m + 
+##     Per_Forest, data = ChiLinUMF)
+## ---
+## Model selection table 
+##     p(Int) psi(Int) p(Bms_100) p(Bms_30m) psi(Bms_100) psi(Bms_30m)
+## 16 -1.2300  -0.9880     1.7410   -0.99980      1.13700     -1.16400
+## 12 -1.6750  -0.2615     2.3320   -1.32200                  -0.68520
+## 4  -1.6370  -0.4247     2.2770   -1.54500                          
+## 32 -1.2030  -1.0470     1.6930   -0.97750      1.12900     -1.17300
+## 28 -1.6460  -0.3470     2.2870   -1.30000                  -0.66340
+## 20 -1.5950  -0.5029     2.2190   -1.51400                          
+## 8  -1.6670  -0.3716     2.3200   -1.55200     -0.07412             
+## 14 -0.7411  -1.2740     0.7101                 1.68000     -1.61100
+## 24 -1.6240  -0.4553     2.2600   -1.52000     -0.06920             
+## 30 -0.7279  -1.3190     0.6782                 1.65000     -1.60600
+## 29 -0.4258  -1.5130                            2.08300     -1.67300
+## 13 -0.4108  -1.4830                            2.10600     -1.64300
+## 31 -0.4255  -1.5120               0.04579      2.08100     -1.68600
+## 15 -0.4103  -1.4830               0.05074      2.10400     -1.65800
+## 10 -1.2070  -0.4392     1.2450                             -0.98430
+## 26 -1.1760  -0.5393     1.2040                             -0.94560
+## 18 -0.8795  -0.9649     0.8669                                     
+## 2  -0.9191  -0.8942     0.9199                                     
+## 22 -0.7354  -1.1360     0.6871                 0.30720             
+## 6  -0.7432  -1.1070     0.7022                 0.35640             
+## 21 -0.3964  -1.3140                            0.60860             
+## 5  -0.3929  -1.2930                            0.66780             
+## 23 -0.4297  -1.2900              -0.16200      0.65790             
+## 7  -0.4286  -1.2660              -0.16930      0.71840             
+## 17 -0.3921  -1.2240                                                
+## 25 -0.3919  -1.2260                                        -0.06444
+## 19 -0.3915  -1.2250               0.03638                          
+## 1  -0.3900  -1.1820                                                
+## 27 -0.3938  -1.2250               0.08268                  -0.09272
+## 3  -0.3919  -1.1810               0.08221                          
+## 9  -0.3901  -1.1820                                         0.01377
+## 11 -0.3931  -1.1800               0.09410                  -0.01949
+##    psi(Per_Frs) df   logLik  AICc delta weight
+## 16               6 -152.716 318.0  0.00  0.171
+## 12               5 -153.862 318.1  0.13  0.160
+## 4                4 -155.113 318.5  0.50  0.133
+## 32       0.2820  7 -151.883 318.5  0.52  0.132
+## 28       0.2890  6 -153.111 318.8  0.79  0.115
+## 20       0.2872  5 -154.346 319.1  1.10  0.098
+## 8                5 -155.103 320.6  2.61  0.046
+## 14               5 -155.313 321.0  3.04  0.037
+## 24       0.2889  6 -154.336 321.2  3.24  0.034
+## 30       0.2952  6 -154.391 321.3  3.35  0.032
+## 29       0.3337  5 -156.189 322.8  4.79  0.016
+## 13               4 -157.298 322.9  4.87  0.015
+## 31       0.3326  6 -156.174 324.9  6.92  0.005
+## 15               5 -157.280 324.9  6.97  0.005
+## 10               4 -159.982 328.2 10.24  0.001
+## 26       0.3232  5 -158.954 328.3 10.32  0.001
+## 18       0.3178  4 -162.251 332.8 14.78  0.000
+## 2                3 -163.485 333.1 15.14  0.000
+## 22       0.2984  5 -161.882 334.2 16.17  0.000
+## 6                4 -163.007 334.3 16.29  0.000
+## 21       0.3114  4 -163.931 336.1 18.14  0.000
+## 5                3 -165.123 336.4 18.42  0.000
+## 23       0.3172  5 -163.748 337.9 19.90  0.000
+## 7                4 -164.929 338.1 20.14  0.000
+## 17       0.4152  3 -167.018 340.2 22.21  0.000
+## 25       0.4266  4 -166.974 342.2 24.23  0.000
+## 19       0.4123  4 -167.008 342.3 24.29  0.000
+## 1                2 -169.241 342.6 24.58  0.000
+## 27       0.4248  5 -166.934 344.3 26.28  0.000
+## 3                3 -169.193 344.5 26.56  0.000
+## 9                3 -169.239 344.6 26.65  0.000
+## 11               4 -169.190 346.6 28.66  0.000
+## Models ranked by AICc(x)</code></pre>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb131-1" title="1"><span class="co">#Comparación de modelos para explorar los resultados para ocupación: </span></a>
+<a class="sourceLine" id="cb131-2" title="2">occ_dredge_table &lt;-<span class="st"> </span>occ_dredge<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb131-3" title="3"><span class="st">  </span><span class="kw">mutate_all</span>(<span class="op">~</span><span class="st"> </span><span class="kw">round</span>(., <span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb131-4" title="4"></a>
+<a class="sourceLine" id="cb131-5" title="5"><span class="co">#Acá con la tabla de selección del modelo se puede observar cuales modelos tienen el mayor apoyo en el caso de esta especie here you can see which models have the most support for this species</span></a>
+<a class="sourceLine" id="cb131-6" title="6">Occ_res &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(occ_dredge_table)</a>
+<a class="sourceLine" id="cb131-7" title="7"></a>
+<a class="sourceLine" id="cb131-8" title="8">Occ_res</a></code></pre></div>
 <pre><code>##    p(Int) psi(Int) p(Biomass_100m) p(Biomass_30m) psi(Biomass_100m)
 ## 1  -1.230   -0.988           1.741         -1.000             1.137
 ## 2  -1.675   -0.261           2.332         -1.322                NA
@@ -1399,90 +1543,90 @@ code span.er { color: #a61717; background-color: #e3d2d2; }
 ## 30               NA              NA  3 -169.193 344.539 26.561  0.000
 ## 31            0.014              NA  3 -169.239 344.630 26.652  0.000
 ## 32           -0.019              NA  4 -169.190 346.636 28.658  0.000</code></pre>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb129-1" title="1"><span class="co">#Procedemos a la escogencia del mejor modelo utilizando el criterio de información de AKAIKE</span></a>
-<a class="sourceLine" id="cb129-2" title="2"></a>
-<a class="sourceLine" id="cb129-3" title="3"><span class="co"># Los modelos con menos de 2.5 Delta AICc)</span></a>
-<a class="sourceLine" id="cb129-4" title="4">occ_dredge_Delta &lt;-<span class="st"> </span><span class="kw">get.models</span>(occ_dredge, <span class="dt">subset =</span> delta <span class="op">&lt;=</span><span class="st"> </span><span class="fl">2.5</span>)</a>
-<a class="sourceLine" id="cb129-5" title="5"></a>
-<a class="sourceLine" id="cb129-6" title="6"><span class="co"># modelos promediados basados en el peso del modelo  </span></a>
-<a class="sourceLine" id="cb129-7" title="7">occ_avg &lt;-<span class="st"> </span><span class="kw">model.avg</span>(occ_dredge_Delta, <span class="dt">fit =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb129-8" title="8"></a>
-<a class="sourceLine" id="cb129-9" title="9"><span class="co">#  coeficientes de los modelos promediados para lsa probabilidades de ocupación y detección. </span></a>
-<a class="sourceLine" id="cb129-10" title="10"><span class="kw">coef</span>(occ_avg)</a></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb133-1" title="1"><span class="co">#Procedemos a la escogencia del mejor modelo utilizando el criterio de información de AKAIKE</span></a>
+<a class="sourceLine" id="cb133-2" title="2"></a>
+<a class="sourceLine" id="cb133-3" title="3"><span class="co"># Los modelos con menos de 2.5 Delta AICc)</span></a>
+<a class="sourceLine" id="cb133-4" title="4">occ_dredge_Delta &lt;-<span class="st"> </span><span class="kw">get.models</span>(occ_dredge, <span class="dt">subset =</span> delta <span class="op">&lt;=</span><span class="st"> </span><span class="fl">2.5</span>)</a>
+<a class="sourceLine" id="cb133-5" title="5"></a>
+<a class="sourceLine" id="cb133-6" title="6"><span class="co"># modelos promediados basados en el peso del modelo  </span></a>
+<a class="sourceLine" id="cb133-7" title="7">occ_avg &lt;-<span class="st"> </span><span class="kw">model.avg</span>(occ_dredge_Delta, <span class="dt">fit =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb133-8" title="8"></a>
+<a class="sourceLine" id="cb133-9" title="9"><span class="co">#  coeficientes de los modelos promediados para lsa probabilidades de ocupación y detección. </span></a>
+<a class="sourceLine" id="cb133-10" title="10"><span class="kw">coef</span>(occ_avg)</a></code></pre></div>
 <pre><code>##          psi(Int) psi(Biomass_100m)  psi(Biomass_30m)            p(Int) 
 ##        -0.6112024         1.1337309        -0.9336784        -1.4841850 
 ##   p(Biomass_100m)    p(Biomass_30m)   psi(Per_Forest) 
 ##         2.0741568        -1.2546720         0.2858260</code></pre>
-<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb131-1" title="1"><span class="co">#crear un data frame nuevo</span></a>
-<a class="sourceLine" id="cb131-2" title="2"></a>
-<a class="sourceLine" id="cb131-3" title="3">newDatHab &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Biomass_100m =</span> <span class="kw">mean</span>(CR_HAB_BPI<span class="op">$</span>Biomass_100m),</a>
-<a class="sourceLine" id="cb131-4" title="4">                        <span class="dt">Biomass_30m =</span> <span class="kw">seq</span>(<span class="kw">min</span>(CR_HAB_BPI<span class="op">$</span>Biomass_30m),<span class="kw">max</span>(CR_HAB_BPI<span class="op">$</span>Biomass_30m), <span class="dt">length=</span><span class="dv">100</span>),</a>
-<a class="sourceLine" id="cb131-5" title="5">                        <span class="dt">Per_Forest =</span> <span class="kw">mean</span>(CR_HAB_BPI<span class="op">$</span>Per_Forest))</a>
-<a class="sourceLine" id="cb131-6" title="6"></a>
-<a class="sourceLine" id="cb131-7" title="7"></a>
-<a class="sourceLine" id="cb131-8" title="8">occ_pred &lt;-<span class="st"> </span><span class="kw">predict</span>(occ_avg,</a>
-<a class="sourceLine" id="cb131-9" title="9">                    <span class="dt">newdata =</span> newDatHab,</a>
-<a class="sourceLine" id="cb131-10" title="10">                    <span class="dt">type =</span> <span class="st">&quot;state&quot;</span>)</a>
-<a class="sourceLine" id="cb131-11" title="11"></a>
-<a class="sourceLine" id="cb131-12" title="12">Biomass_30m &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="kw">min</span>(CR_Hab_BPI2<span class="op">$</span>Biomass_30m),<span class="kw">max</span>(CR_Hab_BPI2<span class="op">$</span>Biomass_30m), <span class="dt">length=</span><span class="dv">100</span>)</a>
-<a class="sourceLine" id="cb131-13" title="13"></a>
-<a class="sourceLine" id="cb131-14" title="14"> <span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>))</a>
-<a class="sourceLine" id="cb131-15" title="15"><span class="kw">plot</span>(Biomass_30m, occ_pred<span class="op">$</span>fit, <span class="dt">xlab=</span><span class="st">&quot;Above Ground Biomass at 30m&quot;</span>,</a>
-<a class="sourceLine" id="cb131-16" title="16">       <span class="dt">ylab=</span><span class="st">&quot;Occupancy Probability&quot;</span>, <span class="dt">pch=</span><span class="dv">16</span>, <span class="dt">ylim=</span><span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
-<a class="sourceLine" id="cb131-17" title="17">       <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">main =</span> Species_CR[<span class="dv">2</span>])</a>
-<a class="sourceLine" id="cb131-18" title="18"><span class="kw">lines</span>(Biomass_30m, occ_pred<span class="op">$</span>fit<span class="op">-</span>occ_pred<span class="op">$</span>se.fit, <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb131-19" title="19"><span class="kw">lines</span>(Biomass_30m, occ_pred<span class="op">$</span>fit<span class="op">+</span>occ_pred<span class="op">$</span>se.fit, <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb131-20" title="20"></a>
-<a class="sourceLine" id="cb131-21" title="21"></a>
-<a class="sourceLine" id="cb131-22" title="22"></a>
-<a class="sourceLine" id="cb131-23" title="23"><span class="co">#crea un  data frame Prediciendo ocupación basandose en biomasa 100m</span></a>
-<a class="sourceLine" id="cb131-24" title="24"></a>
-<a class="sourceLine" id="cb131-25" title="25">newDatHab2 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Biomass_100m =</span> <span class="kw">seq</span>(<span class="kw">min</span>(CR_HAB_BPI<span class="op">$</span>Biomass_100m),<span class="kw">max</span>(CR_HAB_BPI<span class="op">$</span>Biomass_100m), <span class="dt">length=</span><span class="dv">100</span>),</a>
-<a class="sourceLine" id="cb131-26" title="26">                        <span class="dt">Biomass_30m =</span> <span class="kw">mean</span>(CR_HAB_BPI<span class="op">$</span>Biomass_30m),</a>
-<a class="sourceLine" id="cb131-27" title="27">                         <span class="dt">Per_Forest =</span> <span class="kw">mean</span>(CR_HAB_BPI<span class="op">$</span>Per_Forest))</a>
-<a class="sourceLine" id="cb131-28" title="28"> </a>
-<a class="sourceLine" id="cb131-29" title="29"> </a>
-<a class="sourceLine" id="cb131-30" title="30"> occ_pred2 &lt;-<span class="st"> </span><span class="kw">predict</span>(occ_avg,</a>
-<a class="sourceLine" id="cb131-31" title="31">                     <span class="dt">newdata =</span> newDatHab2,</a>
-<a class="sourceLine" id="cb131-32" title="32">                     <span class="dt">type =</span> <span class="st">&quot;state&quot;</span>)</a>
-<a class="sourceLine" id="cb131-33" title="33"> </a>
-<a class="sourceLine" id="cb131-34" title="34"> Biomass_100m &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="kw">min</span>(CR_Hab_BPI2<span class="op">$</span>Biomass_100m),<span class="kw">max</span>(CR_Hab_BPI2<span class="op">$</span>Biomass_100m), <span class="dt">length=</span><span class="dv">100</span>)</a>
-<a class="sourceLine" id="cb131-35" title="35"> </a>
-<a class="sourceLine" id="cb131-36" title="36"> <span class="kw">plot</span>(Biomass_100m, occ_pred2<span class="op">$</span>fit, <span class="dt">xlab=</span><span class="st">&quot;Above Ground Biomass at 100m&quot;</span>,</a>
-<a class="sourceLine" id="cb131-37" title="37">      <span class="dt">ylab=</span><span class="st">&quot;Occupancy Probability&quot;</span>, <span class="dt">pch=</span><span class="dv">16</span>, <span class="dt">ylim=</span><span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
-<a class="sourceLine" id="cb131-38" title="38">       <span class="co">#lwd=2, main = Species_CR[i])</span></a>
-<a class="sourceLine" id="cb131-39" title="39">      <span class="dt">lwd=</span><span class="dv">3</span>, <span class="dt">main =</span> Species_CR[<span class="dv">2</span>],<span class="dt">col=</span><span class="dv">3</span>) <span class="co">#recordemos cambiar por un 2.</span></a>
-<a class="sourceLine" id="cb131-40" title="40"> <span class="kw">lines</span>(Biomass_100m, occ_pred2<span class="op">$</span>fit<span class="op">-</span>occ_pred2<span class="op">$</span>se.fit, <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb131-41" title="41"><span class="kw">lines</span>(Biomass_100m, occ_pred2<span class="op">$</span>fit<span class="op">+</span>occ_pred2<span class="op">$</span>se.fit, <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb135-1" title="1"><span class="co">#crear un data frame nuevo</span></a>
+<a class="sourceLine" id="cb135-2" title="2"></a>
+<a class="sourceLine" id="cb135-3" title="3">newDatHab &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Biomass_100m =</span> <span class="kw">mean</span>(CR_HAB_BPI<span class="op">$</span>Biomass_100m),</a>
+<a class="sourceLine" id="cb135-4" title="4">                        <span class="dt">Biomass_30m =</span> <span class="kw">seq</span>(<span class="kw">min</span>(CR_HAB_BPI<span class="op">$</span>Biomass_30m),<span class="kw">max</span>(CR_HAB_BPI<span class="op">$</span>Biomass_30m), <span class="dt">length=</span><span class="dv">100</span>),</a>
+<a class="sourceLine" id="cb135-5" title="5">                        <span class="dt">Per_Forest =</span> <span class="kw">mean</span>(CR_HAB_BPI<span class="op">$</span>Per_Forest))</a>
+<a class="sourceLine" id="cb135-6" title="6"></a>
+<a class="sourceLine" id="cb135-7" title="7"></a>
+<a class="sourceLine" id="cb135-8" title="8">occ_pred &lt;-<span class="st"> </span><span class="kw">predict</span>(occ_avg,</a>
+<a class="sourceLine" id="cb135-9" title="9">                    <span class="dt">newdata =</span> newDatHab,</a>
+<a class="sourceLine" id="cb135-10" title="10">                    <span class="dt">type =</span> <span class="st">&quot;state&quot;</span>)</a>
+<a class="sourceLine" id="cb135-11" title="11"></a>
+<a class="sourceLine" id="cb135-12" title="12">Biomass_30m &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="kw">min</span>(CR_Hab_BPI2<span class="op">$</span>Biomass_30m),<span class="kw">max</span>(CR_Hab_BPI2<span class="op">$</span>Biomass_30m), <span class="dt">length=</span><span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb135-13" title="13"></a>
+<a class="sourceLine" id="cb135-14" title="14"> <span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb135-15" title="15"><span class="kw">plot</span>(Biomass_30m, occ_pred<span class="op">$</span>fit, <span class="dt">xlab=</span><span class="st">&quot;Above Ground Biomass at 30m&quot;</span>,</a>
+<a class="sourceLine" id="cb135-16" title="16">       <span class="dt">ylab=</span><span class="st">&quot;Occupancy Probability&quot;</span>, <span class="dt">pch=</span><span class="dv">16</span>, <span class="dt">ylim=</span><span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb135-17" title="17">       <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">main =</span> Species_CR[<span class="dv">2</span>])</a>
+<a class="sourceLine" id="cb135-18" title="18"><span class="kw">lines</span>(Biomass_30m, occ_pred<span class="op">$</span>fit<span class="op">-</span>occ_pred<span class="op">$</span>se.fit, <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb135-19" title="19"><span class="kw">lines</span>(Biomass_30m, occ_pred<span class="op">$</span>fit<span class="op">+</span>occ_pred<span class="op">$</span>se.fit, <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb135-20" title="20"></a>
+<a class="sourceLine" id="cb135-21" title="21"></a>
+<a class="sourceLine" id="cb135-22" title="22"></a>
+<a class="sourceLine" id="cb135-23" title="23"><span class="co">#crea un  data frame Prediciendo ocupación basandose en biomasa 100m</span></a>
+<a class="sourceLine" id="cb135-24" title="24"></a>
+<a class="sourceLine" id="cb135-25" title="25">newDatHab2 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Biomass_100m =</span> <span class="kw">seq</span>(<span class="kw">min</span>(CR_HAB_BPI<span class="op">$</span>Biomass_100m),<span class="kw">max</span>(CR_HAB_BPI<span class="op">$</span>Biomass_100m), <span class="dt">length=</span><span class="dv">100</span>),</a>
+<a class="sourceLine" id="cb135-26" title="26">                        <span class="dt">Biomass_30m =</span> <span class="kw">mean</span>(CR_HAB_BPI<span class="op">$</span>Biomass_30m),</a>
+<a class="sourceLine" id="cb135-27" title="27">                         <span class="dt">Per_Forest =</span> <span class="kw">mean</span>(CR_HAB_BPI<span class="op">$</span>Per_Forest))</a>
+<a class="sourceLine" id="cb135-28" title="28"> </a>
+<a class="sourceLine" id="cb135-29" title="29"> </a>
+<a class="sourceLine" id="cb135-30" title="30"> occ_pred2 &lt;-<span class="st"> </span><span class="kw">predict</span>(occ_avg,</a>
+<a class="sourceLine" id="cb135-31" title="31">                     <span class="dt">newdata =</span> newDatHab2,</a>
+<a class="sourceLine" id="cb135-32" title="32">                     <span class="dt">type =</span> <span class="st">&quot;state&quot;</span>)</a>
+<a class="sourceLine" id="cb135-33" title="33"> </a>
+<a class="sourceLine" id="cb135-34" title="34"> Biomass_100m &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="kw">min</span>(CR_Hab_BPI2<span class="op">$</span>Biomass_100m),<span class="kw">max</span>(CR_Hab_BPI2<span class="op">$</span>Biomass_100m), <span class="dt">length=</span><span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb135-35" title="35"> </a>
+<a class="sourceLine" id="cb135-36" title="36"> <span class="kw">plot</span>(Biomass_100m, occ_pred2<span class="op">$</span>fit, <span class="dt">xlab=</span><span class="st">&quot;Above Ground Biomass at 100m&quot;</span>,</a>
+<a class="sourceLine" id="cb135-37" title="37">      <span class="dt">ylab=</span><span class="st">&quot;Occupancy Probability&quot;</span>, <span class="dt">pch=</span><span class="dv">16</span>, <span class="dt">ylim=</span><span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb135-38" title="38">       <span class="co">#lwd=2, main = Species_CR[i])</span></a>
+<a class="sourceLine" id="cb135-39" title="39">      <span class="dt">lwd=</span><span class="dv">3</span>, <span class="dt">main =</span> Species_CR[<span class="dv">2</span>],<span class="dt">col=</span><span class="dv">3</span>) <span class="co">#recordemos cambiar por un 2.</span></a>
+<a class="sourceLine" id="cb135-40" title="40"> <span class="kw">lines</span>(Biomass_100m, occ_pred2<span class="op">$</span>fit<span class="op">-</span>occ_pred2<span class="op">$</span>se.fit, <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb135-41" title="41"><span class="kw">lines</span>(Biomass_100m, occ_pred2<span class="op">$</span>fit<span class="op">+</span>occ_pred2<span class="op">$</span>se.fit, <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">3</span>)</a></code></pre></div>
 <p><img src="data:image/png;base64,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0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSPN/MHUMHY1Gt7MAAAAASUVORK5CYII=" /><!-- --></p>
 <p>Ahora queremos saber que sucede en el caso de <em>L. souleyetii</em></p>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb132-1" title="1"> sp.name &lt;-<span class="st"> </span>Species_CR[<span class="dv">1</span>] <span class="co">#ponemos un 1 porque es la primera especie en la lista que hicimos</span></a>
-<a class="sourceLine" id="cb132-2" title="2">    temp.det.mat &lt;-<span class="st"> </span>CR_<span class="dv">2020</span>_Matrix  <span class="co">#esta es la matriz de presencia ausencia para cada una de las réplicas</span></a>
-<a class="sourceLine" id="cb132-3" title="3">    temp.data &lt;-<span class="st"> </span>Data.CR.<span class="fl">2020.</span>BPI <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb132-4" title="4"><span class="st">    </span><span class="kw">filter</span>(Scientific.Name <span class="op">==</span><span class="st"> </span>sp.name) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb132-5" title="5"><span class="st">    </span><span class="kw">filter</span>(year <span class="op">==</span><span class="st"> </span><span class="dv">2020</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb132-6" title="6"><span class="st">    </span><span class="kw">filter</span>(month <span class="op">%in%</span><span class="st"> </span>Months2020[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>])</a>
-<a class="sourceLine" id="cb132-7" title="7">    temp.sites &lt;-<span class="st"> </span><span class="kw">unique</span>(temp.data<span class="op">$</span>Location)</a>
-<a class="sourceLine" id="cb132-8" title="8">    site.match &lt;-<span class="st"> </span><span class="kw">match</span>(Sites_BPI_Obvs,temp.sites)</a>
-<a class="sourceLine" id="cb132-9" title="9">    site.idx &lt;-<span class="st"> </span><span class="op">!</span><span class="kw">is.na</span>(<span class="kw">match</span>(Sites_BPI_Obvs,temp.sites))</a>
-<a class="sourceLine" id="cb132-10" title="10">    <span class="cf">for</span>(ii <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(Sites_BPI_Obvs)){</a>
-<a class="sourceLine" id="cb132-11" title="11">      <span class="cf">if</span>(site.idx[ii] <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span>){</a>
-<a class="sourceLine" id="cb132-12" title="12">      temp.site &lt;-<span class="st"> </span>temp.data <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb132-13" title="13"><span class="st">        </span><span class="kw">filter</span>(Location <span class="op">==</span><span class="st"> </span>temp.sites[site.match[ii]])</a>
-<a class="sourceLine" id="cb132-14" title="14">        n.obs &lt;-<span class="st"> </span><span class="kw">nrow</span>(temp.site)</a>
-<a class="sourceLine" id="cb132-15" title="15">        <span class="cf">if</span>(n.obs <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span>){</a>
-<a class="sourceLine" id="cb132-16" title="16">          n.obs &lt;-<span class="st"> </span><span class="dv">4</span>;</a>
-<a class="sourceLine" id="cb132-17" title="17">        } </a>
-<a class="sourceLine" id="cb132-18" title="18">        <span class="cf">for</span>(n <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n.obs){</a>
-<a class="sourceLine" id="cb132-19" title="19">          temp.det.mat[ii,n] &lt;-<span class="st"> </span><span class="dv">1</span>;</a>
-<a class="sourceLine" id="cb132-20" title="20">        }</a>
-<a class="sourceLine" id="cb132-21" title="21">      }<span class="cf">else</span> <span class="cf">if</span>(site.idx[ii] <span class="op">==</span><span class="st"> </span><span class="ot">FALSE</span>){ </a>
-<a class="sourceLine" id="cb132-22" title="22">      temp.det.mat &lt;-<span class="st"> </span>temp.det.mat</a>
-<a class="sourceLine" id="cb132-23" title="23">      }</a>
-<a class="sourceLine" id="cb132-24" title="24">    }</a>
-<a class="sourceLine" id="cb132-25" title="25">    </a>
-<a class="sourceLine" id="cb132-26" title="26">    LepSouUMF &lt;-<span class="st"> </span><span class="kw">unmarkedFrameOccu</span>(<span class="dt">y =</span> temp.det.mat,<span class="dt">siteCovs =</span> CR_HAB_BPI)</a>
-<a class="sourceLine" id="cb132-27" title="27"><span class="kw">summary</span>(LepSouUMF)</a></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb136-1" title="1"> sp.name &lt;-<span class="st"> </span>Species_CR[<span class="dv">1</span>] <span class="co">#ponemos un 1 porque es la primera especie en la lista que hicimos</span></a>
+<a class="sourceLine" id="cb136-2" title="2">    temp.det.mat &lt;-<span class="st"> </span>CR_<span class="dv">2020</span>_Matrix  <span class="co">#esta es la matriz de presencia ausencia para cada una de las réplicas</span></a>
+<a class="sourceLine" id="cb136-3" title="3">    temp.data &lt;-<span class="st"> </span>Data.CR.<span class="fl">2020.</span>BPI <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb136-4" title="4"><span class="st">    </span><span class="kw">filter</span>(Scientific.Name <span class="op">==</span><span class="st"> </span>sp.name) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb136-5" title="5"><span class="st">    </span><span class="kw">filter</span>(year <span class="op">==</span><span class="st"> </span><span class="dv">2020</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb136-6" title="6"><span class="st">    </span><span class="kw">filter</span>(month <span class="op">%in%</span><span class="st"> </span>Months2020[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>])</a>
+<a class="sourceLine" id="cb136-7" title="7">    temp.sites &lt;-<span class="st"> </span><span class="kw">unique</span>(temp.data<span class="op">$</span>Location)</a>
+<a class="sourceLine" id="cb136-8" title="8">    site.match &lt;-<span class="st"> </span><span class="kw">match</span>(Sites_BPI_Obvs,temp.sites)</a>
+<a class="sourceLine" id="cb136-9" title="9">    site.idx &lt;-<span class="st"> </span><span class="op">!</span><span class="kw">is.na</span>(<span class="kw">match</span>(Sites_BPI_Obvs,temp.sites))</a>
+<a class="sourceLine" id="cb136-10" title="10">    <span class="cf">for</span>(ii <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(Sites_BPI_Obvs)){</a>
+<a class="sourceLine" id="cb136-11" title="11">      <span class="cf">if</span>(site.idx[ii] <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span>){</a>
+<a class="sourceLine" id="cb136-12" title="12">      temp.site &lt;-<span class="st"> </span>temp.data <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb136-13" title="13"><span class="st">        </span><span class="kw">filter</span>(Location <span class="op">==</span><span class="st"> </span>temp.sites[site.match[ii]])</a>
+<a class="sourceLine" id="cb136-14" title="14">        n.obs &lt;-<span class="st"> </span><span class="kw">nrow</span>(temp.site)</a>
+<a class="sourceLine" id="cb136-15" title="15">        <span class="cf">if</span>(n.obs <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span>){</a>
+<a class="sourceLine" id="cb136-16" title="16">          n.obs &lt;-<span class="st"> </span><span class="dv">4</span>;</a>
+<a class="sourceLine" id="cb136-17" title="17">        } </a>
+<a class="sourceLine" id="cb136-18" title="18">        <span class="cf">for</span>(n <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n.obs){</a>
+<a class="sourceLine" id="cb136-19" title="19">          temp.det.mat[ii,n] &lt;-<span class="st"> </span><span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb136-20" title="20">        }</a>
+<a class="sourceLine" id="cb136-21" title="21">      }<span class="cf">else</span> <span class="cf">if</span>(site.idx[ii] <span class="op">==</span><span class="st"> </span><span class="ot">FALSE</span>){ </a>
+<a class="sourceLine" id="cb136-22" title="22">      temp.det.mat &lt;-<span class="st"> </span>temp.det.mat</a>
+<a class="sourceLine" id="cb136-23" title="23">      }</a>
+<a class="sourceLine" id="cb136-24" title="24">    }</a>
+<a class="sourceLine" id="cb136-25" title="25">    </a>
+<a class="sourceLine" id="cb136-26" title="26">    LepSouUMF &lt;-<span class="st"> </span><span class="kw">unmarkedFrameOccu</span>(<span class="dt">y =</span> temp.det.mat,<span class="dt">siteCovs =</span> CR_HAB_BPI)</a>
+<a class="sourceLine" id="cb136-27" title="27"><span class="kw">summary</span>(LepSouUMF)</a></code></pre></div>
 <pre><code>## unmarkedFrame Object
 ## 
 ## 161 sites
@@ -1502,7 +1646,7 @@ code span.er { color: #a61717; background-color: #e3d2d2; }
 ##  Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000  
 ##  3rd Qu.: 0.7561   3rd Qu.: 0.7653   3rd Qu.: 0.7142  
 ##  Max.   : 2.2947   Max.   : 1.7268   Max.   : 2.1557</code></pre>
-<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb134-1" title="1"><span class="kw">str</span>(LepSouUMF)</a></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb138-1" title="1"><span class="kw">str</span>(LepSouUMF)</a></code></pre></div>
 <pre><code>## Formal class &#39;unmarkedFrameOccu&#39; [package &quot;unmarked&quot;] with 5 slots
 ##   ..@ y       : num [1:161, 1:4] 0 0 1 1 0 0 0 1 0 0 ...
 ##   .. ..- attr(*, &quot;dimnames&quot;)=List of 2
@@ -1515,7 +1659,7 @@ code span.er { color: #a61717; background-color: #e3d2d2; }
 ##   .. ..$ Per_Forest  : num [1:161] 0.468 1.807 -0.301 0.287 1.716 ...
 ##   ..@ mapInfo : NULL
 ##   ..@ obsToY  : num [1:4, 1:4] 1 0 0 0 0 1 0 0 0 0 ...</code></pre>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb136-1" title="1">LepSouUMF[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,]  </a></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb140-1" title="1">LepSouUMF[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,]  </a></code></pre></div>
 <pre><code>## Data frame representation of unmarkedFrame object.
 ##   y.1 y.2 y.3 y.4 Biomass_30m Biomass_100m Per_Forest
 ## 1   0   0   0   0   0.4671274  -0.01453463  0.4684136
@@ -1523,9 +1667,9 @@ code span.er { color: #a61717; background-color: #e3d2d2; }
 ## 3   1   0   0   0  -0.5444232   0.08508586 -0.3010413
 ## 4   1   0   0   0   0.3226202   0.34168408  0.2872382
 ## 5   0   0   0   0  -0.1321526  -0.13277106  1.7157738</code></pre>
-<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb138-1" title="1"><span class="co">#Acontinuación el modelo nulo:</span></a>
-<a class="sourceLine" id="cb138-2" title="2"></a>
-<a class="sourceLine" id="cb138-3" title="3">(null &lt;-<span class="st"> </span><span class="kw">occu</span>(<span class="op">~</span><span class="dv">1</span> <span class="op">~</span><span class="dv">1</span>, LepSouUMF))</a></code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb142-1" title="1"><span class="co">#Acontinuación el modelo nulo:</span></a>
+<a class="sourceLine" id="cb142-2" title="2"></a>
+<a class="sourceLine" id="cb142-3" title="3">(null &lt;-<span class="st"> </span><span class="kw">occu</span>(<span class="op">~</span><span class="dv">1</span> <span class="op">~</span><span class="dv">1</span>, LepSouUMF))</a></code></pre></div>
 <pre><code>## 
 ## Call:
 ## occu(formula = ~1 ~ 1, data = LepSouUMF)
@@ -1539,36 +1683,107 @@ code span.er { color: #a61717; background-color: #e3d2d2; }
 ##     -1.53 0.343 -4.46 8.15e-06
 ## 
 ## AIC: 282.2322</code></pre>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb140-1" title="1"><span class="co">## Backtransform: transforma &quot;de vuelta&quot; psi y p a la escala original. Psi= probabilidad de ocupación y P= probabilidad de detección.</span></a>
-<a class="sourceLine" id="cb140-2" title="2"></a>
-<a class="sourceLine" id="cb140-3" title="3"><span class="co"># NOTA: esta función sólo funciona en el modelo nulo</span></a>
-<a class="sourceLine" id="cb140-4" title="4"><span class="kw">backTransform</span>(null, <span class="st">&quot;state&quot;</span>) <span class="co">#probabilidad de ocupación</span></a></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb144-1" title="1"><span class="co">## Backtransform: transforma &quot;de vuelta&quot; psi y p a la escala original. Psi= probabilidad de ocupación y P= probabilidad de detección.</span></a>
+<a class="sourceLine" id="cb144-2" title="2"></a>
+<a class="sourceLine" id="cb144-3" title="3"><span class="co"># NOTA: esta función sólo funciona en el modelo nulo</span></a>
+<a class="sourceLine" id="cb144-4" title="4"><span class="kw">backTransform</span>(null, <span class="st">&quot;state&quot;</span>) <span class="co">#probabilidad de ocupación</span></a></code></pre></div>
 <pre><code>## Backtransformed linear combination(s) of Occupancy estimate(s)
 ## 
 ##  Estimate     SE LinComb (Intercept)
 ##     0.331 0.0878  -0.702           1
 ## 
 ## Transformation: logistic</code></pre>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb142-1" title="1"><span class="kw">backTransform</span>(null, <span class="st">&quot;det&quot;</span>) <span class="co">#probabilidad de detección</span></a></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb146-1" title="1"><span class="kw">backTransform</span>(null, <span class="st">&quot;det&quot;</span>) <span class="co">#probabilidad de detección</span></a></code></pre></div>
 <pre><code>## Backtransformed linear combination(s) of Detection estimate(s)
 ## 
 ##  Estimate     SE LinComb (Intercept)
 ##     0.178 0.0502   -1.53           1
 ## 
 ## Transformation: logistic</code></pre>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb144-1" title="1"><span class="co"># Modelo global (ie, con biomasa en ambas resoluciones)</span></a>
-<a class="sourceLine" id="cb144-2" title="2">full &lt;-<span class="st"> </span><span class="kw">occu</span>(<span class="op">~</span>Biomass_100m <span class="op">+</span>Biomass_30m <span class="op">~</span>Biomass_100m <span class="op">+</span><span class="st"> </span>Biomass_30m <span class="op">+</span><span class="st"> </span>Per_Forest, LepSouUMF)</a>
-<a class="sourceLine" id="cb144-3" title="3"></a>
-<a class="sourceLine" id="cb144-4" title="4">occ_dredge &lt;-<span class="st"> </span><span class="kw">dredge</span>(full)</a></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb148-1" title="1"><span class="co"># Modelo global (ie, con biomasa en ambas resoluciones)</span></a>
+<a class="sourceLine" id="cb148-2" title="2">full &lt;-<span class="st"> </span><span class="kw">occu</span>(<span class="op">~</span>Biomass_100m <span class="op">+</span>Biomass_30m <span class="op">~</span>Biomass_100m <span class="op">+</span><span class="st"> </span>Biomass_30m <span class="op">+</span><span class="st"> </span>Per_Forest, LepSouUMF)</a>
+<a class="sourceLine" id="cb148-3" title="3"></a>
+<a class="sourceLine" id="cb148-4" title="4">occ_dredge &lt;-<span class="st"> </span><span class="kw">dredge</span>(full)</a></code></pre></div>
 <pre><code>## Fixed terms are &quot;p(Int)&quot; and &quot;psi(Int)&quot;</code></pre>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb146-1" title="1"><span class="co">#Comparación de modelos para explorar los resultados para ocupación: </span></a>
-<a class="sourceLine" id="cb146-2" title="2">occ_dredge_table &lt;-<span class="st"> </span>occ_dredge<span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb146-3" title="3"><span class="st">  </span><span class="kw">mutate_all</span>(<span class="op">~</span><span class="st"> </span><span class="kw">round</span>(., <span class="dv">3</span>))</a>
-<a class="sourceLine" id="cb146-4" title="4"></a>
-<a class="sourceLine" id="cb146-5" title="5"><span class="co">#Acá con la tabla de selección del modelo se puede observar cuales modelos tienen el mayor apoyo en el caso de esta especie here you can see which models have the most support for this species</span></a>
-<a class="sourceLine" id="cb146-6" title="6">Occ_res &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(occ_dredge_table)</a>
-<a class="sourceLine" id="cb146-7" title="7"></a>
-<a class="sourceLine" id="cb146-8" title="8">Occ_res</a></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb150-1" title="1">occ_dredge</a></code></pre></div>
+<pre><code>## Global model call: occu(formula = ~Biomass_100m + Biomass_30m ~ Biomass_100m + Biomass_30m + 
+##     Per_Forest, data = LepSouUMF)
+## ---
+## Model selection table 
+##    p(Int) psi(Int) p(Bms_100) p(Bms_30m) psi(Bms_100) psi(Bms_30m) psi(Per_Frs)
+## 5  -1.553  -0.7239                             0.5472                          
+## 11 -1.474  -0.6076               -0.6441                    1.1190             
+## 9  -1.555  -0.7183                                          0.5238             
+## 2  -1.710  -0.5523    0.44290                                                  
+## 12 -1.526  -0.6045    0.52350    -0.9790                    1.0590             
+## 21 -1.554  -0.7280                             0.5947                   -0.2335
+## 7  -1.473  -0.7464               -0.3069       0.7494                          
+## 1  -1.529  -0.7023                                                             
+## 27 -1.492  -0.5605               -0.6760                    1.2250      -0.2671
+## 28 -1.564  -0.5236    0.59150    -1.0670                    1.2000      -0.3399
+## 13 -1.555  -0.7265                             0.3788       0.2161             
+## 15 -1.472  -0.6291               -0.6233       0.3283       0.8217             
+## 18 -1.731  -0.5266    0.47600                                           -0.2211
+## 6  -1.528  -0.7134   -0.16110                  0.7029                          
+## 25 -1.559  -0.7162                                          0.5486      -0.1864
+## 10 -1.621  -0.6738    0.22930                               0.3357             
+## 4  -1.694  -0.5696    0.60130    -0.2004                                       
+## 3  -1.654  -0.5893                0.2904                                       
+## 16 -1.637  -0.4341    0.87470    -1.2020      -0.5712       1.5380             
+## 23 -1.468  -0.7464               -0.3316       0.8199                   -0.2591
+## 31 -1.487  -0.5870               -0.6543       0.3918       0.8737      -0.2969
+## 29 -1.557  -0.7284                             0.4423       0.1933      -0.2270
+## 22 -1.531  -0.7232   -0.12840                  0.7199                   -0.2385
+## 17 -1.530  -0.7040                                                      -0.1195
+## 32 -1.670  -0.3448    0.90430    -1.2610      -0.5534       1.6770      -0.3498
+## 8  -1.474  -0.7427   -0.01036    -0.3047       0.7583                          
+## 26 -1.646  -0.6509    0.28420                               0.3130      -0.2102
+## 20 -1.716  -0.5432    0.65440    -0.2219                                -0.2289
+## 14 -1.531  -0.7217   -0.13620                  0.5113       0.2131             
+## 19 -1.663  -0.5808                0.3075                                -0.1642
+## 24 -1.469  -0.7514    0.02201    -0.3380       0.8038                   -0.2581
+## 30 -1.536  -0.7264   -0.10760                  0.5484       0.1906      -0.2306
+##    df   logLik  AICc delta weight
+## 5   3 -137.238 280.6  0.00  0.089
+## 11  4 -136.330 280.9  0.29  0.077
+## 9   3 -137.457 281.1  0.44  0.071
+## 2   3 -137.547 281.2  0.62  0.065
+## 12  5 -135.551 281.5  0.86  0.058
+## 21  4 -136.884 282.0  1.40  0.044
+## 7   4 -136.978 282.2  1.59  0.040
+## 1   2 -139.116 282.3  1.68  0.038
+## 27  5 -135.981 282.3  1.72  0.038
+## 28  6 -134.970 282.5  1.86  0.035
+## 13  4 -137.140 282.5  1.91  0.034
+## 15  5 -136.108 282.6  1.98  0.033
+## 18  4 -137.188 282.6  2.00  0.033
+## 6   4 -137.210 282.7  2.05  0.032
+## 25  4 -137.222 282.7  2.07  0.032
+## 10  4 -137.305 282.9  2.24  0.029
+## 4   4 -137.437 283.1  2.50  0.025
+## 3   3 -138.497 283.1  2.52  0.025
+## 16  6 -135.336 283.2  2.59  0.024
+## 23  5 -136.583 283.6  2.92  0.021
+## 31  6 -135.684 283.9  3.28  0.017
+## 29  5 -136.807 284.0  3.37  0.016
+## 22  5 -136.867 284.1  3.49  0.016
+## 17  3 -139.009 284.2  3.54  0.015
+## 32  7 -134.752 284.2  3.61  0.015
+## 8   5 -136.978 284.3  3.72  0.014
+## 26  5 -136.992 284.4  3.74  0.014
+## 20  5 -137.049 284.5  3.86  0.013
+## 14  5 -137.119 284.6  4.00  0.012
+## 19  4 -138.302 284.9  4.23  0.011
+## 24  6 -136.582 285.7  5.08  0.007
+## 30  6 -136.795 286.1  5.51  0.006
+## Models ranked by AICc(x)</code></pre>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb152-1" title="1"><span class="co">#Comparación de modelos para explorar los resultados para ocupación: </span></a>
+<a class="sourceLine" id="cb152-2" title="2">occ_dredge_table &lt;-<span class="st"> </span>occ_dredge<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb152-3" title="3"><span class="st">  </span><span class="kw">mutate_all</span>(<span class="op">~</span><span class="st"> </span><span class="kw">round</span>(., <span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb152-4" title="4"></a>
+<a class="sourceLine" id="cb152-5" title="5"><span class="co">#Acá con la tabla de selección del modelo se puede observar cuales modelos tienen el mayor apoyo en el caso de esta especie here you can see which models have the most support for this species</span></a>
+<a class="sourceLine" id="cb152-6" title="6">Occ_res &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(occ_dredge_table)</a>
+<a class="sourceLine" id="cb152-7" title="7">Occ_res</a></code></pre></div>
 <pre><code>##    p(Int) psi(Int) p(Biomass_100m) p(Biomass_30m) psi(Biomass_100m)
 ## 1  -1.553   -0.724              NA             NA             0.547
 ## 2  -1.474   -0.608              NA         -0.644                NA
@@ -1635,64 +1850,64 @@ code span.er { color: #a61717; background-color: #e3d2d2; }
 ## 30               NA          -0.164  4 -138.302 284.860 4.231  0.011
 ## 31               NA          -0.258  6 -136.582 285.710 5.082  0.007
 ## 32            0.191          -0.231  6 -136.795 286.135 5.507  0.006</code></pre>
-<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb148-1" title="1"><span class="co">#Procedemos a la escogencia del mejor modelo utilizando el criterio de información de AKAIKE</span></a>
-<a class="sourceLine" id="cb148-2" title="2"></a>
-<a class="sourceLine" id="cb148-3" title="3"><span class="co"># Los modelos con menos de 2.5 Delta AICc)</span></a>
-<a class="sourceLine" id="cb148-4" title="4">occ_dredge_Delta &lt;-<span class="st"> </span><span class="kw">get.models</span>(occ_dredge, <span class="dt">subset =</span> delta <span class="op">&lt;=</span><span class="st"> </span><span class="fl">2.5</span>)</a>
-<a class="sourceLine" id="cb148-5" title="5"></a>
-<a class="sourceLine" id="cb148-6" title="6"><span class="co"># modelos promediados basados en el peso del modelo  </span></a>
-<a class="sourceLine" id="cb148-7" title="7">occ_avg &lt;-<span class="st"> </span><span class="kw">model.avg</span>(occ_dredge_Delta, <span class="dt">fit =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb148-8" title="8"></a>
-<a class="sourceLine" id="cb148-9" title="9"><span class="co">#  coeficientes de los modelos promediados para lsa probabilidades de ocupación y detección. fr the models with the most support from the data</span></a>
-<a class="sourceLine" id="cb148-10" title="10"><span class="kw">coef</span>(occ_avg)</a></code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb154-1" title="1"><span class="co">#Procedemos a la escogencia del mejor modelo utilizando el criterio de información de AKAIKE</span></a>
+<a class="sourceLine" id="cb154-2" title="2"></a>
+<a class="sourceLine" id="cb154-3" title="3"><span class="co"># Los modelos con menos de 2.5 Delta AICc)</span></a>
+<a class="sourceLine" id="cb154-4" title="4">occ_dredge_Delta &lt;-<span class="st"> </span><span class="kw">get.models</span>(occ_dredge, <span class="dt">subset =</span> delta <span class="op">&lt;=</span><span class="st"> </span><span class="fl">2.5</span>)</a>
+<a class="sourceLine" id="cb154-5" title="5"></a>
+<a class="sourceLine" id="cb154-6" title="6"><span class="co"># modelos promediados basados en el peso del modelo  </span></a>
+<a class="sourceLine" id="cb154-7" title="7">occ_avg &lt;-<span class="st"> </span><span class="kw">model.avg</span>(occ_dredge_Delta, <span class="dt">fit =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb154-8" title="8"></a>
+<a class="sourceLine" id="cb154-9" title="9"><span class="co">#  coeficientes de los modelos promediados para lsa probabilidades de ocupación y detección. </span></a>
+<a class="sourceLine" id="cb154-10" title="10"><span class="kw">coef</span>(occ_avg)</a></code></pre></div>
 <pre><code>##          psi(Int) psi(Biomass_100m)            p(Int)  psi(Biomass_30m) 
 ##        -0.6545574         0.5552659        -1.5547991         0.8226342 
 ##    p(Biomass_30m)   p(Biomass_100m)   psi(Per_Forest) 
 ##        -0.7194053         0.3852026        -0.2506797</code></pre>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb150-1" title="1"><span class="co">#crear un data frame nuevo y usar la función predict() para predecir como sería la probabilidad de ocupación al aumentar la biomasa. Primero basandonos en biomasa a 30m.</span></a>
-<a class="sourceLine" id="cb150-2" title="2"></a>
-<a class="sourceLine" id="cb150-3" title="3">newDatHab &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Biomass_100m =</span> <span class="kw">mean</span>(CR_HAB_BPI<span class="op">$</span>Biomass_100m),</a>
-<a class="sourceLine" id="cb150-4" title="4">                        <span class="dt">Biomass_30m =</span> <span class="kw">seq</span>(<span class="kw">min</span>(CR_HAB_BPI<span class="op">$</span>Biomass_30m),<span class="kw">max</span>(CR_HAB_BPI<span class="op">$</span>Biomass_30m), <span class="dt">length=</span><span class="dv">100</span>),</a>
-<a class="sourceLine" id="cb150-5" title="5">                        <span class="dt">Per_Forest =</span> <span class="kw">mean</span>(CR_HAB_BPI<span class="op">$</span>Per_Forest))</a>
-<a class="sourceLine" id="cb150-6" title="6"></a>
-<a class="sourceLine" id="cb150-7" title="7"></a>
-<a class="sourceLine" id="cb150-8" title="8">occ_pred &lt;-<span class="st"> </span><span class="kw">predict</span>(occ_avg,</a>
-<a class="sourceLine" id="cb150-9" title="9">                    <span class="dt">newdata =</span> newDatHab,</a>
-<a class="sourceLine" id="cb150-10" title="10">                    <span class="dt">type =</span> <span class="st">&quot;state&quot;</span>)</a>
-<a class="sourceLine" id="cb150-11" title="11"></a>
-<a class="sourceLine" id="cb150-12" title="12">Biomass_30m &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="kw">min</span>(CR_Hab_BPI2<span class="op">$</span>Biomass_30m),<span class="kw">max</span>(CR_Hab_BPI2<span class="op">$</span>Biomass_30m), <span class="dt">length=</span><span class="dv">100</span>)</a>
-<a class="sourceLine" id="cb150-13" title="13"></a>
-<a class="sourceLine" id="cb150-14" title="14"> <span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>))</a>
-<a class="sourceLine" id="cb150-15" title="15"><span class="kw">plot</span>(Biomass_30m, occ_pred<span class="op">$</span>fit, <span class="dt">xlab=</span><span class="st">&quot;Above Ground Biomass at 30m&quot;</span>,</a>
-<a class="sourceLine" id="cb150-16" title="16">       <span class="dt">ylab=</span><span class="st">&quot;Occupancy Probability&quot;</span>, <span class="dt">pch=</span><span class="dv">16</span>, <span class="dt">ylim=</span><span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
-<a class="sourceLine" id="cb150-17" title="17">       <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">main =</span> Species_CR[<span class="dv">1</span>])</a>
-<a class="sourceLine" id="cb150-18" title="18"><span class="kw">lines</span>(Biomass_30m, occ_pred<span class="op">$</span>fit<span class="op">-</span>occ_pred<span class="op">$</span>se.fit, <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb150-19" title="19"><span class="kw">lines</span>(Biomass_30m, occ_pred<span class="op">$</span>fit<span class="op">+</span>occ_pred<span class="op">$</span>se.fit, <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb150-20" title="20"></a>
-<a class="sourceLine" id="cb150-21" title="21"></a>
-<a class="sourceLine" id="cb150-22" title="22"><span class="co">#creamos un nuevo data frame Prediciendo ocupación basandonos en la biomasa a escala de 100m</span></a>
-<a class="sourceLine" id="cb150-23" title="23"></a>
-<a class="sourceLine" id="cb150-24" title="24">newDatHab2 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Biomass_100m =</span> <span class="kw">seq</span>(<span class="kw">min</span>(CR_HAB_BPI<span class="op">$</span>Biomass_100m),<span class="kw">max</span>(CR_HAB_BPI<span class="op">$</span>Biomass_100m), <span class="dt">length=</span><span class="dv">100</span>),</a>
-<a class="sourceLine" id="cb150-25" title="25">                        <span class="dt">Biomass_30m =</span> <span class="kw">mean</span>(CR_HAB_BPI<span class="op">$</span>Biomass_30m),</a>
-<a class="sourceLine" id="cb150-26" title="26">                         <span class="dt">Per_Forest =</span> <span class="kw">mean</span>(CR_HAB_BPI<span class="op">$</span>Per_Forest))</a>
-<a class="sourceLine" id="cb150-27" title="27"> </a>
-<a class="sourceLine" id="cb150-28" title="28"> </a>
-<a class="sourceLine" id="cb150-29" title="29"> occ_pred2 &lt;-<span class="st"> </span><span class="kw">predict</span>(occ_avg,</a>
-<a class="sourceLine" id="cb150-30" title="30">                     <span class="dt">newdata =</span> newDatHab2,</a>
-<a class="sourceLine" id="cb150-31" title="31">                     <span class="dt">type =</span> <span class="st">&quot;state&quot;</span>)</a>
-<a class="sourceLine" id="cb150-32" title="32"> </a>
-<a class="sourceLine" id="cb150-33" title="33"> Biomass_100m &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="kw">min</span>(CR_Hab_BPI2<span class="op">$</span>Biomass_100m),<span class="kw">max</span>(CR_Hab_BPI2<span class="op">$</span>Biomass_100m), <span class="dt">length=</span><span class="dv">100</span>)</a>
-<a class="sourceLine" id="cb150-34" title="34"> </a>
-<a class="sourceLine" id="cb150-35" title="35"> <span class="kw">plot</span>(Biomass_100m, occ_pred2<span class="op">$</span>fit, <span class="dt">xlab=</span><span class="st">&quot;Above Ground Biomass at 100m&quot;</span>,</a>
-<a class="sourceLine" id="cb150-36" title="36">      <span class="dt">ylab=</span><span class="st">&quot;Occupancy Probability&quot;</span>, <span class="dt">pch=</span><span class="dv">16</span>, <span class="dt">ylim=</span><span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
-<a class="sourceLine" id="cb150-37" title="37">      <span class="dt">lwd=</span><span class="dv">3</span>, <span class="dt">main =</span> Species_CR[<span class="dv">1</span>],<span class="dt">col=</span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb150-38" title="38"> <span class="kw">lines</span>(Biomass_100m, occ_pred2<span class="op">$</span>fit<span class="op">-</span>occ_pred2<span class="op">$</span>se.fit, <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb150-39" title="39"><span class="kw">lines</span>(Biomass_100m, occ_pred2<span class="op">$</span>fit<span class="op">+</span>occ_pred2<span class="op">$</span>se.fit, <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb156-1" title="1"><span class="co">#crear un data frame nuevo y usar la función predict() para predecir como sería la probabilidad de ocupación al aumentar la biomasa. Primero basandonos en biomasa a 30m.</span></a>
+<a class="sourceLine" id="cb156-2" title="2"></a>
+<a class="sourceLine" id="cb156-3" title="3">newDatHab &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Biomass_100m =</span> <span class="kw">mean</span>(CR_HAB_BPI<span class="op">$</span>Biomass_100m),</a>
+<a class="sourceLine" id="cb156-4" title="4">                        <span class="dt">Biomass_30m =</span> <span class="kw">seq</span>(<span class="kw">min</span>(CR_HAB_BPI<span class="op">$</span>Biomass_30m),<span class="kw">max</span>(CR_HAB_BPI<span class="op">$</span>Biomass_30m), <span class="dt">length=</span><span class="dv">100</span>),</a>
+<a class="sourceLine" id="cb156-5" title="5">                        <span class="dt">Per_Forest =</span> <span class="kw">mean</span>(CR_HAB_BPI<span class="op">$</span>Per_Forest))</a>
+<a class="sourceLine" id="cb156-6" title="6"></a>
+<a class="sourceLine" id="cb156-7" title="7"></a>
+<a class="sourceLine" id="cb156-8" title="8">occ_pred &lt;-<span class="st"> </span><span class="kw">predict</span>(occ_avg,</a>
+<a class="sourceLine" id="cb156-9" title="9">                    <span class="dt">newdata =</span> newDatHab,</a>
+<a class="sourceLine" id="cb156-10" title="10">                    <span class="dt">type =</span> <span class="st">&quot;state&quot;</span>)</a>
+<a class="sourceLine" id="cb156-11" title="11"></a>
+<a class="sourceLine" id="cb156-12" title="12">Biomass_30m &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="kw">min</span>(CR_Hab_BPI2<span class="op">$</span>Biomass_30m),<span class="kw">max</span>(CR_Hab_BPI2<span class="op">$</span>Biomass_30m), <span class="dt">length=</span><span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb156-13" title="13"></a>
+<a class="sourceLine" id="cb156-14" title="14"> <span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb156-15" title="15"><span class="kw">plot</span>(Biomass_30m, occ_pred<span class="op">$</span>fit, <span class="dt">xlab=</span><span class="st">&quot;Above Ground Biomass at 30m&quot;</span>,</a>
+<a class="sourceLine" id="cb156-16" title="16">       <span class="dt">ylab=</span><span class="st">&quot;Occupancy Probability&quot;</span>, <span class="dt">pch=</span><span class="dv">16</span>, <span class="dt">ylim=</span><span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb156-17" title="17">       <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">main =</span> Species_CR[<span class="dv">1</span>])</a>
+<a class="sourceLine" id="cb156-18" title="18"><span class="kw">lines</span>(Biomass_30m, occ_pred<span class="op">$</span>fit<span class="op">-</span>occ_pred<span class="op">$</span>se.fit, <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb156-19" title="19"><span class="kw">lines</span>(Biomass_30m, occ_pred<span class="op">$</span>fit<span class="op">+</span>occ_pred<span class="op">$</span>se.fit, <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb156-20" title="20"></a>
+<a class="sourceLine" id="cb156-21" title="21"></a>
+<a class="sourceLine" id="cb156-22" title="22"><span class="co">#creamos un nuevo data frame Prediciendo ocupación basandonos en la biomasa a escala de 100m</span></a>
+<a class="sourceLine" id="cb156-23" title="23"></a>
+<a class="sourceLine" id="cb156-24" title="24">newDatHab2 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Biomass_100m =</span> <span class="kw">seq</span>(<span class="kw">min</span>(CR_HAB_BPI<span class="op">$</span>Biomass_100m),<span class="kw">max</span>(CR_HAB_BPI<span class="op">$</span>Biomass_100m), <span class="dt">length=</span><span class="dv">100</span>),</a>
+<a class="sourceLine" id="cb156-25" title="25">                        <span class="dt">Biomass_30m =</span> <span class="kw">mean</span>(CR_HAB_BPI<span class="op">$</span>Biomass_30m),</a>
+<a class="sourceLine" id="cb156-26" title="26">                         <span class="dt">Per_Forest =</span> <span class="kw">mean</span>(CR_HAB_BPI<span class="op">$</span>Per_Forest))</a>
+<a class="sourceLine" id="cb156-27" title="27"> </a>
+<a class="sourceLine" id="cb156-28" title="28"> </a>
+<a class="sourceLine" id="cb156-29" title="29"> occ_pred2 &lt;-<span class="st"> </span><span class="kw">predict</span>(occ_avg,</a>
+<a class="sourceLine" id="cb156-30" title="30">                     <span class="dt">newdata =</span> newDatHab2,</a>
+<a class="sourceLine" id="cb156-31" title="31">                     <span class="dt">type =</span> <span class="st">&quot;state&quot;</span>)</a>
+<a class="sourceLine" id="cb156-32" title="32"> </a>
+<a class="sourceLine" id="cb156-33" title="33"> Biomass_100m &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="kw">min</span>(CR_Hab_BPI2<span class="op">$</span>Biomass_100m),<span class="kw">max</span>(CR_Hab_BPI2<span class="op">$</span>Biomass_100m), <span class="dt">length=</span><span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb156-34" title="34"> </a>
+<a class="sourceLine" id="cb156-35" title="35"> <span class="kw">plot</span>(Biomass_100m, occ_pred2<span class="op">$</span>fit, <span class="dt">xlab=</span><span class="st">&quot;Above Ground Biomass at 100m&quot;</span>,</a>
+<a class="sourceLine" id="cb156-36" title="36">      <span class="dt">ylab=</span><span class="st">&quot;Occupancy Probability&quot;</span>, <span class="dt">pch=</span><span class="dv">16</span>, <span class="dt">ylim=</span><span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb156-37" title="37">      <span class="dt">lwd=</span><span class="dv">3</span>, <span class="dt">main =</span> Species_CR[<span class="dv">1</span>],<span class="dt">col=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb156-38" title="38"> <span class="kw">lines</span>(Biomass_100m, occ_pred2<span class="op">$</span>fit<span class="op">-</span>occ_pred2<span class="op">$</span>se.fit, <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb156-39" title="39"><span class="kw">lines</span>(Biomass_100m, occ_pred2<span class="op">$</span>fit<span class="op">+</span>occ_pred2<span class="op">$</span>se.fit, <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">3</span>)</a></code></pre></div>
 <p><img src="data:image/png;base64,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IY2AQhoBhTQCCmkEFNIIKKQRUEgjoJBGQCGNgEIaAYU0AgppBBTSCCikEVBII6CQRkAhjYBCGgGFNAIKaQQU0ggopBFQSCOgkEZAIY2AQhoBhTQCCmkEFNIIKKQRUEgjoJBGQCGNgEIaAYU0AgppBBTSCCikEVBII6CQRkAhjYBCGgGFNAIKaQQU0ggopBFQSCOgkEZAIY2AQhoBhTQCCmkEFNIIKKQRUEgjoJBGQCGNgEIaAYU0AgppBBTSCCikEVBII6CQRkAhjYBCGgGFNAIKaQQU0ggopBFQSCOgkEZAIY2AQhoBhTQCCmkEFNIIKKQRUEgjoJBGQCGNgEIaAYU0AgppBBTSCCikEVBII6CQRkAhjYBCGgGFNAIKaQQU0ggopBFQSCOgkEZAIY2AQhoBhTQCCmkEFNIIKKQRUEgjoJBGQCGNgEIaAYU0AgppBBTSCCikEVBII6CQRkAhjYBCGgGFNAIKaQQU0ggopBFQSCOgkEZAIY2AQhoBhTQCCmkEFNIIKKQRUEgjoJBGQCGNgEIaAYU0AgppBBTSCCikEVBII6CQRkAhjYBCGgGFNAIKaQQU0ggopBFQSCOgkEZAIY2AQhoBhTQCCmkEFNIIKKQRUEgjoJBGQCGNgEIaAYU0AgppBBTSCCikEVBII6CQRkAhjYBCGgGFNAIKaQQU0ggopBFQSCOgkEZAIY2AQhoBhTQCCmkEFNIIKKQRUEgjoJBGQCGNgEIaAYU0AgppBBTSCCikEVBII6CQRkAhjYBCGgGFNAIKaQQU0ggopBFQSCOgkEZAIY2AQhoBhTQCCmkEFNIIKKQRUEgjoJBGQCGNgEIaAYU0AgppBBTSCCikEVBII6CQRkAhjYBCGgGFNAIKaQQU0ggopBFQSCOgkEZAIY2AQhoBhTQCCmkEFNIIKKQRUEgjoJBGQCGNgEIaAYU0AgppBBTSCCikEVBII6CQRkAhjYBCGgGFNAIKaQQU0ggopBFQSCOgkEZAIY2AQhoBhTQCCmkEFNIIKKQRUEgjoJBGQCGNgEIaAYU0AgppBBTS/g+oEXp25ZQvmgAAAABJRU5ErkJggg==" /><!-- --></p>
-<ol start="5" style="list-style-type: decimal">
-<li>Interpretación breve de los resultados con respecto a la pregunta de investigación y la hipótesis causal.</li>
-</ol>
-<p>En el caso de <em>B. rufifrons</em> la probabilidad de detección es de y la probabilidad de ocupación es de….En el caso de <em>C. linearis</em> la probabilidad de detección es de y la probabilidad de ocupación es de….En el caso de <em>L. souleyetii</em> la probabilidad de detección es de y la probabilidad de ocupación es de….</p>
+<div id="interpretación-breve-de-los-resultados-con-respecto-a-la-pregunta-de-investigación-y-la-hipótesis-causal." class="section level3">
+<h3>5. Interpretación breve de los resultados con respecto a la pregunta de investigación y la hipótesis causal.</h3>
+<p>En el caso de estas tres especies que tienen requerimientos y estados de conservación dinstintos podemos notar que: en el caso de <em>B. rufifrons</em> ninguna de las covariables utilizadas parece tener un efecto en la probabilidad de ocupación la cual es muy alta casi siempre (~0.8), el mejor modelo sólo incluye biomasa a 100m. Esto era lo que esperábamos ya que esta ave habita los cafetales y se alimenta en ellos. En el caso de <em>C. linearis</em> en el mejor modelo no se incluye porcentaje de bosque y vemos que la probabilidad de ocupación aumenta conforme aumenta la biomasa de 30 a 100m del punto de conteo, sin embargo al ver la probabilidad de ocupación en relación con la biomasa del punto a 30m esta <strong>disminuye</strong>. En el caso de <em>L. souleyetii</em> el mejor modelo es aquel que utiliza unicamente los datos de biomasa a 100m y si parece que hay una aumento en la ocupación desde una ocupación baja (~0,20) cuando la biomasa es baja a una ocupación mayor (~ 4) cuando la biomasa aumenta, esto lo esperabamos ya que es una especie que usualmente es observada en orillas de bosque.</p>
+</div>
 <div id="acá-pueden-acceder-al" class="section level3">
 <h3>Acá pueden acceder al</h3>
 <p><a href="https://github.com/MolinaIngrid/Trabajo_Final">Repositorio en github</a> En el archivo <strong>README</strong> hay más detalles sobre las decisiones que tomé para este ejercicio</p>

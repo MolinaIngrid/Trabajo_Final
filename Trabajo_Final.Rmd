@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ![Reinita Cafetalera](C:/Users/in/Documents/MAESTRIA/Cursos/Estrategias/Trabajo_Final/basruf.jpg)
 
-
+<div style="text-align: left">
 
 ### Antes de iniciar acá dejo esta lista de todos lo paquetes que vamos a necesitar para reproducir este análisis:
 
@@ -76,7 +76,6 @@ library(AICcmodavg)
 
 library(ggdag)
 
-<div style="text-align: left">
 
 ### 1. ¿Cuál es la pregunta específica de investigación?
 
@@ -106,7 +105,7 @@ ggdag(DAG, layout = "circle")+ theme_dag()
 
 ### 3. ¿De dónde vienen los datos? Si son datos empíricos debe incluir el código para su procesamiento desde datos crudos, hasta datos analizables. 
 
-Los datos vienen del trabajo de campo hecho desde finales de 2019 al 2020. Utilicé puntos de conteo de radio fijo y la aplicación ebird para anotar todas las especies detectadas en cada uno de los 161 puntos. Al bajar de la aplicación toda la información obtengo unas tablas muy grandes por eso debo procesar los datos.
+Los datos vienen del trabajo de campo hecho desde finales de 2019 al 2020. Utilicé puntos de conteo de radio fijo de dos bandas (Anotamos las especies detectadas de 0 a 30m del punto y las detectadas de 30 a 100m del punto). Utilizamos la aplicación ebird para anotar todas las especies detectadas en cada uno de los 161 puntos. Al bajar de la aplicación toda la información obtengo unas tablas muy grandes por eso debo procesar los datos.
 
 ## Procesamiento de los datos: 
 
@@ -311,7 +310,7 @@ CR_Family_List
 ```
 
 
-## 4. Análisis de los datos. Se vale escoger un subconjunto de los datos para que esta sección sea concisa, pero debe ser un análisis coherente con el DAG del punto 2.
+## 4. Análisis de los datos. 
 
 Para comenzar con el análisis de los datos, quiero primero ver cuantos registros tengo de cada especie
 
@@ -350,7 +349,7 @@ Sites <- Datos_BPI_CR[,1]
 CR_2020_Matrix <- matrix(0, nrow=n, ncol=J,dimnames=list(1:n, paste("survey", 1:J, sep="")))
 ```
 
-En este momento agrego la información de la biomasa sobre el suelo y del tipo de uso del suelo (en el tipo de uso tengo el porcentaje de bosque). (contamos con una resolución a 30m y otra a 100m)
+En este momento agrego la información de la biomasa sobre el suelo (**OJO** hay dos archivos de biomasa para cada punto de conteo, uno con los valores de 0 a 30m y otro con los valores de 30 a 100m) y del tipo de uso del suelo (en el tipo de uso tenemos el porcentaje de bosque).
 
 ```{r}
 LandUseCR_30m <- read.csv("C:/Users/in/Documents/MAESTRIA/Cursos/Estrategias/Trabajo_Final/LandUseCR_30m.csv")
@@ -455,6 +454,8 @@ full <- occu(~Biomass_100m +Biomass_30m ~Biomass_100m + Biomass_30m + Per_Forest
 
 occ_dredge <- dredge(full)
 
+occ_dredge
+
 #Comparación de modelos para explorar los resultados para ocupación: 
 occ_dredge_table <- occ_dredge%>%
   mutate_all(~ round(., 3))
@@ -479,7 +480,7 @@ occ_avg <- model.avg(occ_dredge_Delta, fit = TRUE)
 coef(occ_avg)
 ```
 
-Creamos un nuevo data frame y hacemos el gráfico de probabilidad de ocupación respecto a biomasa a 30m
+Creamos un nuevo data frame y hacemos el gráfico de probabilidad de ocupación respecto a biomasa de 0 a 30m
 ```{r}
 newDatHab <- data.frame(Biomass_100m = mean(CR_HAB_BPI$Biomass_100m),
                         Biomass_30m = seq(min(CR_HAB_BPI$Biomass_30m),max(CR_HAB_BPI$Biomass_30m), length=100),
@@ -570,6 +571,8 @@ backTransform(null, "det") #probabilidad de detección
 full <- occu(~Biomass_100m +Biomass_30m ~Biomass_100m + Biomass_30m + Per_Forest, ChiLinUMF)
 
 occ_dredge <- dredge(full)
+
+occ_dredge
 
 #Comparación de modelos para explorar los resultados para ocupación: 
 occ_dredge_table <- occ_dredge%>%
@@ -685,6 +688,7 @@ backTransform(null, "det") #probabilidad de detección
 full <- occu(~Biomass_100m +Biomass_30m ~Biomass_100m + Biomass_30m + Per_Forest, LepSouUMF)
 
 occ_dredge <- dredge(full)
+occ_dredge
 
 #Comparación de modelos para explorar los resultados para ocupación: 
 occ_dredge_table <- occ_dredge%>%
@@ -692,9 +696,7 @@ occ_dredge_table <- occ_dredge%>%
 
 #Acá con la tabla de selección del modelo se puede observar cuales modelos tienen el mayor apoyo en el caso de esta especie here you can see which models have the most support for this species
 Occ_res <- as.data.frame(occ_dredge_table)
-
 Occ_res
-
 
 #Procedemos a la escogencia del mejor modelo utilizando el criterio de información de AKAIKE
 
@@ -704,7 +706,7 @@ occ_dredge_Delta <- get.models(occ_dredge, subset = delta <= 2.5)
 # modelos promediados basados en el peso del modelo  
 occ_avg <- model.avg(occ_dredge_Delta, fit = TRUE)
 
-#  coeficientes de los modelos promediados para lsa probabilidades de ocupación y detección. fr the models with the most support from the data
+#  coeficientes de los modelos promediados para lsa probabilidades de ocupación y detección. 
 coef(occ_avg)
 
 #crear un data frame nuevo y usar la función predict() para predecir como sería la probabilidad de ocupación al aumentar la biomasa. Primero basandonos en biomasa a 30m.
@@ -750,9 +752,9 @@ lines(Biomass_100m, occ_pred2$fit+occ_pred2$se.fit, lty=3,col=3)
 
 ```
 
-5. Interpretación breve de los resultados con respecto a la  pregunta de investigación y la hipótesis causal. 
+### 5. Interpretación breve de los resultados con respecto a la  pregunta de investigación y la hipótesis causal. 
 
-En el caso de *B. rufifrons* la probabilidad de detección es de y la probabilidad de ocupación es de....En el caso de *C. linearis* la probabilidad de detección es de y la probabilidad de ocupación es de....En el caso de *L. souleyetii* la probabilidad de detección es de y la probabilidad de ocupación es de....
+En el caso de estas tres especies que tienen requerimientos y estados de conservación dinstintos podemos notar que: en el caso de  *B. rufifrons* ninguna de las covariables utilizadas parece tener un efecto en la probabilidad de ocupación la cual es muy alta casi siempre (~0.8), el mejor modelo sólo incluye biomasa a 100m. Esto era lo que esperábamos ya que esta ave habita los cafetales y se alimenta en ellos. En el caso de *C. linearis* en el mejor modelo no se incluye porcentaje de bosque y vemos que la probabilidad de ocupación aumenta conforme aumenta la biomasa de 30 a 100m del punto de conteo, sin embargo al ver la probabilidad de ocupación en relación con la biomasa del punto a 30m esta **disminuye**. En el caso de *L. souleyetii* el mejor modelo es aquel que utiliza unicamente los datos de biomasa a 100m y si parece que hay una aumento en la ocupación desde una ocupación baja (~0,20) cuando la biomasa es baja a una ocupación mayor (~ 4) cuando la biomasa aumenta, esto lo esperabamos ya que es una especie que usualmente es observada en orillas de bosque.  
 
 
 ### Acá pueden acceder al 
